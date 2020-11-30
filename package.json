@@ -1,14 +1,19 @@
 {
-  "name": "gatsby-starter-netlify-cms",
-  "description": "Example Gatsby, and Netlify CMS project",
-  "version": "1.1.3",
-  "author": "Austin Green",
+  "name": "muso.sk",
+  "description": "Gatsby, Netlify CMS and TailwindCSS project",
+  "version": "1.0.0",
+  "author": "muso.sk",
+  "repository": "https://github.com/musosoft/muso.sk",
   "dependencies": {
-    "bulma": "^0.9.0",
+    "@fortawesome/fontawesome-free": "5.14.0",
+    "@popperjs/core": "2.5.1",
+    "@tailwindcss/custom-forms": "0.2.1",
+    "chart.js": "2.9.3",
     "gatsby": "^2.20.35",
     "gatsby-image": "^2.3.5",
     "gatsby-plugin-netlify": "^2.2.4",
     "gatsby-plugin-netlify-cms": "^4.2.5",
+    "gatsby-plugin-postcss": "^3.2.0",
     "gatsby-plugin-purgecss": "^5.0.0",
     "gatsby-plugin-react-helmet": "^3.2.5",
     "gatsby-plugin-sass": "^2.2.4",
@@ -25,10 +30,12 @@
     "netlify-cms-media-library-cloudinary": "^1.3.2",
     "netlify-cms-media-library-uploadcare": "^0.5.2",
     "node-sass": "^4.14.0",
+    "postcss": "^8.1.9",
     "prop-types": "^15.6.0",
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
     "react-helmet": "^6.0.0",
+    "tailwindcss": "^2.0.1",
     "uuid": "^7.0.0"
   },
   "keywords": [
@@ -42,7 +49,24 @@
     "build": "npm run clean && gatsby build",
     "develop": "npm run clean && gatsby develop",
     "format": "prettier --trailing-comma es5 --no-semi --single-quote --write \"{gatsby-*.js,src/**/*.js}\"",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "install:clean": "rm -rf node_modules/ && rm -rf package-lock.json && npm install && npm run build:tailwind && npm start",
+    "build:tailwind": "tailwind build src/assets/styles/index.css -o src/assets/styles/tailwind.css"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   },
   "devDependencies": {
     "prettier": "^2.0.5"
