@@ -5,10 +5,12 @@
   "author": "muso.sk",
   "repository": "https://github.com/musosoft/muso.sk",
   "dependencies": {
-    "@fortawesome/fontawesome-free": "5.14.0",
-    "@popperjs/core": "2.5.1",
-    "@tailwindcss/custom-forms": "0.2.1",
-    "chart.js": "2.9.3",
+    "@fortawesome/fontawesome-free": "^5.14.0",
+    "@headlessui/react": "^0.2.0",
+    "@popperjs/core": "^2.5.1",
+    "@tailwindcss/custom-forms": "^0.2.1",
+    "autoprefixer": "^10.0.4",
+    "chart.js": "^2.9.3",
     "gatsby": "^2.20.35",
     "gatsby-image": "^2.3.5",
     "gatsby-plugin-netlify": "^2.2.4",
@@ -45,13 +47,13 @@
   "main": "n/a",
   "scripts": {
     "clean": "gatsby clean",
-    "start": "npm run develop",
-    "build": "npm run clean && gatsby build",
-    "develop": "npm run clean && gatsby develop",
+    "start": "yarn run develop",
+    "build": "yarn run clean && gatsby build",
+    "develop": "yarn run clean && gatsby develop",
     "format": "prettier --trailing-comma es5 --no-semi --single-quote --write \"{gatsby-*.js,src/**/*.js}\"",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "install:clean": "rm -rf node_modules/ && rm -rf package-lock.json && npm install && npm run build:tailwind && npm start",
-    "build:tailwind": "tailwind build src/assets/styles/index.css -o src/assets/styles/tailwind.css"
+    "install:clean": "rm -rf node_modules/ && yarn cache clean && rm -rf package-lock.json && yarn && yarn run build:tailwind && yarn start",
+    "build:tailwind": "tailwind build src/styles/global.css -o src/styles/tailwind.css"
   },
   "eslintConfig": {
     "extends": "react-app"

@@ -1,34 +1,30 @@
-import React from "react";
-import { Link } from "gatsby";
-import github from "../img/github-icon.svg";
-import logo from "../img/logo.svg";
+import React from 'react';
+import { Link } from 'gatsby';
+import { Transition } from '@headlessui/react';
+import logo from '../img/logo.svg';
 
 const Navbar = class extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       active: false,
-      navBarActiveClass: "",
+      flyoutMenuServicesOpen: false,
+      flyoutMenuMoreOpen: false,
+      navBarActiveClass: '',
     };
   }
-
   toggleHamburger = () => {
-    // toggle the active boolean in the state
     this.setState(
       {
         active: !this.state.active,
       },
-      // after state has been updated,
       () => {
-        // set the class in state for the navbar accordingly
         this.state.active
           ? this.setState({
-              navBarActiveClass: "hidden",
-              // navBarActiveClass: "text-gray-900",
+              navBarActiveClass: 'hidden',
             })
           : this.setState({
-              navBarActiveClass: "",
-              // navBarActiveClass: "text-gray-500",
+              navBarActiveClass: '',
             });
       }
     );
@@ -41,7 +37,7 @@ const Navbar = class extends React.Component {
           <div className="flex justify-between items-center border-b-2 border-gray-100 py-6 md:justify-start md:space-x-10">
             <div className="flex justify-start lg:w-0 lg:flex-1">
               <Link to="/">
-                <span className="sr-only">Workflow</span>
+                <span className="sr-only">muso.sk</span>
                 <img className="h-8 w-auto sm:h-10" src={logo} alt="" />
               </Link>
             </div>
@@ -71,45 +67,50 @@ const Navbar = class extends React.Component {
             </div>
             <nav className="hidden md:flex space-x-10">
               <div className="relative">
-                <button
-                  type="button"
-                  className={`group bg-white rounded-md ${this.state.navBarActiveClass} inline-flex items-center text-base font-medium hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500`}
-                >
-                  <span>Solutions</span>
-                  <svg
-                    className="ml-2 h-5 w-5 text-gray-400 group-hover:text-gray-500"
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 20 20"
-                    fill="currentColor"
-                    aria-hidden="true"
+                <Link to="/about">
+                  <button
+                    type="button"
+                    className="group bg-white rounded-md inline-flex items-center text-base font-medium hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                    onClick={() => {
+                      this.setState({
+                        flyoutMenuServicesOpen: !this.state.flyoutMenuServicesOpen,
+                      });
+                    }}
                   >
-                    <path
-                      fill-rule="evenodd"
-                      d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                      clip-rule="evenodd"
-                    />
-                  </svg>
-                </button>
-
-                {/* <!--
-            'Solutions' flyout menu, show/hide based on flyout menu state.
-
-            Entering: "transition ease-out duration-200"
-              From: "opacity-0 translate-y-1"
-              To: "opacity-100 translate-y-0"
-            Leaving: "transition ease-in duration-150"
-              From: "opacity-100 translate-y-0"
-              To: "opacity-0 translate-y-1"
-          --> */}
-                <div className="absolute -ml-4 mt-3 transform px-2 w-screen max-w-md sm:px-0 lg:ml-0 lg:left-1/2 lg:-translate-x-1/2">
+                    <span>Services</span>
+                    <svg
+                      className="ml-2 h-5 w-5 text-gray-400 group-hover:text-gray-500"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                      aria-hidden="true"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                  </button>
+                </Link>
+                <Transition
+                  show={this.state.flyoutMenuServicesOpen}
+                  enter="transition ease-out duration-200"
+                  enterFrom="opacity-0 translate-y-1"
+                  enterTo="opacity-100 translate-y-0"
+                  leave="transition ease-in duration-150"
+                  leaveFrom="opacity-100 translate-y-0"
+                  leaveTo="opacity-0 translate-y-1"
+                  className={`absolute -ml-4 mt-3 transform px-2 w-screen max-w-md sm:px-0 lg:ml-0 lg:left-1/2 lg:-translate-x-1/2`}
+                >
                   <div className="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 overflow-hidden">
                     <div className="z-20 relative grid gap-6 bg-white px-5 py-6 sm:gap-8 sm:p-8">
                       <Link
-                        to="/"
+                        to="/about"
                         className="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50"
                       >
                         <svg
-                          className="flex-shrink-0 h-6 w-6 text-indigo-600"
+                          className="flex-shrink-0 h-6 w-6 text-muso"
                           xmlns="http://www.w3.org/2000/svg"
                           fill="none"
                           viewBox="0 0 24 24"
@@ -125,7 +126,7 @@ const Navbar = class extends React.Component {
                         </svg>
                         <div className="ml-4">
                           <p className="text-base font-medium text-gray-900">
-                            Analytics
+                            IT Consulting
                           </p>
                           <p className="mt-1 text-sm text-gray-500">
                             Get a better understanding of where your traffic is
@@ -139,7 +140,7 @@ const Navbar = class extends React.Component {
                         className="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50"
                       >
                         <svg
-                          className="flex-shrink-0 h-6 w-6 text-indigo-600"
+                          className="flex-shrink-0 h-6 w-6 text-muso"
                           xmlns="http://www.w3.org/2000/svg"
                           fill="none"
                           viewBox="0 0 24 24"
@@ -155,7 +156,7 @@ const Navbar = class extends React.Component {
                         </svg>
                         <div className="ml-4">
                           <p className="text-base font-medium text-gray-900">
-                            Engagement
+                            Website Development
                           </p>
                           <p className="mt-1 text-sm text-gray-500">
                             Speak directly to your customers in a more
@@ -169,7 +170,7 @@ const Navbar = class extends React.Component {
                         className="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50"
                       >
                         <svg
-                          className="flex-shrink-0 h-6 w-6 text-indigo-600"
+                          className="flex-shrink-0 h-6 w-6 text-muso"
                           xmlns="http://www.w3.org/2000/svg"
                           fill="none"
                           viewBox="0 0 24 24"
@@ -198,7 +199,7 @@ const Navbar = class extends React.Component {
                         className="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50"
                       >
                         <svg
-                          className="flex-shrink-0 h-6 w-6 text-indigo-600"
+                          className="flex-shrink-0 h-6 w-6 text-muso"
                           xmlns="http://www.w3.org/2000/svg"
                           fill="none"
                           viewBox="0 0 24 24"
@@ -228,7 +229,7 @@ const Navbar = class extends React.Component {
                         className="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50"
                       >
                         <svg
-                          className="flex-shrink-0 h-6 w-6 text-indigo-600"
+                          className="flex-shrink-0 h-6 w-6 text-muso"
                           xmlns="http://www.w3.org/2000/svg"
                           fill="none"
                           viewBox="0 0 24 24"
@@ -256,7 +257,7 @@ const Navbar = class extends React.Component {
                     <div className="px-5 py-5 bg-gray-50 space-y-6 sm:flex sm:space-y-0 sm:space-x-10 sm:px-8">
                       <div className="flow-root">
                         <Link
-                          to="/"
+                          to="/about"
                           className="-m-3 p-3 flex items-center rounded-md text-base font-medium text-gray-900 hover:bg-gray-100"
                         >
                           <svg
@@ -280,7 +281,7 @@ const Navbar = class extends React.Component {
                               d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
                             />
                           </svg>
-                          <span className="ml-3">Watch Demo</span>
+                          <span className="ml-3">About me</span>
                         </Link>
                       </div>
 
@@ -309,7 +310,7 @@ const Navbar = class extends React.Component {
                       </div>
                     </div>
                   </div>
-                </div>
+                </Transition>
               </div>
 
               <Link
@@ -328,7 +329,12 @@ const Navbar = class extends React.Component {
               <div className="relative">
                 <button
                   type="button"
-                  className={`group bg-white rounded-md ${this.state.navBarActiveClass} inline-flex items-center text-base font-medium hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500`}
+                  className="group bg-white rounded-md inline-flex items-center text-base font-medium hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                  onClick={() => {
+                    this.setState({
+                      flyoutMenuMoreOpen: !this.state.flyoutMenuMoreOpen,
+                    });
+                  }}
                 >
                   <span>More</span>
                   {/* Item active: "text-gray-600", Item inactive: "text-gray-400" */}
@@ -347,17 +353,17 @@ const Navbar = class extends React.Component {
                   </svg>
                 </button>
 
-                {/* <!--
-            'More' flyout menu, show/hide based on flyout menu state.
-
-            Entering: "transition ease-out duration-200"
-              From: "opacity-0 translate-y-1"
-              To: "opacity-100 translate-y-0"
-            Leaving: "transition ease-in duration-150"
-              From: "opacity-100 translate-y-0"
-              To: "opacity-0 translate-y-1"
-          --> */}
-                <div className="absolute left-1/2 transform -translate-x-1/2 mt-3 px-2 w-screen max-w-md sm:px-0">
+                <Transition
+                  show={this.state.flyoutMenuMoreOpen}
+                  enter="transition ease-out duration-200"
+                  enterFrom="opacity-0 translate-y-1"
+                  enterTo="opacity-100 translate-y-0"
+                  leave="transition ease-in duration-150"
+                  leaveFrom="opacity-100 translate-y-0"
+                  leaveTo="opacity-0 translate-y-1"
+                  className="absolute left-1/2 transform -translate-x-1/2 mt-3
+                  px-2 w-screen max-w-md sm:px-0"
+                >
                   <div className="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 overflow-hidden">
                     <div className="z-20 relative grid gap-6 bg-white px-5 py-6 sm:gap-8 sm:p-8">
                       <Link
@@ -365,7 +371,7 @@ const Navbar = class extends React.Component {
                         className="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50"
                       >
                         <svg
-                          className="flex-shrink-0 h-6 w-6 text-indigo-600"
+                          className="flex-shrink-0 h-6 w-6 text-muso"
                           xmlns="http://www.w3.org/2000/svg"
                           fill="none"
                           viewBox="0 0 24 24"
@@ -395,7 +401,7 @@ const Navbar = class extends React.Component {
                         className="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50"
                       >
                         <svg
-                          className="flex-shrink-0 h-6 w-6 text-indigo-600"
+                          className="flex-shrink-0 h-6 w-6 text-muso"
                           xmlns="http://www.w3.org/2000/svg"
                           fill="none"
                           viewBox="0 0 24 24"
@@ -425,7 +431,7 @@ const Navbar = class extends React.Component {
                         className="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50"
                       >
                         <svg
-                          className="flex-shrink-0 h-6 w-6 text-indigo-600"
+                          className="flex-shrink-0 h-6 w-6 text-muso"
                           xmlns="http://www.w3.org/2000/svg"
                           fill="none"
                           viewBox="0 0 24 24"
@@ -455,7 +461,7 @@ const Navbar = class extends React.Component {
                         className="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50"
                       >
                         <svg
-                          className="flex-shrink-0 h-6 w-6 text-indigo-600"
+                          className="flex-shrink-0 h-6 w-6 text-muso"
                           xmlns="http://www.w3.org/2000/svg"
                           fill="none"
                           viewBox="0 0 24 24"
@@ -519,16 +525,16 @@ const Navbar = class extends React.Component {
                           to="/"
                           className="font-medium text-indigo-600 hover:text-indigo-500"
                         >
-                          {" "}
+                          {' '}
                           View all posts <span aria-hidden="true">&rarr;</span>
                         </Link>
                       </div>
                     </div>
                   </div>
-                </div>
+                </Transition>
               </div>
             </nav>
-            <div className="hidden md:flex items-center justify-end md:flex-1 lg:w-0">
+            <div className="md:flex items-center justify-end md:flex-1 lg:w-0">
               <Link
                 to="/"
                 className="whitespace-nowrap text-base font-medium text-gray-500 hover:text-gray-900"
@@ -537,7 +543,7 @@ const Navbar = class extends React.Component {
               </Link>
               <Link
                 to="/"
-                className="ml-8 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700"
+                className="ml-8 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-muso hover:bg-muso-700"
               >
                 Sign up
               </Link>
@@ -562,7 +568,7 @@ const Navbar = class extends React.Component {
             <div className="pt-5 pb-6 px-5">
               <div className="flex items-center justify-between">
                 <div>
-                  <img className="h-8 w-auto" src={logo} alt="Workflow" />
+                  <img className="h-8 w-auto" src={logo} alt="muso.sk" />
                 </div>
                 <div className="-mr-2">
                   <button
@@ -596,7 +602,7 @@ const Navbar = class extends React.Component {
                     className="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50"
                   >
                     <svg
-                      className="flex-shrink-0 h-6 w-6 text-indigo-600"
+                      className="flex-shrink-0 h-6 w-6 text-muso"
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
                       viewBox="0 0 24 24"
@@ -611,7 +617,7 @@ const Navbar = class extends React.Component {
                       />
                     </svg>
                     <span className="ml-3 text-base font-medium text-gray-900">
-                      Analytics
+                      IT Consulting
                     </span>
                   </Link>
 
@@ -620,7 +626,7 @@ const Navbar = class extends React.Component {
                     className="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50"
                   >
                     <svg
-                      className="flex-shrink-0 h-6 w-6 text-indigo-600"
+                      className="flex-shrink-0 h-6 w-6 text-muso"
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
                       viewBox="0 0 24 24"
@@ -635,7 +641,7 @@ const Navbar = class extends React.Component {
                       />
                     </svg>
                     <span className="ml-3 text-base font-medium text-gray-900">
-                      Engagement
+                      Website Development
                     </span>
                   </Link>
 
@@ -644,7 +650,7 @@ const Navbar = class extends React.Component {
                     className="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50"
                   >
                     <svg
-                      className="flex-shrink-0 h-6 w-6 text-indigo-600"
+                      className="flex-shrink-0 h-6 w-6 text-muso"
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
                       viewBox="0 0 24 24"
@@ -668,7 +674,7 @@ const Navbar = class extends React.Component {
                     className="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50"
                   >
                     <svg
-                      className="flex-shrink-0 h-6 w-6 text-indigo-600"
+                      className="flex-shrink-0 h-6 w-6 text-muso"
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
                       viewBox="0 0 24 24"
@@ -692,7 +698,7 @@ const Navbar = class extends React.Component {
                     className="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50"
                   >
                     <svg
-                      className="flex-shrink-0 h-6 w-6 text-indigo-600"
+                      className="flex-shrink-0 h-6 w-6 text-muso"
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
                       viewBox="0 0 24 24"
@@ -792,69 +798,6 @@ const Navbar = class extends React.Component {
           </div>
         </div>
       </div>
-
-      //       <Link to="/" className="px-4" title="Logo">
-      //         <img src={logo} alt="muso.sk" />
-      //       </Link>
-      //       {/* Hamburger menu */}
-      //       <div
-      //         className={`hover:text-gray-200 hover:underline px-4 ${this.state.navBarActiveClass}`}
-      //         data-target="navMenu"
-      //         onClick={() => this.toggleHamburger()}
-      //         role="menu"
-      //       ></div>
-      //     </div>
-      //     <div
-      //       id="navMenu"
-      //       className={`navbar-menu ${this.state.navBarActiveClass}`}
-      //     >
-      //       <div className="lex items-center justify-between font-bold text-sm text-white uppercase no-underline">
-      //         <Link
-      //           className="hover:text-gray-200 hover:underline px-4"
-      //           to="/about"
-      //         >
-      //           About
-      //         </Link>
-      //         <Link
-      //           className="hover:text-gray-200 hover:underline px-4"
-      //           to="/products"
-      //         >
-      //           Products
-      //         </Link>
-      //         <Link
-      //           className="hover:text-gray-200 hover:underline px-4"
-      //           to="/blog"
-      //         >
-      //           Blog
-      //         </Link>
-      //         <Link
-      //           className="hover:text-gray-200 hover:underline px-4"
-      //           to="/contact"
-      //         >
-      //           Contact
-      //         </Link>
-      //         <Link
-      //           className="hover:text-gray-200 hover:underline px-4"
-      //           to="/contact/examples"
-      //         >
-      //           Form Examples
-      //         </Link>
-      //       </div>
-      //       <div className="flex items-center text-lg no-underline text-white pr-6">
-      //         <a
-      //           className=""
-      //           href="https://github.com/netlify-templates/gatsby-starter-netlify-cms"
-      //           target="_blank"
-      //           rel="noopener noreferrer"
-      //         >
-      //           <span>
-      //             <img className="w-4 h-4" src={github} alt="Github" />
-      //           </span>
-      //         </Link>
-      //       </div>
-      //     </div>
-      //   </div>
-      // </nav>
     );
   }
 };
