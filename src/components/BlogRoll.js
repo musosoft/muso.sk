@@ -1,60 +1,55 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import { Link, graphql, StaticQuery } from 'gatsby'
-import PreviewCompatibleImage from './PreviewCompatibleImage'
+import React from 'react';
+import PropTypes from 'prop-types';
+import { Link, graphql, StaticQuery } from 'gatsby';
+import PreviewCompatibleImage from './PreviewCompatibleImage';
 
 class BlogRoll extends React.Component {
   render() {
-    const { data } = this.props
-    const { edges: posts } = data.allMarkdownRemark
+    const { data } = this.props;
+    const { edges: posts } = data.allMarkdownRemark;
 
     return (
-      <div className="columns is-multiline">
+      <div className="mt-16 max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
         {posts &&
           posts.map(({ node: post }) => (
-            <div className="is-parent column is-6" key={post.id}>
-              <article
-                className={`blog-list-item tile is-child box notification ${
-                  post.frontmatter.featuredpost ? 'is-featured' : ''
-                }`}
-              >
-                <header>
-                  {post.frontmatter.featuredimage ? (
-                    <div className="featured-thumbnail">
-                      <PreviewCompatibleImage
-                        imageInfo={{
-                          image: post.frontmatter.featuredimage,
-                          alt: `featured image thumbnail for post ${post.frontmatter.title}`,
-                        }}
-                      />
-                    </div>
-                  ) : null}
-                  <p className="post-meta">
-                    <Link
-                      className="title has-text-primary is-size-4"
-                      to={post.fields.slug}
-                    >
-                      {post.frontmatter.title}
-                    </Link>
-                    <span> &bull; </span>
-                    <span className="subtitle is-size-5 is-block">
-                      {post.frontmatter.date}
-                    </span>
-                  </p>
-                </header>
-                <p>
-                  {post.excerpt}
-                  <br />
-                  <br />
-                  <Link className="button" to={post.fields.slug}>
-                    Keep Reading →
+            <article
+              key={post.id}
+              className={`relative border border-gray-200 rounded-lg px-4 py-6 mb-4 overflow-hidden sm:px-6 sm:py-8 lg:p-12 xl:p-16 ${
+                post.frontmatter.featuredpost ? 'bg-gray-200' : 'bg-gray-300'
+              }`}
+            >
+              <header>
+                <p className="text-2xl font-semibold font-display text-gray-900 sm:text-3xl">
+                  <span className="block text-white max-w-xl font-medium">
+                    {post.frontmatter.date}
+                  </span>
+                  <Link className="" to={post.fields.slug}>
+                    {post.frontmatter.title}
                   </Link>
+                  <span> &bull; </span>
                 </p>
-              </article>
-            </div>
+              </header>
+              <p className="mt-2 max-w-2xl text-base text-gray-500">
+                {post.excerpt}
+                <Link className="" to={post.fields.slug}>
+                  Keep Reading →
+                </Link>
+              </p>
+              {post.frontmatter.featuredimage ? (
+                <div className="hidden lg:block absolute inset-y-0 lg:left-2/3 right-0">
+                  <PreviewCompatibleImage
+                    imageInfo={{
+                      className: 'w-full h-full object-cover object-left',
+                      image: post.frontmatter.featuredimage,
+                      alt: `featured image thumbnail for post ${post.frontmatter.title}`,
+                    }}
+                  />
+                </div>
+              ) : null}
+            </article>
           ))}
       </div>
-    )
+    );
   }
 }
 
@@ -64,7 +59,7 @@ BlogRoll.propTypes = {
       edges: PropTypes.array,
     }),
   }),
-}
+};
 
 export default () => (
   <StaticQuery
@@ -88,7 +83,7 @@ export default () => (
                 featuredpost
                 featuredimage {
                   childImageSharp {
-                    fluid(maxWidth: 120, quality: 100) {
+                    fluid(maxWidth: 400, quality: 100) {
                       ...GatsbyImageSharpFluid
                     }
                   }
@@ -101,4 +96,4 @@ export default () => (
     `}
     render={(data, count) => <BlogRoll data={data} count={count} />}
   />
-)
+);

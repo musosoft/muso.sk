@@ -4,7 +4,7 @@ module.exports = {
     purgeLayersByDefault: true,
   },
   purge: {
-    enabled: true,
+    enabled: false,
     content: [
       './public/**/*.html',
       './public/*.html',
@@ -16,13 +16,13 @@ module.exports = {
       './public/*.js',
     ],
     options: {
-      whitelist: [],
+      whitelist: ['bg-red-400', 'bg-green-400', 'bg-blue-400'],
     },
   },
   theme: {
     extend: {
       colors: {
-        'muso': '#1992ff',
+        muso: '#1992ff',
       },
       fontFamily: {
         poppins: ['Poppins', 'system-ui'],

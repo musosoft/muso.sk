@@ -1,52 +1,112 @@
-import React from 'react'
-import { Link } from 'gatsby'
+import React from 'react';
+import { Link } from 'gatsby';
 
-import logo from '../img/logo.svg'
-import facebook from '../img/social/facebook.svg'
-import instagram from '../img/social/instagram.svg'
-import twitter from '../img/social/twitter.svg'
-import vimeo from '../img/social/vimeo.svg'
+import {
+  FaTwitter,
+  FaFacebookSquare,
+  FaDribbble,
+  FaGithub,
+} from 'react-icons/fa';
 
 const Footer = class extends React.Component {
   render() {
     return (
-      <footer className="footer has-background-black has-text-white-ter">
-        <div className="content has-text-centered">
-          <img
-            src={logo}
-            alt="Kaldi"
-            style={{ width: '14em', height: '10em' }}
-          />
+      <footer className="relative bg-gray-300 pt-8 pb-6">
+        <div
+          className="bottom-auto top-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden -mt-20 h-20"
+          style={{ transform: 'translateZ(0)' }}
+        >
+          <svg
+            className="absolute bottom-0 overflow-hidden"
+            xmlns="http://www.w3.org/2000/svg"
+            preserveAspectRatio="none"
+            version="1.1"
+            viewBox="0 0 2560 100"
+            x="0"
+            y="0"
+          >
+            <polygon
+              className="text-gray-300 fill-current"
+              points="2560 0 2560 100 0 100"
+            ></polygon>
+          </svg>
         </div>
-        <div className="content has-text-centered has-background-black has-text-white-ter">
-          <div className="container has-background-black has-text-white-ter">
-            <div style={{ maxWidth: '100vw' }} className="columns">
-              <div className="column is-4">
-                <section className="menu">
-                  <ul className="menu-list">
+        <div className="container mx-auto px-4">
+          <div className="flex flex-wrap text-center lg:text-left">
+            <div className="w-full lg:w-6/12 px-4">
+              <h4 className="text-3xl font-semibold">Let's keep in touch!</h4>
+              <h5 className="text-lg mt-0 mb-2 text-gray-700">
+                Find muso.sk on any of these platforms, get response in 1-2 business days.
+              </h5>
+              <div className="mt-6 lg:mb-0 mb-6">
+                <button
+                  className="bg-white text-blue-400 shadow-lg font-normal h-10 w-10 items-center justify-center inline-flex align-center rounded-full outline-none focus:outline-none mr-2"
+                  type="button"
+                >
+                  <FaTwitter />
+                </button>
+                <button
+                  className="bg-white text-blue-600 shadow-lg font-normal h-10 w-10 items-center justify-center inline-flex align-center rounded-full outline-none focus:outline-none mr-2"
+                  type="button"
+                >
+                  <FaFacebookSquare />
+                </button>
+                <button
+                  className="bg-white text-pink-400 shadow-lg font-normal h-10 w-10 items-center justify-center inline-flex align-center rounded-full outline-none focus:outline-none mr-2"
+                  type="button"
+                >
+                  <FaDribbble />
+                </button>
+                <button
+                  className="bg-white text-gray-900 shadow-lg font-normal h-10 w-10 items-center justify-center inline-flex align-center rounded-full outline-none focus:outline-none mr-2"
+                  type="button"
+                >
+                  <FaGithub />
+                </button>
+              </div>
+            </div>
+            <div className="w-full lg:w-6/12 px-4">
+              <div className="flex flex-wrap items-top mb-6">
+                <div className="w-full lg:w-4/12 px-4 ml-auto">
+                  <span className="block uppercase text-gray-600 text-sm font-semibold mb-2">
+                    Useful Links
+                  </span>
+                  <ul className="list-unstyled">
                     <li>
-                      <Link to="/" className="navbar-item">
+                      <Link
+                        to="/"
+                        className="text-gray-700 hover:text-gray-900 font-semibold block pb-2 text-sm"
+                      >
                         Home
                       </Link>
                     </li>
                     <li>
-                      <Link className="navbar-item" to="/about">
+                      <Link
+                        className="text-gray-700 hover:text-gray-900 font-semibold block pb-2 text-sm"
+                        to="/about"
+                      >
                         About
                       </Link>
                     </li>
                     <li>
-                      <Link className="navbar-item" to="/products">
+                      <Link
+                        className="text-gray-700 hover:text-gray-900 font-semibold block pb-2 text-sm"
+                        to="/products"
+                      >
                         Products
                       </Link>
                     </li>
                     <li>
-                      <Link className="navbar-item" to="/contact/examples">
+                      <Link
+                        className="text-gray-700 hover:text-gray-900 font-semibold block pb-2 text-sm"
+                        to="/contact/examples"
+                      >
                         Form Examples
                       </Link>
                     </li>
                     <li>
                       <a
-                        className="navbar-item"
+                        className="text-gray-700 hover:text-gray-900 font-semibold block pb-2 text-sm"
                         href="/admin/"
                         target="_blank"
                         rel="noopener noreferrer"
@@ -55,61 +115,45 @@ const Footer = class extends React.Component {
                       </a>
                     </li>
                   </ul>
-                </section>
-              </div>
-              <div className="column is-4">
-                <section>
-                  <ul className="menu-list">
+                </div>
+                <div className="w-full lg:w-4/12 px-4">
+                  <span className="block uppercase text-gray-600 text-sm font-semibold mb-2">
+                    Other Resources
+                  </span>
+                  <ul className="list-unstyled">
                     <li>
-                      <Link className="navbar-item" to="/blog">
+                      <Link
+                        className="text-gray-700 hover:text-gray-900 font-semibold block pb-2 text-sm"
+                        to="/blog"
+                      >
                         Latest Stories
                       </Link>
                     </li>
                     <li>
-                      <Link className="navbar-item" to="/contact">
+                      <Link
+                        className="text-gray-700 hover:text-gray-900 font-semibold block pb-2 text-sm"
+                        to="/contact"
+                      >
                         Contact
                       </Link>
                     </li>
                   </ul>
-                </section>
+                </div>
               </div>
-              <div className="column is-4 social">
-                <a title="facebook" href="https://facebook.com">
-                  <img
-                    src={facebook}
-                    alt="Facebook"
-                    style={{ width: '1em', height: '1em' }}
-                  />
-                </a>
-                <a title="twitter" href="https://twitter.com">
-                  <img
-                    className="fas fa-lg"
-                    src={twitter}
-                    alt="Twitter"
-                    style={{ width: '1em', height: '1em' }}
-                  />
-                </a>
-                <a title="instagram" href="https://instagram.com">
-                  <img
-                    src={instagram}
-                    alt="Instagram"
-                    style={{ width: '1em', height: '1em' }}
-                  />
-                </a>
-                <a title="vimeo" href="https://vimeo.com">
-                  <img
-                    src={vimeo}
-                    alt="Vimeo"
-                    style={{ width: '1em', height: '1em' }}
-                  />
-                </a>
+            </div>
+          </div>
+          <hr className="my-6 border-gray-400" />
+          <div className="flex flex-wrap items-center md:justify-between justify-center">
+            <div className="w-full md:w-4/12 px-4 mx-auto text-center">
+              <div className="text-sm text-gray-600 font-normal py-1">
+                Copyright © {new Date().getFullYear()} muso.sk
               </div>
             </div>
           </div>
         </div>
       </footer>
-    )
+    );
   }
-}
+};
 
-export default Footer
+export default Footer;
