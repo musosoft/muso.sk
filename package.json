@@ -27,12 +27,12 @@
     "netlify-cms-app": "^2.9.6",
     "postcss": "^8.1.9",
     "prop-types": "^15.6.0",
-    "react": "17.0.0",
-    "react-dom": "17.0.0",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
     "react-helmet": "^6.0.0",
     "react-icons": "^4.1.0",
     "tailwindcss": "^2.0.1",
-    "uuid": "^7.0.0"
+    "uuid": "^8.3.2"
   },
   "keywords": [
     "gatsby"
