@@ -23,15 +23,14 @@ class BlogRoll extends React.Component {
                   <span className="block text-white max-w-xl font-medium">
                     {post.frontmatter.date}
                   </span>
-                  <Link className="" to={post.fields.slug}>
+                  <Link to={post.fields.slug}>
                     {post.frontmatter.title}
                   </Link>
-                  <span> &bull; </span>
                 </p>
               </header>
               <p className="mt-2 max-w-2xl text-base text-gray-500">
                 {post.excerpt}
-                <Link className="" to={post.fields.slug}>
+                <Link className="mt-2 block" to={post.fields.slug}>
                   Keep Reading →
                 </Link>
               </p>

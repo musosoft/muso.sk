@@ -23,6 +23,12 @@ module.exports = {
         'screen-75': '75vh',
       },
       fontSize: {
+        tiny: [
+          '.5rem',
+          {
+            lineHeight: '.75rem',
+          },
+        ],
         55: '55rem',
       },
       opacity: {
