@@ -4,17 +4,9 @@ module.exports = {
     purgeLayersByDefault: true,
   },
   purge: {
-    enabled: false,
-    content: [
-      './public/**/*.html',
-      './public/*.html',
-      './src/**/*.js',
-      './src/*.js',
-      './src/**/*.html',
-      './src/*.html',
-      './public/**/*.js',
-      './public/*.js',
-    ],
+    enabled: process.env.NODE_ENV === 'production',
+    mode: 'all',
+    content: ['./src/**/**/*.js', './src/**/*.js', './src/*.js'],
     options: {
       whitelist: ['bg-red-400', 'bg-green-400', 'bg-blue-400'],
     },
@@ -99,5 +91,8 @@ module.exports = {
     'visited',
     'disabled',
   ],
-  plugins: [require('@tailwindcss/custom-forms')],
+  plugins: [
+    require('@tailwindcss/custom-forms'),
+    require('@tailwindcss/typography'),
+  ],
 };
