@@ -98,7 +98,7 @@ export const AboutPageTemplate = ({
                   </div>
                 </div>
               </div>
-              <div className="mt-12 text-centeryarn plugin import interactive-tools">
+              <div className="mt-12 text-center">
                 <h3 className="text-4xl font-semibold leading-normal text-gray-800 mb-2">
                   {heading}
                 </h3>

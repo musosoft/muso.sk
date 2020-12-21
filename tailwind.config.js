@@ -79,7 +79,7 @@ module.exports = {
         48: '12rem',
       },
       backgroundSize: {
-        full: '100$',
+        full: '100%',
       },
     },
   },
@@ -97,8 +97,5 @@ module.exports = {
     'visited',
     'disabled',
   ],
-  plugins: [
-    require('@tailwindcss/custom-forms'),
-    require('@tailwindcss/typography'),
-  ],
+  plugins: [require('@tailwindcss/forms'), require('@tailwindcss/typography')],
 };
