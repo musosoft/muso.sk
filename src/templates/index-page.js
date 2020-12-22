@@ -6,16 +6,9 @@ import Layout from '../components/Layout';
 import Features from '../components/Features';
 import BlogRoll from '../components/BlogRoll';
 
-import { FaUserCircle } from 'react-icons/fa';
+import { FcIdea } from 'react-icons/fc';
 
-export const IndexPageTemplate = ({
-  image,
-  title,
-  subheading,
-  mainpitch,
-  description,
-  intro,
-}) => (
+export const IndexPageTemplate = ({ image, title, subheading, mainpitch, intro }) => (
   <main>
     <div className="relative pt-16 pb-32 flex content-center items-center justify-center min-h-screen-75">
       <div
@@ -64,7 +57,7 @@ export const IndexPageTemplate = ({
         <div className="flex flex-wrap items-center mt-32">
           <div className="w-full md:w-5/12 px-4 mr-auto ml-auto">
             <div className="text-gray-600 p-1 text-center inline-flex items-center justify-center w-16 h-16 mb-6 shadow-lg rounded-full bg-gray-100">
-              <FaUserCircle size="2em" />
+              <FcIdea size="2em" />
             </div>
             <h3 className="text-3xl mb-2 font-semibold leading-normal">
               {mainpitch.title}
@@ -72,7 +65,7 @@ export const IndexPageTemplate = ({
             <p className="text-lg font-light leading-relaxed mt-4 mb-4 text-gray-700">
               {mainpitch.description}
             </p>
-            <Link to="/" className="font-bold text-gray-800 mt-8">
+            <Link to="/blog/" className="font-bold text-gray-800 mt-8">
               Check Blog
             </Link>
           </div>
@@ -99,9 +92,12 @@ export const IndexPageTemplate = ({
                 <h4 className="text-xl font-bold text-white">
                   {intro.heading}
                 </h4>
-                <p className="text-md font-light mt-2 text-white">
+                <p className="text-md font-light my-2 text-white">
                   {intro.description}
                 </p>
+                <Link to="/" className="font-bold text-white mt-8">
+                  Get a Quote
+                </Link>
               </blockquote>
             </div>
           </div>
@@ -126,9 +122,7 @@ export const IndexPageTemplate = ({
               ></polygon>
             </svg>
           </div>
-
           <BlogRoll />
-
         </section>
       </div>
     </section>

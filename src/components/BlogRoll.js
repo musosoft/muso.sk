@@ -10,28 +10,31 @@ class BlogRoll extends React.Component {
 
     return (
       <div className="mt-16 max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h3 className="text-3xl mb-4 font-semibold leading-normal">
+          Latest news
+        </h3>
         {posts &&
           posts.map(({ node: post }) => (
             <article
               key={post.id}
-              className={`relative border border-gray-200 rounded-lg px-4 py-6 mb-4 overflow-hidden sm:px-6 sm:py-8 lg:p-12 xl:p-16 ${
-                post.frontmatter.featuredpost ? 'bg-gray-200' : 'bg-gray-300'
+              className={`relative border rounded-lg px-3 py-4 mb-4 overflow-hidden sm:px-6 sm:py-8 lg:p-8 xl:p-12 bg-gray-50 border-2 ${
+                post.frontmatter.featuredpost
+                  ? 'border-blue-300'
+                  : 'border-gray-200'
               }`}
             >
               <header>
                 <p className="text-2xl font-semibold font-display text-gray-900 sm:text-3xl">
-                  <span className="block text-white max-w-xl font-medium">
+                  <span className="block text-gray-500 max-w-xl text-xl font-medium">
                     {post.frontmatter.date}
                   </span>
-                  <Link to={post.fields.slug}>
-                    {post.frontmatter.title}
-                  </Link>
+                  <Link to={post.fields.slug}>{post.frontmatter.title}</Link>
                 </p>
               </header>
               <p className="mt-2 max-w-2xl text-base text-gray-500">
                 {post.excerpt}
-                <Link className="mt-2 block" to={post.fields.slug}>
-                  Keep Reading →
+                <Link className="mt-2 font-bold block" to={post.fields.slug}>
+                  Keep Reading
                 </Link>
               </p>
               {post.frontmatter.featuredimage ? (
@@ -70,7 +73,7 @@ export default () => (
         ) {
           edges {
             node {
-              excerpt(pruneLength: 400)
+              excerpt(pruneLength: 200)
               id
               fields {
                 slug
@@ -82,7 +85,7 @@ export default () => (
                 featuredpost
                 featuredimage {
                   childImageSharp {
-                    fluid(maxWidth: 400, quality: 100) {
+                    fluid(maxWidth: 420, quality: 100) {
                       ...GatsbyImageSharpFluid
                     }
                   }
