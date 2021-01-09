@@ -2,10 +2,10 @@ import React from 'react';
 import { Link } from 'gatsby';
 
 import {
-  FaTwitter,
   FaFacebookSquare,
-  FaDribbble,
+  FaLinkedin,
   FaGithub,
+  FaFacebookMessenger,
 } from 'react-icons/fa';
 
 const Footer = class extends React.Component {
@@ -36,33 +36,35 @@ const Footer = class extends React.Component {
             <div className="w-full lg:w-6/12 px-4">
               <h4 className="text-3xl font-semibold">Let's keep in touch!</h4>
               <h5 className="text-lg mt-0 mb-2 text-gray-700">
-                Find muso.sk on any of these platforms, get response in 1-2 business days.
+                Find muso.sk on any of these platforms, get response in 1-2
+                business days.
               </h5>
               <div className="mt-6 lg:mb-0 mb-6">
-                <button
-                  className="bg-white text-blue-400 shadow-lg font-normal h-10 w-10 items-center justify-center inline-flex align-center rounded-full outline-none focus:outline-none mr-2"
-                  type="button"
-                >
-                  <FaTwitter />
-                </button>
-                <button
-                  className="bg-white text-blue-600 shadow-lg font-normal h-10 w-10 items-center justify-center inline-flex align-center rounded-full outline-none focus:outline-none mr-2"
-                  type="button"
+                <a
+                  href="//fb.com/www.muso.sk"
+                  className="bg-white text-facebook shadow-lg font-normal h-10 w-10 items-center justify-center inline-flex align-center rounded-full outline-none focus:outline-none mr-2"
+                  target="_blank"
                 >
                   <FaFacebookSquare />
-                </button>
-                <button
-                  className="bg-white text-pink-400 shadow-lg font-normal h-10 w-10 items-center justify-center inline-flex align-center rounded-full outline-none focus:outline-none mr-2"
-                  type="button"
+                </a>
+                <a href="//linkedin.com/in/RomanKovac"
+                  className="bg-white text-linkedin shadow-lg font-normal h-10 w-10 items-center justify-center inline-flex align-center rounded-full outline-none focus:outline-none mr-2"
+                  target="_blank"
                 >
-                  <FaDribbble />
-                </button>
-                <button
-                  className="bg-white text-gray-900 shadow-lg font-normal h-10 w-10 items-center justify-center inline-flex align-center rounded-full outline-none focus:outline-none mr-2"
-                  type="button"
+                  <FaLinkedin />
+                </a>
+                <a href="//github.com/musosoft"
+                  className="bg-white text-github shadow-lg font-normal h-10 w-10 items-center justify-center inline-flex align-center rounded-full outline-none focus:outline-none mr-2"
+                  target="_blank"
                 >
                   <FaGithub />
-                </button>
+                </a>
+                <a href="//m.me/www.muso.sk"
+                  className="bg-white text-messenger shadow-lg font-normal h-10 w-10 items-center justify-center inline-flex align-center rounded-full outline-none focus:outline-none mr-2"
+                  target="_blank"
+                >
+                  <FaFacebookMessenger />
+                </a>
               </div>
             </div>
             <div className="w-full lg:w-6/12 px-4">
@@ -91,9 +93,9 @@ const Footer = class extends React.Component {
                     <li>
                       <Link
                         className="text-gray-700 hover:text-gray-900 font-semibold block pb-2 text-sm"
-                        to="/products"
+                        to="/portfolio"
                       >
-                        Products
+                        Portfolio
                       </Link>
                     </li>
                     <li>

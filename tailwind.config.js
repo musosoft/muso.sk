@@ -15,6 +15,10 @@ module.exports = {
     extend: {
       colors: {
         muso: '#1992ff',
+        facebook: '#3b5998',
+        linkedin: '#0077b5',
+        github: '#333',
+        messenger: '#0084ff',
       },
       fontFamily: {
         poppins: ['Poppins', 'system-ui'],

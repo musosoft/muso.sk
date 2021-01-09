@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link, graphql, StaticQuery } from 'gatsby';
 import PreviewCompatibleImage from './PreviewCompatibleImage';
+import { FaStar } from 'react-icons/fa';
 
 class BlogRoll extends React.Component {
   render() {
@@ -17,17 +18,18 @@ class BlogRoll extends React.Component {
           posts.map(({ node: post }) => (
             <article
               key={post.id}
-              className={`relative border rounded-lg px-3 py-4 mb-4 overflow-hidden sm:px-6 sm:py-8 lg:p-8 xl:p-12 bg-gray-50 border-2 ${
-                post.frontmatter.featuredpost
-                  ? 'border-blue-300'
-                  : 'border-gray-200'
-              }`}
+              className="relative px-3 py-4 mb-4 overflow-hidden sm:px-6 sm:py-8 lg:p-8 xl:p-12"
             >
               <header>
                 <p className="text-2xl font-semibold font-display text-gray-900 sm:text-3xl">
                   <span className="block text-gray-500 max-w-xl text-xl font-medium">
                     {post.frontmatter.date}
                   </span>
+                  {post.frontmatter.featuredpost && (
+                    <span title="Featured" className="absolute text-sm -m-1 text-yellow-200">
+                      <FaStar />
+                    </span>
+                  )}
                   <Link to={post.fields.slug}>{post.frontmatter.title}</Link>
                 </p>
               </header>
@@ -38,7 +40,7 @@ class BlogRoll extends React.Component {
                 </Link>
               </p>
               {post.frontmatter.featuredimage ? (
-                <div className="hidden lg:block absolute inset-y-0 lg:left-2/3 right-0">
+                <div className="lg:block absolute inset-y-0 lg:left-2/3 right-0">
                   <PreviewCompatibleImage
                     imageInfo={{
                       className: 'w-full h-full object-cover object-left',
