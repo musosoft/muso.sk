@@ -47,7 +47,7 @@
     "develop": "yarn run clean && gatsby develop",
     "format": "prettier --trailing-comma es5 --no-semi --single-quote --write \"{gatsby-*.js,src/**/*.js}\"",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "install:clean": "rm -rf node_modules/ && yarn cache clean && rm -rf package-lock.json && yarn && yarn run build:tailwind && yarn start",
+    "install:clean": "rm -rf node_modules/ && yarn cache clean && rm -rf yarn.lock && yarn && yarn run build:tailwind && yarn start",
     "build:tailwind": "tailwind build src/styles/global.css -o src/styles/tailwind.css"
   },
   "eslintConfig": {
