@@ -8,12 +8,20 @@ import BlogRoll from '../components/BlogRoll';
 
 import { FcIdea } from 'react-icons/fc';
 
-export const IndexPageTemplate = ({ image, title, subheading, mainpitch, intro }) => (
+export const IndexPageTemplate = ({
+  image,
+  title,
+  subheading,
+  mainpitch,
+  intro,
+}) => (
   <main>
     <div className="relative pt-16 pb-32 flex content-center items-center justify-center min-h-screen-75">
       <div
         className="absolute top-0 w-full h-full bg-center bg-cover"
-        style={{ backgroundImage: `url(${image.childImageSharp.fluid.src})` }}
+        style={{
+          backgroundImage: `url(${image.childImageSharp.gatsbyImageData.images.fallback.src})`,
+        }}
       >
         <span
           id="blackOverlay"
@@ -176,9 +184,7 @@ export const pageQuery = graphql`
         title
         image {
           childImageSharp {
-            fluid(maxWidth: 2048, quality: 100) {
-              ...GatsbyImageSharpFluid
-            }
+            gatsbyImageData(quality: 100, layout: FULL_WIDTH)
           }
         }
         heading

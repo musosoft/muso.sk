@@ -44,24 +44,31 @@ const Footer = class extends React.Component {
                   href="//fb.com/www.muso.sk"
                   className="bg-white text-facebook shadow-lg font-normal h-10 w-10 items-center justify-center inline-flex align-center rounded-full outline-none focus:outline-none mr-2"
                   target="_blank"
+                  rel="noreferrer"
                 >
                   <FaFacebookSquare />
                 </a>
-                <a href="//linkedin.com/in/RomanKovac"
+                <a
+                  href="//linkedin.com/in/RomanKovac"
                   className="bg-white text-linkedin shadow-lg font-normal h-10 w-10 items-center justify-center inline-flex align-center rounded-full outline-none focus:outline-none mr-2"
                   target="_blank"
+                  rel="noreferrer"
                 >
                   <FaLinkedin />
                 </a>
-                <a href="//github.com/musosoft"
+                <a
+                  href="//github.com/musosoft"
                   className="bg-white text-github shadow-lg font-normal h-10 w-10 items-center justify-center inline-flex align-center rounded-full outline-none focus:outline-none mr-2"
                   target="_blank"
+                  rel="noreferrer"
                 >
                   <FaGithub />
                 </a>
-                <a href="//m.me/www.muso.sk"
+                <a
+                  href="//m.me/www.muso.sk"
                   className="bg-white text-messenger shadow-lg font-normal h-10 w-10 items-center justify-center inline-flex align-center rounded-full outline-none focus:outline-none mr-2"
                   target="_blank"
+                  rel="noreferrer"
                 >
                   <FaFacebookMessenger />
                 </a>

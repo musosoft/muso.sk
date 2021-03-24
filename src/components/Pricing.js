@@ -24,9 +24,9 @@ const Pricing = ({ data }) => (
                           viewBox="0 0 24 24"
                         >
                           <path
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            stroke-width="2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth="2"
                             d="M5 13l4 4L19 7"
                           ></path>
                         </svg>
@@ -38,9 +38,7 @@ const Pricing = ({ data }) => (
                   ))}
                 </ul>
                 <div className="my-2">{price.description}</div>
-                <div className="text-3xl">
-                  {price.price} €
-                </div>
+                <div className="text-3xl">{price.price} €</div>
               </p>
             </div>
           </div>

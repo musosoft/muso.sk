@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link, graphql, StaticQuery } from 'gatsby';
-import PreviewCompatibleImage from './PreviewCompatibleImage';
+import { GatsbyImage } from 'gatsby-plugin-image';
 import { FaStar } from 'react-icons/fa';
 
 class BlogRoll extends React.Component {
@@ -26,7 +26,10 @@ class BlogRoll extends React.Component {
                     {post.frontmatter.date}
                   </span>
                   {post.frontmatter.featuredpost && (
-                    <span title="Featured" className="absolute text-sm -m-1 text-yellow-200">
+                    <span
+                      title="Featured"
+                      className="absolute text-sm -m-1 text-yellow-200"
+                    >
                       <FaStar />
                     </span>
                   )}
@@ -41,12 +44,13 @@ class BlogRoll extends React.Component {
               </p>
               {post.frontmatter.featuredimage ? (
                 <div className="lg:block absolute inset-y-0 lg:left-2/3 right-0">
-                  <PreviewCompatibleImage
-                    imageInfo={{
-                      className: 'w-full h-full object-cover object-left',
-                      image: post.frontmatter.featuredimage,
-                      alt: `featured image thumbnail for post ${post.frontmatter.title}`,
-                    }}
+                  <GatsbyImage
+                    className="w-full h-full object-cover object-left rounded-lg"
+                    image={
+                      post.frontmatter.featuredimage.childImageSharp
+                        .gatsbyImageData
+                    }
+                    alt={`featured image thumbnail for post ${post.frontmatter.title}`}
                   />
                 </div>
               ) : null}
@@ -65,7 +69,7 @@ BlogRoll.propTypes = {
   }),
 };
 
-export default () => (
+const BlogRollQuery = () => (
   <StaticQuery
     query={graphql`
       query BlogRollQuery {
@@ -87,9 +91,11 @@ export default () => (
                 featuredpost
                 featuredimage {
                   childImageSharp {
-                    fluid(maxWidth: 420, quality: 100) {
-                      ...GatsbyImageSharpFluid
-                    }
+                    gatsbyImageData(
+                      width: 420
+                      quality: 100
+                      layout: CONSTRAINED
+                    )
                   }
                 }
               }
@@ -101,3 +107,5 @@ export default () => (
     render={(data, count) => <BlogRoll data={data} count={count} />}
   />
 );
+
+export default BlogRollQuery;

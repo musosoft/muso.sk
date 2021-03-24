@@ -4,9 +4,9 @@ import { graphql } from 'gatsby';
 import Layout from '../components/Layout';
 import Content, { HTMLContent } from '../components/Content';
 import muso from '../../static/img/muso.jpg';
-import { FaMapMarkerAlt, FaBriefcase, FaUniversity } from 'react-icons/fa';
+import { FaMapMarkerAlt, FaBriefcase } from 'react-icons/fa';
 
-export const AboutPageTemplate = ({
+const AboutPageTemplate = ({
   position,
   location,
   heading,
@@ -176,6 +176,8 @@ const AboutPage = ({ data }) => {
 AboutPage.propTypes = {
   data: PropTypes.object.isRequired,
 };
+
+export { AboutPageTemplate };
 
 export default AboutPage;
 
