@@ -1,6 +1,6 @@
 /*eslint-disable*/
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link } from 'gatsby-link';
 
 import NotificationDropdown from 'components/Dropdowns/NotificationDropdown.js';
 import UserDropdown from 'components/Dropdowns/UserDropdown.js';

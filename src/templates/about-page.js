@@ -75,25 +75,29 @@ const AboutPageTemplate = ({
                     </button>
                   </div>
                 </div>
-                <div className="w-full lg:w-4/12 px-4 lg:order-1">
+                <div className="w-full lg:w-4/12 px-2 lg:order-1">
                   <div className="flex justify-center py-4 lg:pt-4 pt-8">
-                    <div className="mr-4 p-3 text-center">
+                    <div className="mr-3 py-3 text-center">
                       <span className="text-xl font-bold block uppercase tracking-wide text-gray-700">
-                        22
+                        7 years
                       </span>
-                      <span className="text-sm text-gray-500">Friends</span>
+                      <span className="text-sm text-gray-500">
+                        Web development
+                      </span>
                     </div>
-                    <div className="mr-4 p-3 text-center">
+                    <div className="mr-3 py-3 text-center">
                       <span className="text-xl font-bold block uppercase tracking-wide text-gray-700">
-                        10
+                        13 years
                       </span>
-                      <span className="text-sm text-gray-500">Photos</span>
+                      <span className="text-sm text-gray-500">IT services</span>
                     </div>
-                    <div className="lg:mr-4 p-3 text-center">
+                    <div className="py-3 text-center">
                       <span className="text-xl font-bold block uppercase tracking-wide text-gray-700">
-                        89
+                        4 years
                       </span>
-                      <span className="text-sm text-gray-500">Comments</span>
+                      <span className="text-sm text-gray-500">
+                        Remote consulting
+                      </span>
                     </div>
                   </div>
                 </div>
@@ -116,13 +120,6 @@ const AboutPageTemplate = ({
                   />
                   {position}
                 </div>
-                {/* <div className="mb-2 text-gray-700">
-                  <FaUniversity
-                    size=""
-                    className="inline-block mr-2 text-lg text-gray-500"
-                  />
-                  {subheading}
-                </div> */}
               </div>
               <div className="mt-10 py-10 border-t border-gray-300 text-center">
                 <div className="flex flex-wrap justify-center">
@@ -131,13 +128,13 @@ const AboutPageTemplate = ({
                       className="leading-relaxed text-gray-800 prose lg:prose-lg max-w-none"
                       content={content}
                     />
-                    {/* <a
+                    <a
                       href="#pablo"
                       className="font-normal text-blue-500"
                       onClick={(e) => e.preventDefault()}
                     >
                       Show more
-                    </a> */}
+                    </a>
                   </div>
                 </div>
               </div>
@@ -176,8 +173,6 @@ const AboutPage = ({ data }) => {
 AboutPage.propTypes = {
   data: PropTypes.object.isRequired,
 };
-
-export { AboutPageTemplate };
 
 export default AboutPage;
 

@@ -8,13 +8,7 @@ import BlogRoll from '../components/BlogRoll';
 
 import { FcIdea } from 'react-icons/fc';
 
-export const IndexPageTemplate = ({
-  image,
-  title,
-  subheading,
-  mainpitch,
-  intro,
-}) => (
+const IndexPageTemplate = ({ image, title, subheading, mainpitch, intro }) => (
   <main>
     <div className="relative pt-16 pb-32 flex content-center items-center justify-center min-h-screen-75">
       <div
