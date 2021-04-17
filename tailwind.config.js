@@ -1,20 +1,22 @@
 module.exports = {
-  future: {
-    removeDeprecatedGapUtilities: true,
-    purgeLayersByDefault: true,
-  },
-  purge: {
-    enabled: process.env.NODE_ENV === 'production',
-    mode: 'all',
-    content: ['./src/**/**/*.js', './src/**/*.js', './src/*.js'],
-    options: {
-      whitelist: ['bg-red-400', 'bg-green-400', 'bg-blue-400'],
-    },
-  },
+  mode: 'jit',
+  purge: ['./src/**/**/*.js', './src/**/*.js', './public/page-data/**/*.json'],
   theme: {
     extend: {
       colors: {
-        muso: '#1992ff',
+        'dodger-blue': {
+          DEFAULT: '#1992FF',
+          50: '#E8F4FF',
+          100: '#D1E9FF',
+          200: '#A3D3FF',
+          300: '#75BEFF',
+          400: '#47A8FF',
+          500: '#1992FF',
+          600: '#007BEA',
+          700: '#0063BC',
+          800: '#004B8E',
+          900: '#003360',
+        },
         facebook: '#3b5998',
         linkedin: '#0077b5',
         github: '#333',
@@ -87,19 +89,5 @@ module.exports = {
       },
     },
   },
-  variants: [
-    'responsive',
-    'group-hover',
-    'focus-within',
-    'first',
-    'last',
-    'odd',
-    'even',
-    'hover',
-    'focus',
-    'active',
-    'visited',
-    'disabled',
-  ],
   plugins: [require('@tailwindcss/forms'), require('@tailwindcss/typography')],
 };

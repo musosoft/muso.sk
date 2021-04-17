@@ -12,7 +12,7 @@ description: >-
 intro:
   blurbs:
     - icon: FaReact
-      color: blue
+      color: bg-blue-400
       title: Websites
       text: >
         Create innovative, effective websites that capture your ideas and help grow your business. 
@@ -20,7 +20,7 @@ intro:
         Get useful website tricks and tips and consult them directly.
       button: Portfolio
     - icon: FaDesktop
-      color: green
+      color: bg-green-400
       title: IT Technologies
       text: >
         Get care of your business or personal Hardware - Computers, Servers, Smartphones and accessories.
@@ -29,7 +29,7 @@ intro:
         Learn about the best tools used by IT professionals.
       button: Tips & Tricks
     - icon: FaGamepad
-      color: red
+      color: bg-red-400
       title: Gaming and eSports
       text: >
         Speed-up your configuration to get lag-free experience.

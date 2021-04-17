@@ -32,10 +32,7 @@ const IndexPageTemplate = ({ image, title, subheading, mainpitch, intro }) => (
           </div>
         </div>
       </div>
-      <div
-        className="top-auto bottom-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden h-70-px"
-        style={{ transform: 'translateZ(0)' }}
-      >
+      <div className="top-auto bottom-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden h-70-px">
         <svg
           className="absolute bottom-0 overflow-hidden"
           xmlns="http://www.w3.org/2000/svg"
@@ -73,7 +70,7 @@ const IndexPageTemplate = ({ image, title, subheading, mainpitch, intro }) => (
           </div>
 
           <div className="w-full md:w-4/12 px-4 mr-auto ml-auto">
-            <div className="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg bg-muso">
+            <div className="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg bg-dodger-blue-500">
               <img
                 alt="..."
                 src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1051&q=80"
@@ -88,7 +85,7 @@ const IndexPageTemplate = ({ image, title, subheading, mainpitch, intro }) => (
                 >
                   <polygon
                     points="-30,95 583,95 583,65"
-                    className="text-muso fill-current"
+                    className="text-dodger-blue-500 fill-current"
                   ></polygon>
                 </svg>
                 <h4 className="text-xl font-bold text-white">
@@ -105,10 +102,7 @@ const IndexPageTemplate = ({ image, title, subheading, mainpitch, intro }) => (
           </div>
         </div>
         <section className="relative py-20 bg-white">
-          <div
-            className="bottom-auto top-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden -mt-20 h-20"
-            style={{ transform: 'translateZ(0)' }}
-          >
+          <div className="bottom-auto top-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden -mt-20 h-20">
             <svg
               className="absolute bottom-0 overflow-hidden"
               xmlns="http://www.w3.org/2000/svg"

@@ -65,16 +65,7 @@ module.exports = {
         modulePath: `${__dirname}/src/cms/cms.js`,
       },
     },
-    {
-      resolve: 'gatsby-plugin-postcss',
-      options: {
-        postCssPlugins: [require('tailwindcss')('./tailwind.config.js')],
-      },
-    },
-    {
-      resolve: 'gatsby-plugin-purgecss', // purges all unused/unreferenced css rules
-      options: { tailwind: true },
-    }, // must be after other CSS plugins
+    'gatsby-plugin-postcss',
     'gatsby-plugin-netlify', // make sure to keep it last in the array
   ],
   flags: {
