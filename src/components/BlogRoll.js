@@ -14,48 +14,52 @@ class BlogRoll extends React.Component {
         <h3 className="text-3xl mb-4 font-semibold leading-normal">
           Latest news
         </h3>
-        {posts &&
-          posts.map(({ node: post }) => (
-            <article
-              key={post.id}
-              className="relative px-3 py-4 mb-4 overflow-hidden sm:px-6 sm:py-8 lg:p-8 xl:p-12"
-            >
-              <header>
-                <p className="text-2xl font-semibold font-display text-gray-900 sm:text-3xl">
-                  <span className="block text-gray-500 max-w-xl text-xl font-medium">
-                    {post.frontmatter.date}
-                  </span>
-                  {post.frontmatter.featuredpost && (
-                    <span
-                      title="Featured"
-                      className="absolute text-sm -m-1 text-yellow-200"
-                    >
-                      <FaStar />
-                    </span>
+        <div className="items-center flex flex-wrap -mx-4">
+          {posts &&
+            posts.map(({ node: post }) => (
+              <div
+                className="p-0 pl-0 pr-0 px-4 relative w-full lg:w-3/12"
+                key={post.id}
+              >
+                <div className="h-430-px overflow-hidden relative flex flex-col min-w-0 break-words bg-white w-full shadow-lg transition-all duration-150 ease-in-out hover:z-10 hover:transform hover:scale-110 group rounded-lg mb-4">
+                  {post.frontmatter.featuredimage && (
+                    <GatsbyImage
+                      layout="fixed"
+                      className="absolute w-full h-full bg-50-center bg-cover transition-all duration-1000 ease-in-out group-hover:transform group-hover:scale-110 rounded-lg"
+                      image={
+                        post.frontmatter.featuredimage.childImageSharp
+                          .gatsbyImageData
+                      }
+                      style={{ backfaceVisibility: 'hidden' }}
+                      imgStyle={{ backfaceVisibility: 'hidden' }}
+                      alt=""
+                      width={200}
+                      height={400}
+                    />
                   )}
-                  <Link to={post.fields.slug}>{post.frontmatter.title}</Link>
-                </p>
-              </header>
-              <p className="mt-2 max-w-2xl text-base text-gray-500">
-                {post.excerpt}
-                <Link className="mt-2 font-bold block" to={post.fields.slug}>
-                  Keep Reading
-                </Link>
-              </p>
-              {post.frontmatter.featuredimage ? (
-                <div className="lg:block absolute inset-y-0 lg:left-2/3 right-0">
-                  <GatsbyImage
-                    className="w-full h-full object-cover object-left rounded-lg"
-                    image={
-                      post.frontmatter.featuredimage.childImageSharp
-                        .gatsbyImageData
-                    }
-                    alt={`featured image thumbnail for post ${post.frontmatter.title}`}
-                  />
+                  <div className="absolute w-full h-full bg-black opacity-50 rounded-lg"></div>
+                  <Link to={post.fields.slug}>
+                    <div className="absolute text-left p-6 bottom-0">
+                      <h6 className="text-xl leading-normal mb-0 text-white opacity-75">
+                        {post.frontmatter.date}
+                      </h6>
+                      <h5 className="text-2xl font-bold leading-tight mt-0 mb-2 text-white">
+                        {post.frontmatter.featuredpost && (
+                          <span
+                            title="Featured"
+                            className="absolute text-sm -m-1 text-yellow-200"
+                          >
+                            <FaStar />
+                          </span>
+                        )}
+                        {post.frontmatter.title}
+                      </h5>
+                    </div>
+                  </Link>
                 </div>
-              ) : null}
-            </article>
-          ))}
+              </div>
+            ))}
+        </div>
       </div>
     );
   }
@@ -92,7 +96,8 @@ const BlogRollQuery = () => (
                 featuredimage {
                   childImageSharp {
                     gatsbyImageData(
-                      width: 420
+                      height: 430
+                      width: 300
                       quality: 100
                       layout: CONSTRAINED
                     )

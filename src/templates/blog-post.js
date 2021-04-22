@@ -17,25 +17,25 @@ const BlogPostTemplate = ({
   const PostContent = contentComponent || Content;
 
   return (
-    <section className="section">
+    <section className="py-12 relative">
       {helmet || ''}
-      <div className="max-w-3xl mx-auto px-4 sm:px-6 xl:max-w-5xl xl:px-0">
-        <div className="divide-y divide-gray-200">
-          <div className="pt-6 pb-8 space-y-2 md:space-y-5">
-            <h1 className="text-4xl font-semibold leading-normal text-gray-800 mb-2">
+      <div className="container mx-auto px-4">
+        <div className="flex flex-wrap -mx-4">
+          <div className="mx-auto relative w-full md:w-8/12">
+            <h3 className="text-3xl font-bold leading-normal mt-0 mb-2">
               {title}
-            </h1>
-            <p>{description}</p>
+            </h3>
+            <h6 className="text-lg mt-2 mb-0 text-gray-400">{description}</h6>
             <PostContent
-              className="prose lg:prose-lg max-w-none"
+              className="pt-12 prose text-gray-700 max-w-none"
               content={content}
             />
             {tags && tags.length ? (
-              <div className="block pb-6">
-                <h4>Tags</h4>
+              <div className="flex flex-wrap items-center mt-4 mt-0 mb-5 leading-relaxed text-gray-500">
+                <p className="text-lg mr-2 my-2">Tags: </p>
                 {tags.map((tag) => (
                   <span
-                    className="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-gray-600 bg-gray-50 uppercase last:mr-0 mr-2 mt-2"
+                    className="text-gray-500 bg-gray-200 text-xs font-bold inline-block py-1 uppercase last:mr-0 mr-1 leading-tight rounded-full px-3"
                     key={tag + `tag`}
                   >
                     <Link to={`/tags/${kebabCase(tag)}/`}>{tag}</Link>
