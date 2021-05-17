@@ -1,11 +1,14 @@
+const colors = require('tailwindcss/colors');
+
 module.exports = {
   mode: 'jit',
   purge: ['./src/**/**/*.js', './src/**/*.js', './public/page-data/**/*.json'],
   theme: {
     extend: {
       colors: {
-        'dodger-blue': {
-          DEFAULT: '#1992FF',
+        orange: colors.orange,
+        blueGray: colors.blueGray,
+        dodgerBlue: {
           50: '#E8F4FF',
           100: '#D1E9FF',
           200: '#A3D3FF',

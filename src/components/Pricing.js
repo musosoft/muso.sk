@@ -12,7 +12,7 @@ const Pricing = ({ data }) => (
                 <i className="fas fa-sitemap"></i>
               </div>
               <h6 className="text-xl mb-1 font-semibold">{price.plan}</h6>
-              <p className="mb-4 text-gray-600">
+              <div className="mb-4 text-gray-600">
                 <ul>
                   {price.items.map((item) => (
                     <li key={item} className="mt-4 flex items-start">
@@ -39,7 +39,7 @@ const Pricing = ({ data }) => (
                 </ul>
                 <div className="my-2">{price.description}</div>
                 <div className="text-3xl">{price.price} €</div>
-              </p>
+              </div>
             </div>
           </div>
         </div>

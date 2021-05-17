@@ -3,10 +3,9 @@ import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 import { GatsbyImage } from 'gatsby-plugin-image';
 import Layout from '../components/Layout';
-import Features from '../components/Features';
+import Highlights from '../components/Highlights';
 import Testimonials from '../components/Testimonials';
 import Pricing from '../components/Pricing';
-// import PreviewCompatibleImage from '../components/PreviewCompatibleImage';
 
 const ProductPageTemplate = ({
   image,
@@ -20,55 +19,53 @@ const ProductPageTemplate = ({
   pricing,
 }) => (
   <>
-    <section className="header relative pt-16 items-center flex h-screen max-h-860-px">
-      <div className="container mx-auto items-center flex flex-wrap">
-        <div className="w-full md:w-8/12 lg:w-6/12 xl:w-6/12 px-4">
-          <div className="pt-32 sm:pt-0">
-            <h2 className="font-semibold text-4xl text-gray-700">{title}</h2>
-            <p className="mt-4 text-lg leading-relaxed text-gray-600">
-              {heading}
-              <a
-                href="https://tailwindcss.com/?ref=creativetim"
-                className="text-gray-700"
-                target="_blank"
-                rel="noreferrer"
-              >
-                Tailwind CSS
-              </a>
-              {description}
-            </p>
-            <div className="mt-12">
-              <a
-                href="https://www.creative-tim.com/learning-lab/tailwind/react/overview/notus?ref=nr-index"
-                target="_blank"
-                rel="noreferrer"
-                className="get-started text-white font-bold px-6 py-4 rounded outline-none focus:outline-none mr-1 mb-1 bg-blue-500 active:bg-blue-600 uppercase text-sm shadow hover:shadow-lg ease-linear transition-all duration-150"
-              >
-                Get started
-              </a>
-              <a
-                href="https://github.com/creativetimofficial/notus-react?ref=nr-index"
-                className="github-star ml-1 text-white font-bold px-6 py-4 rounded outline-none focus:outline-none mr-1 mb-1 bg-gray-800 active:bg-gray-700 uppercase text-sm shadow hover:shadow-lg ease-linear transition-all duration-150"
-                target="_blank"
-                rel="noreferrer"
-              >
-                Github Star
-              </a>
-            </div>
-          </div>
+    <section className="container mx-auto px-4 py-12">
+      <div className="flex flex-wrap -mx-4 justify-center">
+        <div className="px-4 relative w-full text-center">
+          <h2 className="text-4xl font-bold mt-3 mb-1 text-gray-700">
+            {title}
+          </h2>
         </div>
       </div>
-
-      <img
-        className="absolute top-0 b-auto right-0 pt-16 sm:w-6/12 -mt-48 sm:mt-0 w-10/12 max-h-860px"
-        src={image.childImageSharp.gatsbyImageData.images.fallback.src}
-        alt="..."
-      />
+      <div className="items-center flex flex-wrap -mx-4">
+        <div className="ml-auto text-left mt-6 px-4 relative w-full lg:w-4/12">
+          <div className="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg text-white bg-gray-500">
+            <GatsbyImage
+              image={image.childImageSharp.gatsbyImageData}
+              alt=""
+              className="w-full flex-shrink-0 rounded-t-lg"
+            />
+            <blockquote className="p-6 relative mb-4">
+              <svg
+                preserveAspectRatio="none"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 583 95"
+                className="block w-full absolute text-blueGray-700 h-95-px -top-94-px left-0"
+              >
+                <polygon
+                  points="0,52 583,95 0,95"
+                  className="text-gray-500 fill-current"
+                ></polygon>
+                <polygon
+                  points="0,42 583,95 683,0 0,95"
+                  opacity=".2"
+                  className="text-gray-500 fill-current"
+                ></polygon>
+              </svg>
+              <h4 className="text-2xl font-semibold mt-0 text-white">
+                {heading}
+              </h4>
+              <p className="text-white mt-2">{description}</p>
+            </blockquote>
+          </div>
+        </div>
+        <div className="mr-auto px-4 relative w-full lg:w-7/12">
+          <Highlights gridItems={intro.blurbs} />
+        </div>
+      </div>
     </section>
     <section className="pb-20 bg-gray-300 mt-24">
       <div className="container mx-auto px-4">
-        <Features gridItems={intro.blurbs} />
-
         <div className="container mx-auto overflow-hidden pb-20">
           <div className="flex flex-wrap items-center">
             <div className="w-full md:w-4/12 px-12 md:px-4 ml-auto mr-auto mt-48">
@@ -269,6 +266,7 @@ export const productPageQuery = graphql`
         intro {
           blurbs {
             icon
+            title
             color
             text
           }

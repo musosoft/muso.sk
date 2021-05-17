@@ -113,7 +113,7 @@ function Navbar() {
                 </Link>
               </div>
               <div className="-mr-2 -my-2 md:hidden">
-                <Popover.Button className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-dodger-blue-500">
+                <Popover.Button className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-dodgerBlue-500">
                   <span className="sr-only">Open menu</span>
                   <HiOutlineMenu className="h-6 w-6" aria-hidden="true" />
                 </Popover.Button>
@@ -125,7 +125,7 @@ function Navbar() {
                       <Popover.Button
                         className={classNames(
                           open ? 'text-gray-900' : 'text-gray-500',
-                          'group bg-white rounded-md inline-flex items-center text-base font-medium hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-dodger-blue-500'
+                          'group bg-white rounded-md inline-flex items-center text-base font-medium hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-dodgerBlue-500'
                         )}
                       >
                         <span>Solutions</span>
@@ -161,7 +161,7 @@ function Navbar() {
                                   className="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50"
                                 >
                                   <item.icon
-                                    className="flex-shrink-0 h-6 w-6 text-dodger-blue-600"
+                                    className="flex-shrink-0 h-6 w-6 text-dodgerBlue-600"
                                     aria-hidden="true"
                                   />
                                   <div className="ml-4">
@@ -217,7 +217,7 @@ function Navbar() {
                       <Popover.Button
                         className={classNames(
                           open ? 'text-gray-900' : 'text-gray-500',
-                          'group bg-white rounded-md inline-flex items-center text-base font-medium hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-dodger-blue-500'
+                          'group bg-white rounded-md inline-flex items-center text-base font-medium hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-dodgerBlue-500'
                         )}
                       >
                         <span>More</span>
@@ -253,7 +253,7 @@ function Navbar() {
                                   className="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50"
                                 >
                                   <item.icon
-                                    className="flex-shrink-0 h-6 w-6 text-dodger-blue-600"
+                                    className="flex-shrink-0 h-6 w-6 text-dodgerBlue-600"
                                     aria-hidden="true"
                                   />
                                   <div className="ml-4">
@@ -291,7 +291,7 @@ function Navbar() {
                               <div className="mt-5 text-sm">
                                 <Link
                                   to="#"
-                                  className="font-medium text-dodger-blue-600 hover:text-dodger-blue-500"
+                                  className="font-medium text-dodgerBlue-600 hover:text-dodgerBlue-500"
                                 >
                                   {' '}
                                   View all posts{' '}
@@ -315,7 +315,7 @@ function Navbar() {
                 </Link>
                 <Link
                   to="#"
-                  className="ml-8 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-dodger-blue-500 hover:bg-dodger-blue-600"
+                  className="ml-8 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-dodgerBlue-500 hover:bg-dodgerBlue-600"
                 >
                   Sign up
                 </Link>
@@ -345,7 +345,7 @@ function Navbar() {
                       <img className="h-8 w-auto" src={logo} alt="Workflow" />
                     </div>
                     <div className="-mr-2">
-                      <Popover.Button className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-dodger-blue-500">
+                      <Popover.Button className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-dodgerBlue-500">
                         <span className="sr-only">Close menu</span>
                         <HiOutlineX className="h-6 w-6" aria-hidden="true" />
                       </Popover.Button>
@@ -360,7 +360,7 @@ function Navbar() {
                           className="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50"
                         >
                           <item.icon
-                            className="flex-shrink-0 h-6 w-6 text-dodger-blue-600"
+                            className="flex-shrink-0 h-6 w-6 text-dodgerBlue-600"
                             aria-hidden="true"
                           />
                           <span className="ml-3 text-base font-medium text-gray-900">
@@ -399,7 +399,7 @@ function Navbar() {
                   <div>
                     <Link
                       to="#"
-                      className="w-full flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-dodger-blue-600 hover:bg-dodger-blue-700"
+                      className="w-full flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-dodgerBlue-600 hover:bg-dodgerBlue-700"
                     >
                       Sign up
                     </Link>
@@ -407,7 +407,7 @@ function Navbar() {
                       Existing customer?{' '}
                       <Link
                         to="#"
-                        className="text-dodger-blue-600 hover:text-dodger-blue-500"
+                        className="text-dodgerBlue-600 hover:text-dodgerBlue-500"
                       >
                         Sign in
                       </Link>

@@ -37,13 +37,13 @@
   "devDependencies": {
     "autoprefixer": "^10.2.5",
     "gatsby-plugin-postcss": "^4.3.0",
-    "postcss": "^8.2.10",
+    "postcss": "^8.2.12",
     "prettier": "^2.2.1",
-    "tailwindcss": "^2.1.1"
+    "tailwindcss": "^2.1.2"
   },
   "scripts": {
     "clean": "gatsby clean",
-    "start": "npm run develop && watch:tailwind",
+    "start": "npm run develop",
     "build": "npm run clean && gatsby build",
     "develop": "gatsby develop",
     "format": "prettier --trailing-comma es5 --no-semi --single-quote --write \"{gatsby-*.js,src/**/*.js}\"",
