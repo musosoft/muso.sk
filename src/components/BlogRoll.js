@@ -15,7 +15,7 @@ const BlogRoll = ({ data }) => {
         {posts &&
           posts.map(({ node: post }) => (
             <div className="px-4 relative w-full lg:w-3/12" key={post.id}>
-              <div className="h-430-px overflow-hidden relative flex flex-col min-w-0 break-words bg-white w-full shadow-lg transition-all duration-150 ease-in-out hover:z-10 hover:transform hover:scale-110 group rounded-lg mb-4">
+              <div className="h-[430px] overflow-hidden relative flex flex-col min-w-0 break-words bg-white w-full shadow-lg transition-all duration-150 ease-in-out hover:z-10 hover:transform hover:scale-110 group rounded-lg mb-4">
                 {post.frontmatter.featuredimage && (
                   <GatsbyImage
                     layout="fixed"
