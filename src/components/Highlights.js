@@ -1,27 +1,46 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import * as FontAwesome from 'react-icons/fa';
+import { GatsbyImage } from 'gatsby-plugin-image';
 
 const HighlightGrid = ({ gridItems }) => {
   return (
-    <div className="flex flex-wrap -mx-4">
+    <div className="items-center flex flex-wrap -mx-4">
       {gridItems.map((item) => {
         return (
-          <div className="px-4 relative w-full md:w-6/12" key={item.text}>
+          <div className="ml-auto text-left mt-6 px-4 relative w-full lg:w-6/12">
             <div
-              className={`${item.color} mt-8 rounded-lg text-left p-6 flex items-start`}
+              className="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg text-white"
+              style={{ backgroundColor: '#' + item.color }}
             >
-              <div className="flex-1">
-                <div
-                  className={`${item.color} text-white shadow-lg rounded-full justify-center items-center text-center p-2 mx-auto mb-5 inline-flex w-12 h-12`}
+              <GatsbyImage
+                image={item.image.childImageSharp.gatsbyImageData}
+                alt=""
+                className="w-full flex-shrink-0 rounded-t-lg"
+              />
+              <blockquote className="p-6 relative mb-4">
+                <svg
+                  preserveAspectRatio="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 583 95"
+                  className="block w-full absolute text-blueGray-700 h-95-px -top-94-px left-0"
                 >
-                  {React.createElement(FontAwesome[item.icon], { size: '2em' })}
-                </div>
+                  <polygon
+                    points="0,52 583,95 0,95"
+                    className="fill-current"
+                    style={{ color: '#' + item.color }}
+                  ></polygon>
+                  <polygon
+                    points="0,42 583,95 683,0 0,95"
+                    opacity=".2"
+                    className="fill-current"
+                    style={{ color: '#' + item.color }}
+                  ></polygon>
+                </svg>
                 <h4 className="text-2xl font-semibold leading-normal text-white">
                   {item.title}
                 </h4>
                 <p className="mt-2 text-white">{item.text}</p>
-              </div>
+              </blockquote>
             </div>
           </div>
         );
@@ -33,7 +52,7 @@ const HighlightGrid = ({ gridItems }) => {
 HighlightGrid.propTypes = {
   gridItems: PropTypes.arrayOf(
     PropTypes.shape({
-      image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
+      image: PropTypes.oneOfType([PropTypes.object, PropTypes.file]),
       text: PropTypes.string,
     })
   ),

@@ -6,6 +6,8 @@ import Layout from '../components/Layout';
 import Highlights from '../components/Highlights';
 import Testimonials from '../components/Testimonials';
 import Pricing from '../components/Pricing';
+import * as FontAwesome from 'react-icons/fa';
+import { FcCommandLine } from 'react-icons/fc';
 
 const ProductPageTemplate = ({
   image,
@@ -29,7 +31,7 @@ const ProductPageTemplate = ({
       </div>
       <div className="items-center flex flex-wrap -mx-4">
         <div className="ml-auto text-left mt-6 px-4 relative w-full lg:w-4/12">
-          <div className="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg text-white bg-gray-500">
+          <div className="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg text-white bg-[#c61d1d]">
             <GatsbyImage
               image={image.childImageSharp.gatsbyImageData}
               alt=""
@@ -44,12 +46,12 @@ const ProductPageTemplate = ({
               >
                 <polygon
                   points="0,52 583,95 0,95"
-                  className="text-gray-500 fill-current"
+                  className="text-[#c61d1d] fill-current"
                 ></polygon>
                 <polygon
                   points="0,42 583,95 683,0 0,95"
                   opacity=".2"
-                  className="text-gray-500 fill-current"
+                  className="text-[#c61d1d] fill-current"
                 ></polygon>
               </svg>
               <h4 className="text-2xl font-semibold mt-0 text-white">
@@ -70,7 +72,7 @@ const ProductPageTemplate = ({
           <div className="flex flex-wrap items-center">
             <div className="w-full md:w-4/12 px-12 md:px-4 ml-auto mr-auto mt-48">
               <div className="text-gray-600 p-3 text-center inline-flex items-center justify-center w-16 h-16 mb-6 shadow-lg rounded-full bg-white">
-                <i className="fas fa-sitemap text-xl"></i>
+                <FcCommandLine size="3em" />
               </div>
               <h3 className="text-3xl mb-2 font-semibold leading-normal">
                 {main.heading}
@@ -114,25 +116,27 @@ const ProductPageTemplate = ({
                 <i className="fa fa-angle-double-right ml-1 leading-relaxed"></i>
               </a>
             </div>
-            <div className="w-full md:w-5/12 px-4 mr-auto ml-auto mt-32">
-              <div className="relative flex flex-col min-w-0 w-full mb-6 mt-48 md:mt-0">
-                <GatsbyImage
-                  image={main.image1.image.childImageSharp.gatsbyImageData}
-                  className="w-full align-middle rounded-lg absolute shadow-2xl max-w-200-px -left-50-px top-25-px"
-                  alt={main.image1.alt}
-                />
 
-                <GatsbyImage
-                  image={main.image2.image.childImageSharp.gatsbyImageData}
-                  className="w-full align-middle rounded-lg absolute shadow-lg -top-160-px left-260-px max-w-210-px"
-                  alt={main.image2.alt}
-                />
-
-                <GatsbyImage
-                  image={main.image3.image.childImageSharp.gatsbyImageData}
-                  className="w-full align-middle rounded-lg absolute shadow-lg max-w-180-px -top-225-px left-40-px z-2"
-                  alt={main.image3.alt}
-                />
+            <div className="w-full md:w-8/12 px-4 mt-32">
+              <div className="relative flex flex-wrap content-between justify-between gap-4 min-w-0 w-full mb-6 mt-48 md:mt-0">
+                {main.icons.map((icon) => (
+                  <div
+                    key={icon.title}
+                    className="bg-white w-52 rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition duration-300"
+                  >
+                    <div
+                      className="flex items-center py-2 px-4 bg-[color:var(--icon-color)] text-white"
+                      style={{ '--icon-color': icon.color }}
+                    >
+                      {React.createElement(FontAwesome[icon.icon], {
+                        size: '4em',
+                        className: 'w-4/12',
+                      })}
+                      <h3 class="w-8/12 ml-3 font-semibold">{icon.title}</h3>
+                    </div>
+                    <p class="mt-2 pb-4 text-sm px-4">{icon.description}</p>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
@@ -208,9 +212,7 @@ ProductPageTemplate.propTypes = {
   main: PropTypes.shape({
     heading: PropTypes.string,
     description: PropTypes.string,
-    image1: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
-    image2: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
-    image3: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
+    icons: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   }),
   testimonials: PropTypes.array,
   fullImage: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
@@ -252,7 +254,7 @@ ProductPage.propTypes = {
 export default ProductPage;
 
 export const productPageQuery = graphql`
-  query ProductPage($id: String!) {
+  query ProductPage($id: String) {
     markdownRemark(id: { eq: $id }) {
       frontmatter {
         title
@@ -265,7 +267,11 @@ export const productPageQuery = graphql`
         description
         intro {
           blurbs {
-            icon
+            image {
+              childImageSharp {
+                gatsbyImageData(quality: 100, layout: FULL_WIDTH)
+              }
+            }
             title
             color
             text
@@ -276,33 +282,17 @@ export const productPageQuery = graphql`
         main {
           heading
           description
-          image1 {
-            alt
-            image {
-              childImageSharp {
-                gatsbyImageData(width: 526, quality: 92, layout: CONSTRAINED)
-              }
-            }
-          }
-          image2 {
-            alt
-            image {
-              childImageSharp {
-                gatsbyImageData(width: 526, quality: 92, layout: CONSTRAINED)
-              }
-            }
-          }
-          image3 {
-            alt
-            image {
-              childImageSharp {
-                gatsbyImageData(quality: 72, layout: FULL_WIDTH)
-              }
-            }
+          icons {
+            title
+            icon
+            color
+            description
           }
         }
         testimonials {
           author
+          company
+          photo
           quote
         }
         full_image {

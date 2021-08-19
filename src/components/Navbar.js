@@ -1,98 +1,75 @@
-import React, { Fragment } from 'react';
-import { Link } from 'gatsby';
+import React, { Fragment, useState } from 'react';
+import { themeChange } from 'theme-change';
+import PropTypes from 'prop-types';
+import { Link, graphql, StaticQuery } from 'gatsby';
 import { Popover, Transition } from '@headlessui/react';
 import logo from '../img/logo.svg';
 import {
   HiOutlineMenu,
   HiChevronDown,
-  HiOutlineChartBar,
+  HiOutlineServer,
   HiOutlineCursorClick,
   HiOutlineX,
   HiOutlineShieldCheck,
   HiOutlineViewGrid,
   HiOutlineRefresh,
-  HiOutlinePlay,
+  HiOutlineUsers,
   HiOutlinePhone,
   HiOutlineSupport,
   HiOutlineBookmarkAlt,
-  HiOutlineCalendar,
+  HiOutlineLightBulb,
+  HiOutlineMoon,
 } from 'react-icons/hi';
 
-const solutions = [
+const services = [
   {
-    name: 'Analytics',
-    description:
-      'Get a better understanding of where your traffic is coming from.',
-    href: '#',
-    icon: HiOutlineChartBar,
-  },
-  {
-    name: 'Engagement',
-    description: 'Speak directly to your customers in a more meaningful way.',
+    name: 'Websites',
+    description: 'Site which will fit all your needs',
     href: '#',
     icon: HiOutlineCursorClick,
   },
   {
-    name: 'Security',
-    description: "Your customers' data will be safe and secure.",
-    href: '#',
-    icon: HiOutlineShieldCheck,
-  },
-  {
-    name: 'Integrations',
-    description: "Connect with third-party tools that you're already using.",
+    name: 'Software',
+    description: 'Tweak operating systems, get customized experience',
     href: '#',
     icon: HiOutlineViewGrid,
   },
   {
+    name: 'Security',
+    description: 'Get rid and secure website or operating system from malware',
+    href: '#',
+    icon: HiOutlineShieldCheck,
+  },
+  {
+    name: 'Servers',
+    description: 'Custom Dedicated Gaming server or Website hosting',
+    href: '#',
+    icon: HiOutlineServer,
+  },
+  {
     name: 'Automations',
-    description:
-      'Build strategic funnels that will drive your customers to convert',
+    description: 'Script your repeating tasks, collect data from websites',
     href: '#',
     icon: HiOutlineRefresh,
   },
 ];
 const callsToAction = [
-  { name: 'Watch Demo', href: '#', icon: HiOutlinePlay },
-  { name: 'Contact Sales', href: '#', icon: HiOutlinePhone },
+  { name: 'Portfolio', href: '/portfolio', icon: HiOutlineUsers },
+  { name: 'Contact', href: '/contact', icon: HiOutlinePhone },
 ];
-const resources = [
+const blog = [
   {
     name: 'Help Center',
-    description:
-      'Get all of your questions answered in our forums or contact support.',
+    description: 'Get help with your technical problems.',
     href: '#',
     icon: HiOutlineSupport,
   },
   {
     name: 'Guides',
-    description:
-      'Learn how to maximize our platform to get the most out of it.',
+    description: 'See technology tips and tricks.',
     href: '#',
     icon: HiOutlineBookmarkAlt,
   },
-  {
-    name: 'Events',
-    description:
-      'See what meet-ups and other events we might be planning near you.',
-    href: '#',
-    icon: HiOutlineCalendar,
-  },
-  {
-    name: 'Security',
-    description: 'Understand how we take your privacy seriously.',
-    href: '#',
-    icon: HiOutlineShieldCheck,
-  },
-];
-const recentPosts = [
-  { id: 1, name: 'Boost your conversion rate', href: '#' },
-  {
-    id: 2,
-    name: 'How to use search engine optimization to drive traffic to your site',
-    href: '#',
-  },
-  { id: 3, name: 'Improve your customer experience', href: '#' },
 ];
 
 function classNames(...classes) {
@@ -100,8 +77,10 @@ function classNames(...classes) {
 }
 
 function Navbar() {
+  const [isClicked, setIsClicked] = useState(false);
+
   return (
-    <Popover className="relative bg-white">
+    <Popover className="relative bg-white dark:bg-gray-800">
       {({ open }) => (
         <>
           <div className="max-w-7xl mx-auto px-4 sm:px-6">
@@ -128,7 +107,7 @@ function Navbar() {
                           'group bg-white rounded-md inline-flex items-center text-base font-medium hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-dodgerBlue-500'
                         )}
                       >
-                        <span>Solutions</span>
+                        <span>Services</span>
                         <HiChevronDown
                           className={classNames(
                             open ? 'text-gray-600' : 'text-gray-400',
@@ -154,7 +133,7 @@ function Navbar() {
                         >
                           <div className="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 overflow-hidden">
                             <div className="relative grid gap-6 bg-white px-5 py-6 sm:gap-8 sm:p-8">
-                              {solutions.map((item) => (
+                              {services.map((item) => (
                                 <Link
                                   key={item.name}
                                   to={item.href}
@@ -199,16 +178,16 @@ function Navbar() {
                 </Popover>
 
                 <Link
-                  to="#"
+                  to="/about"
                   className="text-base font-medium text-gray-500 hover:text-gray-900"
                 >
-                  Pricing
+                  About
                 </Link>
                 <Link
-                  to="#"
+                  to="/contact"
                   className="text-base font-medium text-gray-500 hover:text-gray-900"
                 >
-                  Docs
+                  Contact
                 </Link>
 
                 <Popover className="relative">
@@ -220,7 +199,7 @@ function Navbar() {
                           'group bg-white rounded-md inline-flex items-center text-base font-medium hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-dodgerBlue-500'
                         )}
                       >
-                        <span>More</span>
+                        <span>Blog</span>
                         <HiChevronDown
                           className={classNames(
                             open ? 'text-gray-600' : 'text-gray-400',
@@ -246,7 +225,7 @@ function Navbar() {
                         >
                           <div className="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 overflow-hidden">
                             <div className="relative grid gap-6 bg-white px-5 py-6 sm:gap-8 sm:p-8">
-                              {resources.map((item) => (
+                              {blog.map((item) => (
                                 <Link
                                   key={item.name}
                                   to={item.href}
@@ -272,29 +251,63 @@ function Navbar() {
                                 <h3 className="text-sm tracking-wide font-medium text-gray-500 uppercase">
                                   Recent Posts
                                 </h3>
-                                <ul className="mt-4 space-y-4">
-                                  {recentPosts.map((post) => (
-                                    <li
-                                      key={post.id}
-                                      className="text-base truncate"
-                                    >
-                                      <Link
-                                        to={post.href}
-                                        className="font-medium text-gray-900 hover:text-gray-700"
-                                      >
-                                        {post.name}
-                                      </Link>
-                                    </li>
-                                  ))}
-                                </ul>
+                                <StaticQuery
+                                  query={graphql`
+                                    query NavbarQuery {
+                                      allMarkdownRemark(
+                                        sort: {
+                                          order: DESC
+                                          fields: [frontmatter___date]
+                                        }
+                                        filter: {
+                                          frontmatter: {
+                                            templateKey: { eq: "blog-post" }
+                                          }
+                                        }
+                                      ) {
+                                        edges {
+                                          node {
+                                            id
+                                            fields {
+                                              slug
+                                            }
+                                            frontmatter {
+                                              title
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  `}
+                                  render={(data) => {
+                                    const { edges: posts } =
+                                      data.allMarkdownRemark;
+                                    return (
+                                      <ul className="mt-4 space-y-4">
+                                        {posts.map(({ node: post }) => (
+                                          <li
+                                            key={post.id}
+                                            className="text-base truncate"
+                                          >
+                                            <Link
+                                              to={post.fields.slug}
+                                              className="font-medium text-gray-900 hover:text-gray-700"
+                                            >
+                                              {post.frontmatter.title}
+                                            </Link>
+                                          </li>
+                                        ))}
+                                      </ul>
+                                    );
+                                  }}
+                                />
                               </div>
                               <div className="mt-5 text-sm">
                                 <Link
-                                  to="#"
+                                  to="/blog"
                                   className="font-medium text-dodgerBlue-600 hover:text-dodgerBlue-500"
                                 >
-                                  {' '}
-                                  View all posts{' '}
+                                  View all posts
                                   <span aria-hidden="true">&rarr;</span>
                                 </Link>
                               </div>
@@ -307,18 +320,21 @@ function Navbar() {
                 </Popover>
               </Popover.Group>
               <div className="hidden md:flex items-center justify-end md:flex-1 lg:w-0">
-                <Link
-                  to="#"
-                  className="whitespace-nowrap text-base font-medium text-gray-500 hover:text-gray-900"
+                <button
+                  className="btn btn-square btn-link"
+                  data-toggle-theme="mytheme,dark"
+                  data-act-class="active"
+                  onClick={() => setIsClicked((prev) => !prev)}
                 >
-                  Sign in
-                </Link>
-                <Link
-                  to="#"
-                  className="ml-8 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-dodgerBlue-500 hover:bg-dodgerBlue-600"
-                >
-                  Sign up
-                </Link>
+                  {isClicked ? (
+                    <HiOutlineMoon size="2em" className="text-gray-400" />
+                  ) : (
+                    <HiOutlineLightBulb
+                      size="2em"
+                      className="text-yellow-300"
+                    />
+                  )}
+                </button>
               </div>
             </div>
           </div>
@@ -353,7 +369,7 @@ function Navbar() {
                   </div>
                   <div className="mt-6">
                     <nav className="grid gap-y-8">
-                      {solutions.map((item) => (
+                      {services.map((item) => (
                         <Link
                           key={item.name}
                           to={item.href}
@@ -381,12 +397,12 @@ function Navbar() {
                     </Link>
 
                     <Link
-                      to="#"
+                      to="/contact  "
                       className="text-base font-medium text-gray-900 hover:text-gray-700"
                     >
-                      Docs
+                      Contact
                     </Link>
-                    {resources.map((item) => (
+                    {blog.map((item) => (
                       <Link
                         key={item.name}
                         to={item.href}
@@ -422,5 +438,13 @@ function Navbar() {
     </Popover>
   );
 }
+
+Navbar.propTypes = {
+  data: PropTypes.shape({
+    allMarkdownRemark: PropTypes.shape({
+      edges: PropTypes.array,
+    }),
+  }),
+};
 
 export default Navbar;

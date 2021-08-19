@@ -1,51 +1,33 @@
 ---
 templateKey: 'product-page'
 path: /portfolio
-title: Our Coffee
-image: /img/jumbotron.jpg
-heading: Great coffee with a conscience
+title: Website Services
+image: /img/orc_sk.png
+heading: ORC.sk
 description: >-
-  Kaldi is the ultimate spot for coffee lovers who want to learn about their
-  java’s origin and support the farmers that grew it. We take coffee production,
-  roasting and brewing seriously and we’re glad to pass that knowledge to
-  anyone.
+  Off-road multilanguage shop with thousands of products imported automatically from Google Sheets, built in WooCommerce.
 intro:
   blurbs:
-    - icon: FaReact
-      title: bg-blue-500
-      color: bg-blue-500
+    - image: /img/alenareznickova_sk.png
+      title: alenareznickova.sk
+      color: F237A2
       text: >
-        We sell green and roasted coffee beans that are sourced directly from
-        independent farmers and farm cooperatives. We’re proud to offer a
-        variety of coffee beans grown with great care for the environment and
-        local communities. Check our post or contact us directly for current
-        availability.
-    - icon: FaReact
-      title: bg-orange-500
-      color: bg-orange-500
+        Estate agent fast WordPress site coded from Figma with customised Real Estate administration.
+    - image: /img/masaze-mark_sk.png
+      title: masaze-mark.sk
+      color: ae7e47
       text: >
-        We offer a small, but carefully curated selection of brewing gear and
-        tools for every taste and experience level. No matter if you roast your
-        own beans or just bought your first french press, you’ll find a gadget
-        to fall in love with in our shop.
-    - icon: FaReact
-      title: bg-green-500
-      color: bg-green-500
+        Masseur portfolio easily editable thanks to Elementor page builder.
+    - image: /img/dcrainmaker_com.png
+      title: dcrainmaker.com
+      color: f97206
       text: >
-        Love a great cup of coffee, but never knew how to make one? Bought a
-        fancy new Chemex but have no clue how to use it? Don't worry, we’re here
-        to help. You can schedule a custom 1-on-1 consultation with our baristas
-        to learn anything you want to know about coffee roasting and brewing.
-        Email us or call the store for details.
-    - icon: FaReact
-      title: bg-yellow-500
-      color: bg-yellow-500
+        Sport reviews blog / part job to optimize PageSpeed by reducing CSS
+    - image: /img/pianogroove_com.png
+      title: pianogroove.com
+      color: 29b390
       text: >
-        We believe that good coffee has the power to bring people together.
-        That’s why we decided to turn a corner of our shop into a cozy meeting
-        space where you can hang out with fellow coffee lovers and learn about
-        coffee making techniques. All of the artwork on display there is for
-        sale. The full price you pay goes to the artist.
+        Piano courses / part job to code homepage redesign
   heading: What we offer
   description: >
     Kaldi is the ultimate spot for coffee lovers who want to learn about their
@@ -53,30 +35,53 @@ intro:
     production, roasting and brewing seriously and we’re glad to pass that
     knowledge to anyone. This is an edit via identity...
 main:
-  heading: Great coffee with no compromises
+  heading: IT Services
   description: >
-    We hold our coffee to the highest standards from the shrub to the cup.
-    That’s why we’re meticulous and transparent about each step of the coffee’s
-    journey. We personally visit each farm to make sure the conditions are
-    optimal for the plants, farmers and the local environment.
-  image1:
-    alt: A close-up of a paper filter filled with ground coffee
-    image: /img/products-grid3.jpg
-  image2:
-    alt: A green cup of a coffee on a wooden table
-    image: /img/products-grid2.jpg
-  image3:
-    alt: Coffee beans
-    image: /img/products-grid1.jpg
+    muso.sk is the ultimate spot for customers who want to consult and get job done all around technologies.
+  icons:
+    - title: Automatisation
+      description: Collect data from Websites into database or Excel sheet. Script repeating tasks.
+      icon: FaRobot
+      color: '#a4c639'
+    - title: eSports administration
+      description: Local or online dedicated server for game or LAN tournament.
+      icon: FaGamepad
+      color: '#606266'
+    - title: IT management
+      description: Build Computers, setup Software, Network and Server. Optimise Hardware and System.
+      icon: FaBuilding
+      color: '#7d7474'
+    - title: Smartphone recovery
+      description: Smartphone recovery
+      icon: FaMobile
+      color: '#f8901f'
+    - title: Domain and hosting
+      description: Speedup and secure website with HTTPS. Backup and migrate to faster hosting.
+      icon: FaGlobe
+      color: '#ce3c15'
+    - title: Graphics
+      description: Make flyers, brochures, visit cards and other Photoshop graphics.
+      icon: FaPalette
+      color: '#ce9864'
+    - title: E-mail campaigns
+      description: Cross device optimised and mobile-friendly MailChimp newsletter.
+      icon: FaEnvelope
+      color: '#ffd54f'
+    - title: Server management
+      description: Setup secured Linux Apache, MySQL and PHP server. Windows Server Domain, Users, Storage.
+      icon: FaServer
+      color: '#e4e6e7'
 testimonials:
-  - author: Elisabeth Kaurismäki
+  - author: Frank Tóth
+    company: 'Head of Consumer Technology - BAT Germany'
+    photo: 'https://media-exp1.licdn.com/dms/image/C4D03AQGZ0AsLuLLqWw/profile-displayphoto-shrink_800_800/0/1517627837240?e=1634169600&v=beta&t=osQfNXYiE-ssoWlJnG_vPGOE93_UvhfLZWg3rqG9YvU'
     quote: >-
-      The first time I tried Kaldi’s coffee, I couldn’t even believe that was
-      the same thing I’ve been drinking every morning.
-  - author: Philipp Trommler
+      You are a pretty good expert, and good IT experts are always required.
+  - author: Adrián Řezníček
+    company: 'CEO - Pixels Studio'
+    photo: 'https://media-exp1.licdn.com/dms/image/C5103AQFN-oekTRFE_A/profile-displayphoto-shrink_800_800/0/1517404394692?e=1634169600&v=beta&t=V7TCT7UXaRzhOZQTzJC72qUem4yqtmGxP-TTDTPNoKA'
     quote: >-
-      Kaldi is the place to go if you want the best quality coffee. I love their
-      stance on empowering farmers and transparency.
+      I'm happy that the site looks nice and approach to work was great. I can recommend.
 full_image: /img/products-full-width.jpg
 pricing:
   heading: Monthly subscriptions

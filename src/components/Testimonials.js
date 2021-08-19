@@ -5,27 +5,29 @@ import { v4 } from 'uuid';
 const Testimonials = ({ testimonials }) => (
   <div className="flex justify-center w-full space-x-4">
     {testimonials.map((testimonial) => (
-      <div
+      <figure
         key={v4()}
-        className="max-w-md py-4 px-8 bg-white shadow-lg rounded-lg my-20"
+        className="max-w-md py-4 px-8 bg-white shadow-lg rounded-lg my-20 border border-gray-50"
       >
-        <div className="flex justify-center md:justify-end -mt-16">
-          <img
-            className="w-20 h-20 object-cover rounded-full border-2 border-indigo-500"
-            src="https://images.unsplash.com/photo-1499714608240-22fc6ad53fb2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80"
-            alt=""
-          />
+        <div class="w-full pt-1 pb-5">
+          <div class="overflow-hidden rounded-full w-20 h-20 -mt-16 mx-auto shadow-lg">
+            <img src={testimonial.photo} alt="" />
+          </div>
         </div>
-        <div>
-          <h2 className="text-gray-800 text-3xl font-semibold">Design Tools</h2>
-          <p className="mt-2 text-gray-600">{testimonial.quote}</p>
-        </div>
-        <div className="flex justify-end mt-4">
-          <cite className="text-xl font-medium text-indigo-500">
-            {testimonial.author}
+        <blockquote class="w-full mb-10">
+          <div class="text-3xl text-left leading-tight h-2">“</div>
+          <p class="text-sm text-gray-600 text-center px-5">
+            {testimonial.quote}
+          </p>
+          <div class="text-3xl text-right leading-tight h-3 -mt-3">”</div>
+        </blockquote>
+        <figcaption class="w-full text-center">
+          <p class="text-md font-bold text-center">{testimonial.author}</p>
+          <cite class="text-xs text-gray-500 text-center">
+            {testimonial.company}
           </cite>
-        </div>
-      </div>
+        </figcaption>
+      </figure>
     ))}
   </div>
 );
