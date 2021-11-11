@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-// import PreviewCompatibleImage from '../components/PreviewCompatibleImage';
 import * as FontAwesome from 'react-icons/fa';
 
 const FeatureGrid = ({ gridItems }) => {
@@ -21,12 +20,13 @@ const FeatureGrid = ({ gridItems }) => {
                 </div>
                 <h6 className="text-xl font-semibold">{item.title}</h6>
                 <p className="mt-2 mb-4 text-gray-600">{item.text}</p>
-                <button
+                <a
+                  href={item.link}
                   className={`${item.color} active:opacity-80 uppercase text-white font-bold hover:shadow-md shadow text-xs px-4 py-2 rounded outline-none focus:outline-none sm:mr-2 mb-1 ease-linear transition-all duration-150`}
                   type="button"
                 >
                   {item.button}
-                </button>
+                </a>
               </div>
             </div>
           </div>

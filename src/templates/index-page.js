@@ -89,7 +89,7 @@ const IndexPageTemplate = ({ image, title, subheading, mainpitch, intro }) => (
                 <p className="text-md font-light my-2 text-white">
                   {intro.description}
                 </p>
-                <Link to="/" className="font-bold text-white mt-8">
+                <Link to="/contact" className="font-bold text-white mt-8">
                   Get a Quote
                 </Link>
               </blockquote>
@@ -184,6 +184,7 @@ export const pageQuery = graphql`
             title
             text
             button
+            link
           }
           heading
           description

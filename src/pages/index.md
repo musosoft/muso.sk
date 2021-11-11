@@ -19,6 +19,7 @@ intro:
         Update your current website design, secure against hackers and speedup to be lighting fast and well ranked on Google.
         Get useful website tricks and tips and consult them directly.
       button: Portfolio
+      link: /portfolio
     - icon: FaDesktop
       color: bg-green-400
       title: IT Technologies
@@ -28,6 +29,7 @@ intro:
         Get rid of difficulties and protect against vulnerabilities. 
         Learn about the best tools used by IT professionals.
       button: Tips & Tricks
+      link: /blog
     - icon: FaGamepad
       color: bg-red-400
       title: Gaming and eSports
@@ -36,6 +38,7 @@ intro:
         Make local or online dedicated server for your game or LAN tournament.
         Discover hidden gems of Gaming world.
       button: Gaming news
+      link: /blog
   heading: Need help?
   description: >
     Get things done by IT and Website professional.

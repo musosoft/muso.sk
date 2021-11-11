@@ -37,16 +37,13 @@ export default class Index extends React.Component {
     return (
       <Layout>
         <section className="section">
-          <div className="max-w-screen-xl mt-24 px-8 grid gap-8 grid-cols-1 md:grid-cols-2 md:px-12 lg:px-16 xl:px-32 py-16 mx-auto bg-gray-100 text-gray-900 rounded-lg shadow-lg">
+          <div className="max-w-screen-xl my-24 px-8 grid gap-8 grid-cols-1 md:grid-cols-2 md:px-12 lg:px-16 xl:px-32 py-16 mx-auto text-gray-900">
             <div className="flex flex-col justify-between">
               <div>
                 <h2 className="text-4xl lg:text-5xl font-bold leading-tight">
                   Lets talk about everything!
                 </h2>
-                <div className="text-gray-700 mt-8">
-                  Hate forms? Send us an{' '}
-                  <span className="underline">email</span> instead.
-                </div>
+                <div className="text-gray-700 mt-8">Don't be shy.</div>
               </div>
               <div className="mt-8 text-center">
                 <svg
@@ -173,7 +170,7 @@ export default class Index extends React.Component {
                     <path
                       d="M488.82,290.86a53.08,53.08,0,0,1-4.24-6.24l29.9-4.91-32.34.24a54.62,54.62,0,0,1-1-43.2l43.39,22.51-40-29.42a54.53,54.53,0,1,1,90,61,54.54,54.54,0,0,1,6.22,9.94L541.92,321l41.39-13.89a54.53,54.53,0,0,1-8.79,51.2,54.52,54.52,0,1,1-85.7,0,54.52,54.52,0,0,1,0-67.42Z"
                       transform="translate(-52 -162.63)"
-                      fill="#667eea"
+                      className="fill-current text-dodgerBlue-500"
                     />
                     <path
                       d="M586.19,324.57a54.27,54.27,0,0,1-11.67,33.71,54.52,54.52,0,1,1-85.7,0C481.51,349,586.19,318.45,586.19,324.57Z"
@@ -211,7 +208,7 @@ export default class Index extends React.Component {
                     <path
                       d="M632.44,318.11a39,39,0,0,1-3.17-4.66l22.35-3.67-24.17.18a40.84,40.84,0,0,1-.78-32.29L659.1,294.5l-29.91-22a40.75,40.75,0,1,1,67.29,45.6,41.2,41.2,0,0,1,4.65,7.43l-29,15.07,30.93-10.38a40.76,40.76,0,0,1-6.57,38.26,40.74,40.74,0,1,1-64,0,40.74,40.74,0,0,1,0-50.38Z"
                       transform="translate(-52 -162.63)"
-                      fill="#667eea"
+                      className="fill-current text-dodgerBlue-500"
                     />
                     <path
                       d="M705.2,343.3a40.57,40.57,0,0,1-8.72,25.19,40.74,40.74,0,1,1-64,0C627,361.56,705.2,338.73,705.2,343.3Z"
@@ -249,7 +246,7 @@ export default class Index extends React.Component {
                     <path
                       d="M1133.18,250.86a53.08,53.08,0,0,0,4.24-6.24l-29.9-4.91,32.34.24a54.62,54.62,0,0,0,1-43.2l-43.39,22.51,40-29.42a54.53,54.53,0,1,0-90,61,54.54,54.54,0,0,0-6.22,9.94L1080.08,281l-41.39-13.89a54.53,54.53,0,0,0,8.79,51.2,54.52,54.52,0,1,0,85.7,0,54.52,54.52,0,0,0,0-67.42Z"
                       transform="translate(-52 -162.63)"
-                      fill="#667eea"
+                      className="fill-current text-dodgerBlue-500"
                     />
                     <path
                       d="M1035.81,284.57a54.27,54.27,0,0,0,11.67,33.71,54.52,54.52,0,1,0,85.7,0C1140.49,309,1035.81,278.45,1035.81,284.57Z"
@@ -287,7 +284,7 @@ export default class Index extends React.Component {
                     <path
                       d="M1012.56,312.11a39,39,0,0,0,3.17-4.66l-22.35-3.67,24.17.18a40.84,40.84,0,0,0,.78-32.29L985.9,288.5l29.91-22a40.75,40.75,0,1,0-67.29,45.6,41.2,41.2,0,0,0-4.65,7.43l29,15.07L942,324.23a40.76,40.76,0,0,0,6.57,38.26,40.74,40.74,0,1,0,64,0,40.74,40.74,0,0,0,0-50.38Z"
                       transform="translate(-52 -162.63)"
-                      fill="#667eea"
+                      className="fill-current text-dodgerBlue-500"
                     />
                     <path
                       d="M939.8,337.3a40.57,40.57,0,0,0,8.72,25.19,40.74,40.74,0,1,0,64,0C1018,355.56,939.8,332.73,939.8,337.3Z"
@@ -325,7 +322,7 @@ export default class Index extends React.Component {
                     <path
                       d="M71,250.86a54.33,54.33,0,0,1-4.24-6.24l29.91-4.91L64.3,240a54.62,54.62,0,0,1-1-43.2l43.4,22.51-40-29.42a54.52,54.52,0,1,1,90,61,54.54,54.54,0,0,1,6.22,9.94L124.08,281l41.4-13.89a54.59,54.59,0,0,1-8.8,51.2,54.52,54.52,0,1,1-85.7,0,54.52,54.52,0,0,1,0-67.42Z"
                       transform="translate(-52 -162.63)"
-                      fill="#667eea"
+                      className="fill-current text-dodgerBlue-500"
                     />
                     <path
                       d="M168.35,284.57a54.27,54.27,0,0,1-11.67,33.71,54.52,54.52,0,1,1-85.7,0C63.67,309,168.35,278.45,168.35,284.57Z"
@@ -363,7 +360,7 @@ export default class Index extends React.Component {
                     <path
                       d="M191.6,312.11a40.21,40.21,0,0,1-3.17-4.66l22.35-3.67-24.17.18a40.84,40.84,0,0,1-.78-32.29l32.43,16.83-29.91-22a40.75,40.75,0,1,1,67.29,45.6,40.12,40.12,0,0,1,4.65,7.43l-29,15.07,30.93-10.38a40.76,40.76,0,0,1-6.57,38.26,40.74,40.74,0,1,1-64,0,40.74,40.74,0,0,1,0-50.38Z"
                       transform="translate(-52 -162.63)"
-                      fill="#667eea"
+                      className="fill-current text-dodgerBlue-500"
                     />
                     <path
                       d="M264.36,337.3a40.57,40.57,0,0,1-8.72,25.19,40.74,40.74,0,1,1-64,0C186.14,355.56,264.36,332.73,264.36,337.3Z"
@@ -376,7 +373,7 @@ export default class Index extends React.Component {
                     cy="493.13"
                     rx="548"
                     ry="8.86"
-                    fill="#667eea"
+                    className="fill-current text-dodgerBlue-500"
                     opacity="0.1"
                   />
                   <ellipse
@@ -384,7 +381,7 @@ export default class Index extends React.Component {
                     cy="565.88"
                     rx="548"
                     ry="8.86"
-                    fill="#667eea"
+                    className="fill-current text-dodgerBlue-500"
                     opacity="0.1"
                   />
                   <ellipse
@@ -392,7 +389,7 @@ export default class Index extends React.Component {
                     cy="341.3"
                     rx="548"
                     ry="8.86"
-                    fill="#667eea"
+                    className="fill-current text-dodgerBlue-500"
                     opacity="0.1"
                   />
                   <ellipse
@@ -400,43 +397,43 @@ export default class Index extends React.Component {
                     cy="417.21"
                     rx="548"
                     ry="8.86"
-                    fill="#667eea"
+                    className="fill-current text-dodgerBlue-500"
                     opacity="0.1"
                   />
                   <path
                     d="M860.79,273a18.3,18.3,0,0,0-10.6,1.16,15.65,15.65,0,0,1-12.74,0,17.88,17.88,0,0,0-15,.29,9.24,9.24,0,0,1-4.31,1.08c-6.08,0-11.13-6.12-12.18-14.19a11.88,11.88,0,0,0,3-3.27c3.56-5.74,9.07-9.43,15.27-9.43s11.64,3.64,15.2,9.32a11.68,11.68,0,0,0,10.09,5.54h.16C854.57,263.45,858.76,267.33,860.79,273Z"
                     transform="translate(-52 -162.63)"
-                    fill="#667eea"
+                    className="fill-current text-dodgerBlue-500"
                     opacity="0.1"
                   />
                   <path
                     d="M879.3,247.65l-9.82,6.22,6-10.84a9.7,9.7,0,0,0-5.94-2.11h-.16a11.35,11.35,0,0,1-2-.15L864,242.88l1.43-2.6a11.79,11.79,0,0,1-5.83-4.42l-6,3.78,3.76-6.84c-3.48-4.18-8.18-6.74-13.34-6.74-6.2,0-11.71,3.68-15.28,9.42a11.41,11.41,0,0,1-10.09,5.44h-.33c-6.84,0-12.38,7.75-12.38,17.31s5.54,17.32,12.38,17.32a9.39,9.39,0,0,0,4.31-1.08,17.86,17.86,0,0,1,15-.3,15.55,15.55,0,0,0,12.74,0,17.92,17.92,0,0,1,14.86.29,9.3,9.3,0,0,0,4.26,1.06c6.84,0,12.38-7.76,12.38-17.32A21.93,21.93,0,0,0,879.3,247.65Z"
                     transform="translate(-52 -162.63)"
-                    fill="#667eea"
+                    className="fill-current text-dodgerBlue-500"
                     opacity="0.1"
                   />
                   <path
                     d="M443.26,267.59a12.84,12.84,0,0,0-7.43.81,10.92,10.92,0,0,1-8.91,0,12.48,12.48,0,0,0-10.49.21,6.62,6.62,0,0,1-3,.75c-4.25,0-7.79-4.28-8.53-9.93a8.32,8.32,0,0,0,2.13-2.29c2.49-4,6.35-6.6,10.69-6.6s8.15,2.55,10.64,6.52a8.19,8.19,0,0,0,7.07,3.88h.11C438.9,260.92,441.83,263.64,443.26,267.59Z"
                     transform="translate(-52 -162.63)"
-                    fill="#667eea"
+                    className="fill-current text-dodgerBlue-500"
                     opacity="0.1"
                   />
                   <path
                     d="M456.21,249.86l-6.87,4.36,4.17-7.59a6.75,6.75,0,0,0-4.15-1.48h-.12a7.49,7.49,0,0,1-1.42-.11l-2.33,1.48,1-1.82a8.3,8.3,0,0,1-4.08-3.09l-4.17,2.64,2.64-4.78a12.21,12.21,0,0,0-9.34-4.73c-4.34,0-8.2,2.58-10.69,6.6a8,8,0,0,1-7.07,3.81h-.23c-4.79,0-8.67,5.42-8.67,12.12s3.88,12.12,8.67,12.12a6.5,6.5,0,0,0,3-.76,12.5,12.5,0,0,1,10.48-.2,11.1,11.1,0,0,0,4.49,1,11,11,0,0,0,4.43-.94,12.54,12.54,0,0,1,10.4.2,6.48,6.48,0,0,0,3,.74c4.78,0,8.66-5.43,8.66-12.12A15.33,15.33,0,0,0,456.21,249.86Z"
                     transform="translate(-52 -162.63)"
-                    fill="#667eea"
+                    className="fill-current text-dodgerBlue-500"
                     opacity="0.1"
                   />
                   <path
                     d="M321.59,346a12.82,12.82,0,0,1,7.42.81,10.94,10.94,0,0,0,8.92,0,12.52,12.52,0,0,1,10.49.2,6.47,6.47,0,0,0,3,.76c4.25,0,7.79-4.29,8.52-9.94a8.15,8.15,0,0,1-2.12-2.29c-2.5-4-6.36-6.59-10.69-6.59s-8.15,2.54-10.65,6.52a8.19,8.19,0,0,1-7.06,3.88h-.11C325.94,339.37,323,342.08,321.59,346Z"
                     transform="translate(-52 -162.63)"
-                    fill="#667eea"
+                    className="fill-current text-dodgerBlue-500"
                     opacity="0.1"
                   />
                   <path
                     d="M308.63,328.3l6.88,4.36-4.18-7.58a6.79,6.79,0,0,1,4.16-1.49h.11a8.52,8.52,0,0,0,1.43-.1l2.33,1.47-1-1.81a8.29,8.29,0,0,0,4.07-3.09l4.17,2.64L324,317.91a12.2,12.2,0,0,1,9.34-4.72c4.33,0,8.2,2.58,10.69,6.6a8,8,0,0,0,7.06,3.81h.24c4.78,0,8.66,5.43,8.66,12.12s-3.88,12.12-8.66,12.12a6.49,6.49,0,0,1-3-.75,12.48,12.48,0,0,0-10.49-.21,10.86,10.86,0,0,1-4.48,1,11,11,0,0,1-4.44-.94,12.52,12.52,0,0,0-10.39.2,6.48,6.48,0,0,1-3,.74c-4.79,0-8.67-5.42-8.67-12.12A15.44,15.44,0,0,1,308.63,328.3Z"
                     transform="translate(-52 -162.63)"
-                    fill="#667eea"
+                    className="fill-current text-dodgerBlue-500"
                     opacity="0.1"
                   />
                   <path
@@ -450,22 +447,22 @@ export default class Index extends React.Component {
                   <path
                     d="M750.45,545.85a12.31,12.31,0,0,0-6.15-10.09l-2.76,5.45.09-6.6a12.31,12.31,0,1,0,8.82,11.24Z"
                     transform="translate(-52 -162.63)"
-                    fill="#667eea"
+                    className="fill-current text-dodgerBlue-500"
                   />
                   <path
                     d="M728.49,629.17a12.31,12.31,0,0,1-23.24-5,12,12,0,0,1,.8-5,12.32,12.32,0,0,1,23,.13l-7.69,6.26,8.46-2A12.24,12.24,0,0,1,728.49,629.17Z"
                     transform="translate(-52 -162.63)"
-                    fill="#667eea"
+                    className="fill-current text-dodgerBlue-500"
                   />
                   <path
                     d="M722.41,605.27a12.31,12.31,0,0,1-3.9-24.15l-.07,5.07,2.79-5.52h0a12.31,12.31,0,1,1,1.15,24.6Z"
                     transform="translate(-52 -162.63)"
-                    fill="#667eea"
+                    className="fill-current text-dodgerBlue-500"
                   />
                   <path
                     d="M752.3,585.38a12.31,12.31,0,1,1,5.44-23l-2.17,6L760,564a12.31,12.31,0,0,1-7.74,21.37Z"
                     transform="translate(-52 -162.63)"
-                    fill="#667eea"
+                    className="fill-current text-dodgerBlue-500"
                   />
                   <path
                     d="M748.79,549.13c-2.84.31-5.6,1.19-8.46,1.37s-6-.51-7.78-2.72a39.48,39.48,0,0,1-2.28-4,8.76,8.76,0,0,0-3.1-2.92,12.31,12.31,0,1,0,23,8.18C749.72,549.05,749.25,549.08,748.79,549.13Z"
@@ -498,22 +495,22 @@ export default class Index extends React.Component {
                   <path
                     d="M140.45,473.85a12.31,12.31,0,0,0-6.15-10.09l-2.76,5.45.09-6.6a12.31,12.31,0,1,0,8.82,11.24Z"
                     transform="translate(-52 -162.63)"
-                    fill="#667eea"
+                    className="fill-current text-dodgerBlue-500"
                   />
                   <path
                     d="M118.49,557.17a12.31,12.31,0,0,1-23.24-5,12,12,0,0,1,.8-5,12.32,12.32,0,0,1,23,.13l-7.69,6.26,8.46-2A12.24,12.24,0,0,1,118.49,557.17Z"
                     transform="translate(-52 -162.63)"
-                    fill="#667eea"
+                    className="fill-current text-dodgerBlue-500"
                   />
                   <path
                     d="M112.41,533.27a12.31,12.31,0,0,1-3.9-24.15l-.07,5.07,2.79-5.52h0a12.31,12.31,0,1,1,1.15,24.6Z"
                     transform="translate(-52 -162.63)"
-                    fill="#667eea"
+                    className="fill-current text-dodgerBlue-500"
                   />
                   <path
                     d="M142.3,513.38a12.31,12.31,0,1,1,5.44-23l-2.17,6L150,492a12.31,12.31,0,0,1-7.74,21.37Z"
                     transform="translate(-52 -162.63)"
-                    fill="#667eea"
+                    className="fill-current text-dodgerBlue-500"
                   />
                   <path
                     d="M138.79,477.13c-2.84.31-5.6,1.19-8.46,1.37s-6-.51-7.78-2.72a39.48,39.48,0,0,1-2.28-4,8.76,8.76,0,0,0-3.1-2.92,12.31,12.31,0,1,0,23,8.18C139.72,477.05,139.25,477.08,138.79,477.13Z"
@@ -546,22 +543,22 @@ export default class Index extends React.Component {
                   <path
                     d="M478.39,391.49a12.3,12.3,0,0,1,6.14-10.09l2.76,5.45-.08-6.6a12.62,12.62,0,0,1,4.05-.49,12.31,12.31,0,1,1-12.87,11.73Z"
                     transform="translate(-52 -162.63)"
-                    fill="#667eea"
+                    className="fill-current text-dodgerBlue-500"
                   />
                   <path
                     d="M500.34,474.81a12.31,12.31,0,1,0-.59-9.91l7.69,6.26-8.46-2A12.24,12.24,0,0,0,500.34,474.81Z"
                     transform="translate(-52 -162.63)"
-                    fill="#667eea"
+                    className="fill-current text-dodgerBlue-500"
                   />
                   <path
                     d="M506.42,450.91a12.31,12.31,0,0,0,3.91-24.15l.06,5.07-2.79-5.52h0A12.31,12.31,0,0,0,494.7,438a12.16,12.16,0,0,0,.53,4.2A12.3,12.3,0,0,0,506.42,450.91Z"
                     transform="translate(-52 -162.63)"
-                    fill="#667eea"
+                    className="fill-current text-dodgerBlue-500"
                   />
                   <path
                     d="M476.54,431a12.31,12.31,0,1,0-5.45-23l2.18,6-4.48-4.29a12.21,12.21,0,0,0-4,8.5,11.91,11.91,0,0,0,.31,3.39A12.3,12.3,0,0,0,476.54,431Z"
                     transform="translate(-52 -162.63)"
-                    fill="#667eea"
+                    className="fill-current text-dodgerBlue-500"
                   />
                   <path
                     d="M480.05,394.77c2.84.31,5.6,1.19,8.45,1.37s6-.51,7.79-2.72a39.4,39.4,0,0,0,2.27-4,8.79,8.79,0,0,1,3.11-2.92,12.31,12.31,0,1,1-23,8.17C479.12,394.68,479.58,394.72,480.05,394.77Z"
@@ -587,7 +584,7 @@ export default class Index extends React.Component {
                   <path
                     d="M874.64,426.59c-3.48-3.48-11.85-8.73-16-10.69-4.79-2.3-6.55-2.26-9.94.19-2.82,2-4.65,3.93-7.89,3.22s-9.66-5.55-15.87-11.74S813.91,395,813.22,391.71s1.21-5.08,3.23-7.9c2.44-3.39,2.51-5.15.19-9.94-2-4.15-7.19-12.5-10.7-16s-4.27-2.73-6.19-2a35.8,35.8,0,0,0-5.67,3c-3.48,2.33-5.43,4.27-6.8,7.19s-2.92,8.34,5.05,22.53a125.69,125.69,0,0,0,22.1,29.47l0,0,0,0A125.88,125.88,0,0,0,844,440.2c14.18,8,19.61,6.41,22.53,5.05s4.86-3.29,7.18-6.8a35.33,35.33,0,0,0,3-5.67C877.37,430.86,878.15,430.08,874.64,426.59Z"
                     transform="translate(-52 -162.63)"
-                    fill="#667eea"
+                    className="fill-current text-dodgerBlue-500"
                   />
                   <path
                     d="M831.73,300.86a100,100,0,1,0,99.95,99.95A100,100,0,0,0,831.73,300.86Zm0,186.62a86.67,86.67,0,1,1,86.67-86.67A86.67,86.67,0,0,1,831.73,487.48Z"
@@ -598,12 +595,12 @@ export default class Index extends React.Component {
                   <path
                     d="M658.93,522.44,629,552.89a.54.54,0,0,0,0,.78L650,576a3.62,3.62,0,0,1-2.55,6.17,3.64,3.64,0,0,1-2.56-1.06L624,558.86a.57.57,0,0,0-.8,0L618.11,564a22.37,22.37,0,0,1-16,6.73,22.86,22.86,0,0,1-16.28-6.92l-4.89-5a.57.57,0,0,0-.8,0l-20.84,22.2a3.61,3.61,0,0,1-5.11,0,3.6,3.6,0,0,1,0-5.11l20.92-22.28a.6.6,0,0,0,0-.78l-29.93-30.45a.55.55,0,0,0-.94.39v60.93a8.92,8.92,0,0,0,8.89,8.89H651a8.92,8.92,0,0,0,8.89-8.89V522.83A.55.55,0,0,0,658.93,522.44Z"
                     transform="translate(-52 -162.63)"
-                    fill="#667eea"
+                    className="fill-current text-dodgerBlue-500"
                   />
                   <path
                     d="M602.08,563.5A15.14,15.14,0,0,0,613,559l43.59-44.37a8.7,8.7,0,0,0-5.5-2H553.15a8.64,8.64,0,0,0-5.5,2L591.25,559A15.08,15.08,0,0,0,602.08,563.5Z"
                     transform="translate(-52 -162.63)"
-                    fill="#667eea"
+                    className="fill-current text-dodgerBlue-500"
                   />
                   <path
                     d="M600.82,452.69a100,100,0,1,0,99.95,99.95A100,100,0,0,0,600.82,452.69Zm0,186.62a86.67,86.67,0,1,1,86.67-86.67A86.67,86.67,0,0,1,600.82,639.31Z"
@@ -614,7 +611,7 @@ export default class Index extends React.Component {
                   <path
                     d="M364.85,430.16,325,522.1l3.72,3.72,36.14-15.94L401,525.82l3.72-3.72Z"
                     transform="translate(-52 -162.63)"
-                    fill="#667eea"
+                    className="fill-current text-dodgerBlue-500"
                   />
                   <path
                     d="M364.85,378A100,100,0,1,0,464.8,478,100,100,0,0,0,364.85,378Zm0,186.62A86.67,86.67,0,1,1,451.52,478,86.67,86.67,0,0,1,364.85,564.66Z"
@@ -777,22 +774,22 @@ export default class Index extends React.Component {
                   <path
                     d="M922.52,469.93a12.29,12.29,0,0,0-6.14-10.08l-2.76,5.45.08-6.6a12.08,12.08,0,0,0-4.05-.49,12.31,12.31,0,1,0,12.87,11.72Z"
                     transform="translate(-52 -162.63)"
-                    fill="#667eea"
+                    className="fill-current text-dodgerBlue-500"
                   />
                   <path
                     d="M900.57,553.26a12.31,12.31,0,1,1,.59-9.92l-7.69,6.26,8.46-2A12.24,12.24,0,0,1,900.57,553.26Z"
                     transform="translate(-52 -162.63)"
-                    fill="#667eea"
+                    className="fill-current text-dodgerBlue-500"
                   />
                   <path
                     d="M894.49,529.35a12.31,12.31,0,0,1-3.91-24.15l-.06,5.07,2.79-5.51h0a12.32,12.32,0,0,1,12.87,11.73,12.3,12.3,0,0,1-11.72,12.87Z"
                     transform="translate(-52 -162.63)"
-                    fill="#667eea"
+                    className="fill-current text-dodgerBlue-500"
                   />
                   <path
                     d="M924.37,509.47a12.31,12.31,0,1,1,5.45-23l-2.18,6,4.48-4.3a12.24,12.24,0,0,1,4,8.5,11.88,11.88,0,0,1-.31,3.39A12.31,12.31,0,0,1,924.37,509.47Z"
                     transform="translate(-52 -162.63)"
-                    fill="#667eea"
+                    className="fill-current text-dodgerBlue-500"
                   />
                   <path
                     d="M920.87,473.21c-2.84.32-5.61,1.2-8.46,1.38s-6-.51-7.79-2.73a38.2,38.2,0,0,1-2.27-4,8.85,8.85,0,0,0-3.1-2.92,12.31,12.31,0,1,0,23,8.17C921.79,473.13,921.33,473.16,920.87,473.21Z"
@@ -825,22 +822,22 @@ export default class Index extends React.Component {
                   <path
                     d="M1081.52,621.93a12.29,12.29,0,0,0-6.14-10.08l-2.76,5.45.08-6.6a12.08,12.08,0,0,0-4-.49,12.31,12.31,0,1,0,12.87,11.72Z"
                     transform="translate(-52 -162.63)"
-                    fill="#667eea"
+                    className="fill-current text-dodgerBlue-500"
                   />
                   <path
                     d="M1059.57,705.26a12.31,12.31,0,1,1,.59-9.92l-7.69,6.26,8.46-2A12.24,12.24,0,0,1,1059.57,705.26Z"
                     transform="translate(-52 -162.63)"
-                    fill="#667eea"
+                    className="fill-current text-dodgerBlue-500"
                   />
                   <path
                     d="M1053.49,681.35a12.31,12.31,0,0,1-3.91-24.15l-.06,5.07,2.79-5.51h0a12.32,12.32,0,0,1,12.87,11.73,12.3,12.3,0,0,1-11.72,12.87Z"
                     transform="translate(-52 -162.63)"
-                    fill="#667eea"
+                    className="fill-current text-dodgerBlue-500"
                   />
                   <path
                     d="M1083.37,661.47a12.31,12.31,0,1,1,5.45-23l-2.18,6,4.48-4.3a12.24,12.24,0,0,1,4,8.5,11.88,11.88,0,0,1-.31,3.39A12.31,12.31,0,0,1,1083.37,661.47Z"
                     transform="translate(-52 -162.63)"
-                    fill="#667eea"
+                    className="fill-current text-dodgerBlue-500"
                   />
                   <path
                     d="M1079.87,625.21c-2.84.32-5.61,1.2-8.46,1.38s-6-.51-7.79-2.73a38.2,38.2,0,0,1-2.27-4,8.85,8.85,0,0,0-3.1-2.92,12.31,12.31,0,1,0,23,8.17C1080.79,625.13,1080.33,625.16,1079.87,625.21Z"
@@ -1020,60 +1017,60 @@ export default class Index extends React.Component {
               <input type="hidden" name="form-name" value="contact" />
               <div hidden>
                 <label>
-                  Don’t fill this out:{' '}
+                  Don’t fill this out:
                   <input name="bot-field" onChange={this.handleChange} />
                 </label>
               </div>
               <div>
                 <label
                   className="uppercase text-sm text-gray-600 font-bold"
-                  htmlFor={'name'}
+                  htmlFor="name"
                 >
                   Your name
                 </label>
                 <input
-                  className="w-full bg-gray-300 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
-                  type={'text'}
-                  name={'name'}
+                  className="w-full text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
+                  type="text"
+                  name="name"
                   onChange={this.handleChange}
-                  id={'name'}
+                  id="name"
                   required={true}
                 />
               </div>
               <div className="mt-8">
                 <label
                   className="uppercase text-sm text-gray-600 font-bold"
-                  htmlFor={'email'}
+                  htmlFor="email"
                 >
                   Email
                 </label>
                 <input
-                  className="w-full bg-gray-300 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
-                  type={'email'}
-                  name={'email'}
+                  className="w-full text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
+                  type="email"
+                  name="email"
                   onChange={this.handleChange}
-                  id={'email'}
+                  id="email"
                   required={true}
                 />
               </div>
               <div className="mt-8">
                 <label
                   className="uppercase text-sm text-gray-600 font-bold"
-                  htmlFor={'message'}
+                  htmlFor="message"
                 >
                   Message
                 </label>
                 <textarea
-                  className="w-full h-32 bg-gray-300 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
-                  name={'message'}
+                  className="w-full h-32 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
+                  name="message"
                   onChange={this.handleChange}
-                  id={'message'}
+                  id="message"
                   required={true}
                 ></textarea>
               </div>
               <div className="mt-8">
                 <button
-                  className="uppercase text-sm font-bold tracking-wide bg-indigo-500 text-gray-100 p-3 rounded-lg w-full focus:outline-none focus:shadow-outline"
+                  className="uppercase text-sm font-bold tracking-wide bg-dodgerBlue-500 text-gray-100 p-3 rounded-lg w-full focus:outline-none focus:shadow-outline"
                   type="submit"
                 >
                   Send Message

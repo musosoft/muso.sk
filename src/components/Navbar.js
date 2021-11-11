@@ -2,7 +2,7 @@ import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { Link, graphql, StaticQuery } from 'gatsby';
 import { Popover, Transition } from '@headlessui/react';
-import { ThemeToggle } from './ThemeToggle.js';
+// import { ThemeToggle } from './ThemeToggle.js';
 import logo from '../img/logo.svg';
 import {
   HiOutlineMenu,
@@ -22,32 +22,32 @@ import {
 const services = [
   {
     name: 'Websites',
-    description: 'Site which will fit all your needs',
-    href: '#',
+    description: 'Make site which will fit all your needs',
+    href: '/portfolio',
     icon: HiOutlineCursorClick,
   },
   {
     name: 'Software',
     description: 'Tweak operating systems, get customized experience',
-    href: '#',
+    href: '/portfolio',
     icon: HiOutlineViewGrid,
   },
   {
     name: 'Security',
     description: 'Get rid and secure website or operating system from malware',
-    href: '#',
+    href: '/portfolio',
     icon: HiOutlineShieldCheck,
   },
   {
     name: 'Servers',
     description: 'Custom Dedicated Gaming server or Website hosting',
-    href: '#',
+    href: '/portfolio',
     icon: HiOutlineServer,
   },
   {
     name: 'Automations',
     description: 'Script your repeating tasks, collect data from websites',
-    href: '#',
+    href: '/portfolio',
     icon: HiOutlineRefresh,
   },
 ];
@@ -59,13 +59,13 @@ const blog = [
   {
     name: 'Help Center',
     description: 'Get help with your technical problems.',
-    href: '#',
+    href: '/blog',
     icon: HiOutlineSupport,
   },
   {
     name: 'Guides',
     description: 'See technology tips and tricks.',
-    href: '#',
+    href: '/blog',
     icon: HiOutlineBookmarkAlt,
   },
 ];
@@ -94,7 +94,7 @@ function Navbar() {
                 </Popover.Button>
               </div>
               <Popover.Group as="nav" className="hidden md:flex space-x-10">
-                <Popover className="relative">
+                {/* <Popover className="relative">
                   {({ open }) => (
                     <>
                       <Popover.Button
@@ -171,8 +171,20 @@ function Navbar() {
                       </Transition>
                     </>
                   )}
-                </Popover>
+                </Popover> */}
 
+                <Link
+                  to="/portfolio"
+                  className="text-base font-medium text-gray-500 hover:text-gray-900"
+                >
+                  Portfolio
+                </Link>
+                <Link
+                  to="/blog"
+                  className="text-base font-medium text-gray-500 hover:text-gray-900"
+                >
+                  Blog
+                </Link>
                 <Link
                   to="/about"
                   className="text-base font-medium text-gray-500 hover:text-gray-900"
@@ -186,7 +198,7 @@ function Navbar() {
                   Contact
                 </Link>
 
-                <Popover className="relative">
+                {/* <Popover className="relative">
                   {({ open }) => (
                     <>
                       <Popover.Button
@@ -313,10 +325,10 @@ function Navbar() {
                       </Transition>
                     </>
                   )}
-                </Popover>
+                </Popover> */}
               </Popover.Group>
               <div className="hidden md:flex items-center justify-end md:flex-1 lg:w-0">
-                <ThemeToggle />
+                {/* <ThemeToggle /> */}
               </div>
             </div>
           </div>

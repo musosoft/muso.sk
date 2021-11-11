@@ -105,43 +105,18 @@ const Footer = class extends React.Component {
                     <li>
                       <Link
                         className="text-gray-700 hover:text-gray-900 font-semibold block pb-2 text-sm"
-                        to="/contact/examples"
+                        to="/contact"
                       >
-                        Form Examples
+                        Contact
                       </Link>
                     </li>
                     <li>
                       <a
                         className="text-gray-700 hover:text-gray-900 font-semibold block pb-2 text-sm"
-                        href="/admin/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        Admin
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-                <div className="w-full lg:w-4/12 px-4">
-                  <span className="block uppercase text-gray-600 text-sm font-semibold mb-2">
-                    Other Resources
-                  </span>
-                  <ul className="list-unstyled">
-                    <li>
-                      <Link
-                        className="text-gray-700 hover:text-gray-900 font-semibold block pb-2 text-sm"
-                        to="/blog"
+                        href="/blog"
                       >
                         Latest Stories
-                      </Link>
-                    </li>
-                    <li>
-                      <Link
-                        className="text-gray-700 hover:text-gray-900 font-semibold block pb-2 text-sm"
-                        to="/contact"
-                      >
-                        Contact
-                      </Link>
+                      </a>
                     </li>
                   </ul>
                 </div>
