@@ -68,10 +68,4 @@ module.exports = {
     'gatsby-plugin-postcss',
     'gatsby-plugin-netlify', // make sure to keep it last in the array
   ],
-  flags: {
-    DEV_SSR: false,
-    FAST_DEV: false,
-    PRESERVE_FILE_DOWNLOAD_CACHE: false,
-    PARALLEL_SOURCING: false,
-  },
 };

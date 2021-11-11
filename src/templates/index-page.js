@@ -1,22 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link, graphql } from 'gatsby';
-
 import Layout from '../components/Layout';
 import Features from '../components/Features';
 import BlogRoll from '../components/BlogRoll';
-
+import { GatsbyImage } from 'gatsby-plugin-image';
 import { FcIdea } from 'react-icons/fc';
 
 const IndexPageTemplate = ({ image, title, subheading, mainpitch, intro }) => (
   <main>
     <div className="relative pt-16 pb-32 flex content-center items-center justify-center min-h-screen-75">
-      <div
-        className="absolute top-0 w-full h-full bg-center bg-cover"
-        style={{
-          backgroundImage: `url(${image.childImageSharp.gatsbyImageData.images.fallback.src})`,
-        }}
-      >
+      <div className="absolute top-0 w-full h-full grid">
+        <GatsbyImage image={image.childImageSharp.gatsbyImageData} />
         <span
           id="blackOverlay"
           className="w-full h-full absolute opacity-75 bg-black"
@@ -172,7 +167,7 @@ export const pageQuery = graphql`
         title
         image {
           childImageSharp {
-            gatsbyImageData(quality: 100, layout: FULL_WIDTH)
+            gatsbyImageData(quality: 70, layout: FULL_WIDTH)
           }
         }
         heading

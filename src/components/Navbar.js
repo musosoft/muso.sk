@@ -1,8 +1,8 @@
-import React, { Fragment, useState } from 'react';
-import { themeChange } from 'theme-change';
+import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { Link, graphql, StaticQuery } from 'gatsby';
 import { Popover, Transition } from '@headlessui/react';
+import { ThemeToggle } from './ThemeToggle.js';
 import logo from '../img/logo.svg';
 import {
   HiOutlineMenu,
@@ -17,8 +17,6 @@ import {
   HiOutlinePhone,
   HiOutlineSupport,
   HiOutlineBookmarkAlt,
-  HiOutlineLightBulb,
-  HiOutlineMoon,
 } from 'react-icons/hi';
 
 const services = [
@@ -77,8 +75,6 @@ function classNames(...classes) {
 }
 
 function Navbar() {
-  const [isClicked, setIsClicked] = useState(false);
-
   return (
     <Popover className="relative bg-white dark:bg-gray-800">
       {({ open }) => (
@@ -320,21 +316,7 @@ function Navbar() {
                 </Popover>
               </Popover.Group>
               <div className="hidden md:flex items-center justify-end md:flex-1 lg:w-0">
-                <button
-                  className="btn btn-square btn-link"
-                  data-toggle-theme="mytheme,dark"
-                  data-act-class="active"
-                  onClick={() => setIsClicked((prev) => !prev)}
-                >
-                  {isClicked ? (
-                    <HiOutlineMoon size="2em" className="text-gray-400" />
-                  ) : (
-                    <HiOutlineLightBulb
-                      size="2em"
-                      className="text-yellow-300"
-                    />
-                  )}
-                </button>
+                <ThemeToggle />
               </div>
             </div>
           </div>
