@@ -9,7 +9,7 @@ import Pricing from '../components/Pricing';
 import * as FontAwesome from 'react-icons/fa';
 import { FcCommandLine } from 'react-icons/fc';
 
-const ProductPageTemplate = ({
+const PortfolioPageTemplate = ({
   image,
   title,
   heading,
@@ -24,7 +24,7 @@ const ProductPageTemplate = ({
     <section className="container mx-auto px-4 py-12">
       <div className="flex flex-wrap -mx-4 justify-center">
         <div className="px-4 relative w-full text-center">
-          <h2 className="text-4xl font-bold mt-3 mb-1 text-gray-700">
+          <h2 className="text-4xl font-bold mt-3 mb-3 text-gray-700">
             {title}
           </h2>
         </div>
@@ -66,7 +66,7 @@ const ProductPageTemplate = ({
         </div>
       </div>
     </section>
-    <section className="pb-20 bg-gray-300 mt-24">
+    <section className="pb-20 bg-gray-300 mt-24 clip polygon a-3 d-3">
       <div className="container mx-auto px-4">
         <div className="container mx-auto overflow-hidden pb-20">
           <div className="flex flex-wrap items-center">
@@ -80,7 +80,7 @@ const ProductPageTemplate = ({
               <p className="text-lg font-light leading-relaxed mt-4 mb-4 text-gray-700">
                 {main.description}
               </p>
-              <div className="block pb-6">
+              {/* <div className="block pb-6">
                 <span className="text-xs font-semibold inline-block py-1 px-2 rounded-full text-gray-600 bg-white uppercase last:mr-0 mr-2 mt-2">
                   Buttons
                 </span>
@@ -105,8 +105,8 @@ const ProductPageTemplate = ({
                 <span className="text-xs font-semibold inline-block py-1 px-2 rounded-full text-gray-600 bg-white uppercase last:mr-0 mr-2 mt-2">
                   Typography
                 </span>
-              </div>
-              <a
+              </div> */}
+              {/* <a
                 href="https://www.creative-tim.com/learning-lab/tailwind/react/alerts/notus?ref=nr-index"
                 target="_blank"
                 rel="noreferrer"
@@ -114,7 +114,7 @@ const ProductPageTemplate = ({
               >
                 View All{' '}
                 <i className="fa fa-angle-double-right ml-1 leading-relaxed"></i>
-              </a>
+              </a> */}
             </div>
 
             <div className="w-full md:w-8/12 px-4 mt-32">
@@ -143,8 +143,9 @@ const ProductPageTemplate = ({
         </div>
       </div>
     </section>
-    <Testimonials testimonials={testimonials} />
-
+    <section className="mt-48 md:mt-40 pb-40 relative">
+      <Testimonials testimonials={testimonials} />
+    </section>
     <section className="mt-48 md:mt-40 pb-40 relative bg-gray-200">
       <div className="-mt-20 top-0 bottom-auto left-0 right-0 w-full absolute h-20">
         <svg
@@ -201,7 +202,7 @@ const ProductPageTemplate = ({
   </>
 );
 
-ProductPageTemplate.propTypes = {
+PortfolioPageTemplate.propTypes = {
   image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   title: PropTypes.string,
   heading: PropTypes.string,
@@ -223,12 +224,12 @@ ProductPageTemplate.propTypes = {
   }),
 };
 
-const ProductPage = ({ data }) => {
+const PortfolioPage = ({ data }) => {
   const { frontmatter } = data.markdownRemark;
 
   return (
     <Layout>
-      <ProductPageTemplate
+      <PortfolioPageTemplate
         image={frontmatter.image}
         title={frontmatter.title}
         heading={frontmatter.heading}
@@ -243,7 +244,7 @@ const ProductPage = ({ data }) => {
   );
 };
 
-ProductPage.propTypes = {
+PortfolioPage.propTypes = {
   data: PropTypes.shape({
     markdownRemark: PropTypes.shape({
       frontmatter: PropTypes.object,
@@ -251,10 +252,10 @@ ProductPage.propTypes = {
   }),
 };
 
-export default ProductPage;
+export default PortfolioPage;
 
-export const productPageQuery = graphql`
-  query ProductPage($id: String) {
+export const PortfolioPageQuery = graphql`
+  query PortfolioPage($id: String) {
     markdownRemark(id: { eq: $id }) {
       frontmatter {
         title
@@ -292,7 +293,7 @@ export const productPageQuery = graphql`
         testimonials {
           author
           company
-          photo
+          background
           quote
         }
         full_image {

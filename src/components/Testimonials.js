@@ -10,8 +10,13 @@ const Testimonials = ({ testimonials }) => (
         className="max-w-md py-4 px-8 bg-white shadow-lg rounded-lg my-20 border border-gray-50"
       >
         <div class="w-full pt-1 pb-5">
-          <div class="overflow-hidden rounded-full w-20 h-20 -mt-16 mx-auto shadow-lg">
-            <img src={testimonial.photo} alt="" />
+          <div
+            class={`overflow-hidden rounded-full w-20 h-20 -mt-16 mx-auto shadow-lg flex items-center justify-center ${testimonial.background}`}
+          >
+            <span className="text-white text-4xl">
+              {testimonial.author.split(' ').shift().charAt(0) +
+                testimonial.author.split(' ').pop().charAt(0)}
+            </span>
           </div>
         </div>
         <blockquote class="w-full mb-10">

@@ -1,5 +1,5 @@
 ---
-templateKey: 'product-page'
+templateKey: 'portfolio-page'
 path: /portfolio
 title: Website Services
 image: /img/orc_sk.png
@@ -74,12 +74,12 @@ main:
 testimonials:
   - author: Frank Tóth
     company: 'Head of Consumer Technology - BAT Germany'
-    photo: 'https://media-exp1.licdn.com/dms/image/C4D03AQGZ0AsLuLLqWw/profile-displayphoto-shrink_800_800/0/1517627837240?e=1634169600&v=beta&t=osQfNXYiE-ssoWlJnG_vPGOE93_UvhfLZWg3rqG9YvU'
+    background: 'bg-orange-400'
     quote: >-
       You are a pretty good expert, and good IT experts are always required.
   - author: Adrián Řezníček
     company: 'CEO - Pixels Studio'
-    photo: 'https://media-exp1.licdn.com/dms/image/C5103AQFN-oekTRFE_A/profile-displayphoto-shrink_800_800/0/1517404394692?e=1634169600&v=beta&t=V7TCT7UXaRzhOZQTzJC72qUem4yqtmGxP-TTDTPNoKA'
+    background: 'bg-green-400'
     quote: >-
       I'm happy that the site looks nice and approach to work was great. I can recommend.
 full_image: /img/products-full-width.jpg
