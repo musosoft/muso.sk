@@ -2,18 +2,22 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const Pricing = ({ data }) => (
-  <div className="w-full md:w-6/12 px-4">
+  <div className="w-full px-4">
     <div className="flex flex-wrap">
       {data.map((price) => (
-        <div key={price.plan} className="w-full md:w-6/12 px-4">
-          <div className="relative flex flex-col mt-4">
-            <div className="px-4 py-5 flex-auto">
-              <div className="text-gray-600 p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-5 shadow-lg rounded-full bg-white">
-                <i className="fas fa-sitemap"></i>
+        <div
+          key={price.plan}
+          className="md:w-6/12 lg:w-3/12 px-12 md:px-4 mx-auto"
+        >
+          <div className="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg bg-blue-600 overflow-hidden">
+            <div className="flex-auto">
+              <div className="">
+                <h6 className="text-xl mt-5 mb-3 font-semibold text-white text-center">
+                  {price.plan}
+                </h6>
               </div>
-              <h6 className="text-xl mb-1 font-semibold">{price.plan}</h6>
-              <div className="mb-4 text-gray-600">
-                <ul>
+              <div className=" text-gray-600 bg-gradient-to-b from-white to-gray-400 clip polygon b-3">
+                <ul class="py-8 px-2">
                   {price.items.map((item) => (
                     <li key={item} className="mt-4 flex items-start">
                       <div className="flex-shrink-0">
@@ -37,8 +41,12 @@ const Pricing = ({ data }) => (
                     </li>
                   ))}
                 </ul>
-                <div className="my-2">{price.description}</div>
-                <div className="text-3xl">{price.price} €</div>
+                <div className="bg-blue-600 text-white clip polygon b-3">
+                  <div className="pt-12 pb-6 px-2">{price.description}</div>
+                  <div className="text-center px-3 pb-6 text-3xl">
+                    {price.price}
+                  </div>
+                </div>
               </div>
             </div>
           </div>

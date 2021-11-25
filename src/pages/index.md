@@ -1,7 +1,7 @@
 ---
 templateKey: index-page
 title: Technology / Gaming ...making Websites
-image: /img/home-jumbotron.jpg
+image: /img/keyboard.jpg
 subheading: From Gaming to Servers through Software and Hardware until Website and Graphics, here you get covered it all
 mainpitch:
   title: News, Tips & Tricks and more

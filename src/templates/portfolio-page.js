@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
-import { GatsbyImage } from 'gatsby-plugin-image';
+// import { GatsbyImage } from 'gatsby-plugin-image';
 import Layout from '../components/Layout';
 import Highlights from '../components/Highlights';
 import Testimonials from '../components/Testimonials';
@@ -14,10 +14,9 @@ const PortfolioPageTemplate = ({
   title,
   heading,
   description,
-  intro,
-  main,
+  websites,
+  it,
   testimonials,
-  fullImage,
   pricing,
 }) => (
   <>
@@ -27,10 +26,13 @@ const PortfolioPageTemplate = ({
           <h2 className="text-4xl font-bold mt-3 mb-3 text-gray-700">
             {title}
           </h2>
+          <p className="mt-2 mb-4 text-xl leading-relaxed text-blueGray-400">
+            {heading}
+          </p>
         </div>
       </div>
       <div className="items-center flex flex-wrap -mx-4">
-        <div className="ml-auto text-left mt-6 px-4 relative w-full lg:w-4/12">
+        {/*  <div className="ml-auto text-left mt-6 px-4 relative w-full lg:w-4/12">
           <div className="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg text-white bg-[#c61d1d]">
             <GatsbyImage
               image={image.childImageSharp.gatsbyImageData}
@@ -55,14 +57,14 @@ const PortfolioPageTemplate = ({
                 ></polygon>
               </svg>
               <h4 className="text-2xl font-semibold mt-0 text-white">
-                {heading}
+                {websites.heading}
               </h4>
-              <p className="text-white mt-2">{description}</p>
+              <p className="text-white mt-2">{websites.description}</p>
             </blockquote>
           </div>
-        </div>
-        <div className="mr-auto px-4 relative w-full lg:w-7/12">
-          <Highlights gridItems={intro.blurbs} />
+        </div> */}
+        <div className="mr-auto px-4 relative w-full">
+          <Highlights gridItems={websites.cards} />
         </div>
       </div>
     </section>
@@ -75,10 +77,10 @@ const PortfolioPageTemplate = ({
                 <FcCommandLine size="3em" />
               </div>
               <h3 className="text-3xl mb-2 font-semibold leading-normal">
-                {main.heading}
+                {it.heading}
               </h3>
               <p className="text-lg font-light leading-relaxed mt-4 mb-4 text-gray-700">
-                {main.description}
+                {it.description}
               </p>
               {/* <div className="block pb-6">
                 <span className="text-xs font-semibold inline-block py-1 px-2 rounded-full text-gray-600 bg-white uppercase last:mr-0 mr-2 mt-2">
@@ -107,7 +109,7 @@ const PortfolioPageTemplate = ({
                 </span>
               </div> */}
               {/* <a
-                href="https://www.creative-tim.com/learning-lab/tailwind/react/alerts/notus?ref=nr-index"
+                href="#"
                 target="_blank"
                 rel="noreferrer"
                 className="font-bold text-gray-800 hover:text-gray-600 ease-linear transition-all duration-150"
@@ -119,7 +121,7 @@ const PortfolioPageTemplate = ({
 
             <div className="w-full md:w-8/12 px-4 mt-32">
               <div className="relative flex flex-wrap content-between justify-between gap-4 min-w-0 w-full mb-6 mt-48 md:mt-0">
-                {main.icons.map((icon) => (
+                {it.cards.map((icon) => (
                   <div
                     key={icon.title}
                     className="bg-white w-52 rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition duration-300"
@@ -143,10 +145,24 @@ const PortfolioPageTemplate = ({
         </div>
       </div>
     </section>
-    <section className="mt-48 md:mt-40 pb-40 relative">
+    <section className="mt-48 md:mt-40 pb-8 relative">
+      <div className="px-4 relative w-full text-center">
+        <h2 className="text-4xl font-bold mt-3 mb-3 text-gray-700">
+          Testimonials
+        </h2>
+        <p className="mt-2 mb-4 text-xl leading-relaxed text-blueGray-400">
+          What people say
+        </p>
+      </div>
       <Testimonials testimonials={testimonials} />
     </section>
     <section className="mt-48 md:mt-40 pb-40 relative bg-gray-200">
+      <div className="pt-12 pb-4 relative w-full text-center">
+        <h2 className="text-4xl font-bold mt-3 mb-3 text-gray-700">Pricing</h2>
+        <p className="mt-2 mb-4 text-xl leading-relaxed text-blueGray-400">
+          What people pay
+        </p>
+      </div>
       <div className="-mt-20 top-0 bottom-auto left-0 right-0 w-full absolute h-20">
         <svg
           className="absolute bottom-0 overflow-hidden"
@@ -165,36 +181,6 @@ const PortfolioPageTemplate = ({
       </div>
       <div className="container mx-auto">
         <div className="flex flex-wrap items-center">
-          <div className="w-10/12 md:w-6/12 lg:w-4/12 px-12 md:px-4 mr-auto ml-auto -mt-32">
-            <div className="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg bg-blue-600">
-              <img
-                alt="..."
-                src={
-                  fullImage.childImageSharp.gatsbyImageData.images.fallback.src
-                }
-                className="w-full align-middle rounded-t-lg"
-              />
-              <blockquote className="relative p-8 mb-4">
-                <svg
-                  preserveAspectRatio="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 583 95"
-                  className="absolute left-0 w-full block h-95-px -top-94-px"
-                >
-                  <polygon
-                    points="-30,95 583,95 583,65"
-                    className="text-blue-600 fill-current"
-                  ></polygon>
-                </svg>
-                <h4 className="text-xl font-bold text-white">
-                  {pricing.heading}
-                </h4>
-                <p className="text-md font-light mt-2 text-white">
-                  {pricing.description}
-                </p>
-              </blockquote>
-            </div>
-          </div>
           <Pricing data={pricing.plans} />
         </div>
       </div>
@@ -207,16 +193,15 @@ PortfolioPageTemplate.propTypes = {
   title: PropTypes.string,
   heading: PropTypes.string,
   description: PropTypes.string,
-  intro: PropTypes.shape({
-    blurbs: PropTypes.array,
+  websites: PropTypes.shape({
+    cards: PropTypes.array,
   }),
-  main: PropTypes.shape({
+  it: PropTypes.shape({
     heading: PropTypes.string,
     description: PropTypes.string,
-    icons: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
+    cards: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   }),
   testimonials: PropTypes.array,
-  fullImage: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   pricing: PropTypes.shape({
     heading: PropTypes.string,
     description: PropTypes.string,
@@ -234,10 +219,9 @@ const PortfolioPage = ({ data }) => {
         title={frontmatter.title}
         heading={frontmatter.heading}
         description={frontmatter.description}
-        intro={frontmatter.intro}
-        main={frontmatter.main}
+        websites={frontmatter.websites}
+        it={frontmatter.it}
         testimonials={frontmatter.testimonials}
-        fullImage={frontmatter.full_image}
         pricing={frontmatter.pricing}
       />
     </Layout>
@@ -266,8 +250,8 @@ export const PortfolioPageQuery = graphql`
         }
         heading
         description
-        intro {
-          blurbs {
+        websites {
+          cards {
             image {
               childImageSharp {
                 gatsbyImageData(quality: 100, layout: FULL_WIDTH)
@@ -277,13 +261,11 @@ export const PortfolioPageQuery = graphql`
             color
             text
           }
-          heading
-          description
         }
-        main {
+        it {
           heading
           description
-          icons {
+          cards {
             title
             icon
             color
@@ -295,11 +277,6 @@ export const PortfolioPageQuery = graphql`
           company
           background
           quote
-        }
-        full_image {
-          childImageSharp {
-            gatsbyImageData(quality: 100, layout: FULL_WIDTH)
-          }
         }
         pricing {
           heading
