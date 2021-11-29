@@ -48,6 +48,7 @@
     "develop": "gatsby develop",
     "format": "prettier --trailing-comma es5 --no-semi --single-quote --write \"{gatsby-*.js,src/**/*.js}\"",
     "install:clean": "npm run clean && rm -rf node_modules/ && npm cache clean --force && rm -rf package-lock.json && npm install --legacy-peer-deps",
+    "install:clean-windows": "npm run clean && rd /s /q node_modules && npm cache clean --force && del package-lock.json && npm install --legacy-peer-deps",
     "build:tailwind": "NODE_ENV=production postcss src/styles/global.css -o src/styles/tailwind.css",
     "watch:tailwind": "NODE_ENV=development postcss src/styles/global.css -o src/styles/tailwind.css -w",
     "upgrade": "npm-upgrade && npm update --legacy-peer-deps"
