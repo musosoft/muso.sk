@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { Link, graphql, StaticQuery } from 'gatsby';
 import { Popover, Transition } from '@headlessui/react';
 // import { ThemeToggle } from './ThemeToggle.js';
-import logo from '../img/logo.svg';
+import logo from '../../static/img/logo.svg';
 import {
   HiOutlineMenu,
   HiChevronDown,
