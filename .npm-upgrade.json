@@ -1,0 +1,8 @@
+{
+  "ignore": {
+    "gatsby-remark-relative-images": {
+      "versions": "^0.3.0",
+      "reason": "errors on Windows"
+    }
+  }
+}
