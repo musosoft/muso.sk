@@ -4,12 +4,12 @@ title: Tomb Raider trilogy for free
 date: 2021-12-31T01:53:18.132Z
 description: The last 24-hour giveaway of Epic Games ends with the Tomb Raider trilogy
 featuredpost: false
-featuredimage: https://cdn1.epicgames.com/salesEvent/salesEvent/EGS_RiseoftheTombRaider20YearCelebration_CrystalDynamics_S1_2560x1440-3bd5b3c4c11d46cc2dcb06bdf2f77627
+featuredimage: /img/egs_riseofthetombraider20yearcelebration_crystaldynamics_s1_2560x1440-3bd5b3c4c11d46cc2dcb06bdf2f77627.jpeg
 tags:
   - giveaway
   - game
 ---
-![Tomb Raider trilogy for free](https://cdn1.epicgames.com/salesEvent/salesEvent/EGS_RiseoftheTombRaider20YearCelebration_CrystalDynamics_S1_2560x1440-3bd5b3c4c11d46cc2dcb06bdf2f77627)
+![Tomb Raider trilogy for free](/img/egs_riseofthetombraider20yearcelebration_crystaldynamics_s1_2560x1440-3bd5b3c4c11d46cc2dcb06bdf2f77627.jpeg)
 
 The last 24-hour giveaway of Epic Games ends with the Tomb Raider trilogy.
 
