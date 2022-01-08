@@ -39,7 +39,7 @@ const BlogRollArchive = ({ data }) => {
                       </Link>
                     </h3>
                     <p className="mt-3 text-lg leading-relaxed text-blueGray-500">
-                      <span className="mr-2">{post.excerpt}...</span>
+                      <span className="mr-2">{post.excerpt}</span>
                       <Link to={post.fields.slug} className="text-sky-500">
                         Read More
                       </Link>
