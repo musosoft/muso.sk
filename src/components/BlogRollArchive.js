@@ -19,13 +19,12 @@ const BlogRollArchive = ({ data }) => {
             >
               <div className="items-center flex flex-wrap -mx-4">
                 <div className="px-4 relative w-full lg:w-6/12">
-                  {post.frontmatter.featuredimage && (
+                  {post.frontmatter.image && (
                     <GatsbyImage
                       layout="fixed"
                       className="w-full rounded-lg rounded-r-none"
                       image={
-                        post.frontmatter.featuredimage.childImageSharp
-                          .gatsbyImageData
+                        post.frontmatter.image.childImageSharp.gatsbyImageData
                       }
                       alt={`Featured image of ${post.frontmatter.title}`}
                     />
@@ -82,7 +81,7 @@ const BlogRollArchiveQuery = () => (
                 templateKey
                 date(formatString: "MMMM DD, YYYY")
                 featuredpost
-                featuredimage {
+                image {
                   childImageSharp {
                     gatsbyImageData(
                       height: 315

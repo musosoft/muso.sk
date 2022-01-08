@@ -2,7 +2,11 @@ module.exports = {
   siteMetadata: {
     title: 'muso.sk',
     description:
-      'This repo contains an muso.sk website that is built with Gatsby Netlify CMS and TailwindCSS. It follows the JAMstack architecture by using Git as a single source of truth, and Netlify for continuous deployment, and CDN distribution.',
+      'muso.sk Technology, Gaming, Website... news and services. Servers, Software, Hardware... here you get covered it all.',
+    titleTemplate: '%s · muso.sk',
+    url: 'https://muso.sk',
+    image: '/img/og-image.png',
+    twitterUsername: '@muso.sk',
   },
   plugins: [
     {
