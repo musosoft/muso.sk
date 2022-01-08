@@ -12,7 +12,7 @@ tags:
   - gatsby
 ---
 
-![muso.sk Blog OG meta image](/img/og-image.png)
+![muso.sk Blog about technology, IT, websites, games](/img/og-image.png)
 
 It's been two years since I did anything about my portfolio page. The information was outdated and very simplified.
 While this change is going to be bigger in future, for now at least a little functionality goes public. I’ll explain how the blog came to be and what it all actually mean later. For now technical enthusiasists can use it along with clients as a source of useful articles.
