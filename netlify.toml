@@ -4,5 +4,5 @@
   functions = "lambda"
 [build.environment]
   NODE_VERSION = "17"
-[plugins]
+[[plugins]]
   package = "@netlify/plugin-gatsby"
