@@ -22,7 +22,7 @@ const HighlightGrid = ({ gridItems }) => {
                   preserveAspectRatio="none"
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 583 95"
-                  className="block w-full absolute text-blueGray-700 h-95-px -top-94-px left-0"
+                  className="block w-full absolute text-slate-700 h-95-px -top-94-px left-0"
                 >
                   <polygon
                     points="0,52 583,95 0,95"

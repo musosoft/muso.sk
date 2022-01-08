@@ -1,9 +1,8 @@
 const colors = require('tailwindcss/colors');
 
 module.exports = {
-  mode: 'jit',
   darkMode: 'class',
-  purge: [
+  content: [
     './src/**/**/*.js',
     './src/**/*.js',
     './src/pages/**/*.md',
@@ -13,7 +12,7 @@ module.exports = {
     extend: {
       colors: {
         orange: colors.orange,
-        blueGray: colors.blueGray,
+        slate: colors.slate,
         dodgerBlue: {
           50: '#E8F4FF',
           100: '#D1E9FF',

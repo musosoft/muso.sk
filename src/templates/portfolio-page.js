@@ -26,7 +26,7 @@ const PortfolioPageTemplate = ({
           <h2 className="text-4xl font-bold mt-3 mb-3 text-gray-700">
             {title}
           </h2>
-          <p className="mt-2 mb-4 text-xl leading-relaxed text-blueGray-400">
+          <p className="mt-2 mb-4 text-xl leading-relaxed text-slate-400">
             {heading}
           </p>
         </div>
@@ -44,7 +44,7 @@ const PortfolioPageTemplate = ({
                 preserveAspectRatio="none"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 583 95"
-                className="block w-full absolute text-blueGray-700 h-95-px -top-94-px left-0"
+                className="block w-full absolute text-slate-700 h-95-px -top-94-px left-0"
               >
                 <polygon
                   points="0,52 583,95 0,95"
@@ -150,7 +150,7 @@ const PortfolioPageTemplate = ({
         <h2 className="text-4xl font-bold mt-3 mb-3 text-gray-700">
           Testimonials
         </h2>
-        <p className="mt-2 mb-4 text-xl leading-relaxed text-blueGray-400">
+        <p className="mt-2 mb-4 text-xl leading-relaxed text-slate-400">
           What people say
         </p>
       </div>
@@ -159,7 +159,7 @@ const PortfolioPageTemplate = ({
     <section className="mt-48 md:mt-40 pb-40 relative bg-gray-200">
       <div className="pt-12 pb-4 relative w-full text-center">
         <h2 className="text-4xl font-bold mt-3 mb-3 text-gray-700">Pricing</h2>
-        <p className="mt-2 mb-4 text-xl leading-relaxed text-blueGray-400">
+        <p className="mt-2 mb-4 text-xl leading-relaxed text-slate-400">
           What people pay
         </p>
       </div>
