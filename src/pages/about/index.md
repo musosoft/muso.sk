@@ -2,6 +2,7 @@
 templateKey: about-page
 path: /about
 heading: Roman 'muso.sk' Kováč
+image: /img/view.jpg
 location: Phuket, Thailand
 position: Freelance Front-End Developer / IT System Engineer
 subheading:

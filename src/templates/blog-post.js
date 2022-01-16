@@ -61,7 +61,6 @@ BlogPostTemplate.propTypes = {
 
 const BlogPost = ({ data }) => {
   const { markdownRemark: post } = data;
-
   return (
     <Layout>
       <BlogPostTemplate
@@ -69,6 +68,7 @@ const BlogPost = ({ data }) => {
         contentComponent={HTMLContent}
         description={post.frontmatter.description}
         helmet={
+          // eslint-disable-next-line
           <SEO
             title={post.frontmatter.title}
             description={post.frontmatter.description}

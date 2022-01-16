@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
+import { GatsbyImage } from 'gatsby-plugin-image';
 import Layout from '../components/Layout';
 import Content, { HTMLContent } from '../components/Content';
 import muso from '../../static/img/muso.jpg';
@@ -12,6 +13,7 @@ const AboutPageTemplate = ({
   heading,
   subheading,
   content,
+  image,
   contentComponent,
 }) => {
   const PageContent = contentComponent || Content;
@@ -19,13 +21,12 @@ const AboutPageTemplate = ({
   return (
     <main className="profile-page">
       <section className="relative block h-500-px">
-        <div
-          className="absolute top-0 w-full h-full bg-center bg-cover"
-          style={{
-            backgroundImage:
-              "url('https://images.unsplash.com/photo-1499336315816-097655dcfbda?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2710&q=80')",
-          }}
-        >
+        <div className="absolute top-0 w-full h-full">
+          <GatsbyImage
+            alt=""
+            image={image.childImageSharp.gatsbyImageData}
+            className="w-full h-full absolute"
+          />
           <span
             id="blackOverlay"
             className="w-full h-full absolute opacity-50 bg-black"
@@ -183,6 +184,16 @@ export const aboutPageQuery = graphql`
         location
         position
         heading
+        image {
+          childImageSharp {
+            gatsbyImageData(
+              height: 630
+              width: 1200
+              quality: 100
+              layout: CONSTRAINED
+            )
+          }
+        }
         subheading
       }
     }

@@ -40,6 +40,7 @@ intro:
       button: Gaming news
       link: /blog
   heading: Need help?
+  image: /img/altumcode.jpg
   description: >
     Get things done by IT and Website professional.
 ---
