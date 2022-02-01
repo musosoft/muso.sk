@@ -120,11 +120,11 @@ const PortfolioPageTemplate = ({
             </div>
 
             <div className="w-full md:w-8/12 px-4 mt-32">
-              <div className="relative flex flex-wrap content-between justify-between gap-4 min-w-0 w-full mb-6 mt-48 md:mt-0">
+              <div className="relative flex flex-wrap content-between justify-between gap-4 min-w-0 w-full mb-6">
                 {it.cards.map((icon) => (
                   <div
                     key={icon.title}
-                    className="bg-white w-52 rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition duration-300"
+                    className="bg-white mb-4 w-full sm:w-52 rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition duration-300"
                   >
                     <div
                       className="flex items-center py-2 px-4 bg-[color:var(--icon-color)] text-white"

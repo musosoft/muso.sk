@@ -7,7 +7,7 @@ const Pricing = ({ data }) => (
       {data.map((price) => (
         <div
           key={price.plan}
-          className="md:w-6/12 lg:w-3/12 px-12 md:px-4 mx-auto"
+          className="md:w-6/12 lg:w-3/12 px-4 sm:px-12 md:px-4 mx-auto"
         >
           <div className="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg bg-blue-600 overflow-hidden">
             <div className="flex-auto">

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { v4 } from 'uuid';
 
 const Testimonials = ({ testimonials }) => (
-  <div className="flex justify-center w-full space-x-4">
+  <div className="flex justify-center w-full flex-wrap">
     {testimonials.map((testimonial) => (
       <figure
         key={v4()}

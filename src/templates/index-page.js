@@ -20,10 +20,8 @@ const IndexPageTemplate = ({ image, title, subheading, mainpitch, intro }) => (
       <div className="container relative mx-auto">
         <div className="items-center flex flex-wrap">
           <div className="w-full lg:w-6/12 px-4 ml-auto mr-auto text-center">
-            <div className="pr-12">
-              <h1 className="text-white font-semibold text-5xl">{title}</h1>
-              <p className="mt-4 text-lg text-gray-300">{subheading}</p>
-            </div>
+            <h1 className="text-white font-semibold text-5xl">{title}</h1>
+            <p className="mt-4 text-lg text-gray-300">{subheading}</p>
           </div>
         </div>
       </div>
@@ -48,8 +46,8 @@ const IndexPageTemplate = ({ image, title, subheading, mainpitch, intro }) => (
     <section className="pb-20 bg-gray-300 -mt-24">
       <div className="container mx-auto px-4">
         <Features gridItems={intro.blurbs} />
-        <div className="flex flex-wrap items-center mt-32">
-          <div className="w-full md:w-5/12 px-4 mr-auto ml-auto">
+        <div className="flex flex-wrap items-center mt-32 mb-8">
+          <div className="w-full md:w-5/12 px-4 mr-auto ml-auto mb-4">
             <div className="text-gray-600 p-1 text-center inline-flex items-center justify-center w-16 h-16 mb-6 shadow-lg rounded-full bg-gray-100">
               <FcIdea size="2em" />
             </div>

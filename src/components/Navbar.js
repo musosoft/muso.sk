@@ -58,17 +58,23 @@ const callsToAction = [
 ];
 const blog = [
   {
-    name: 'Help Center',
-    description: 'Get help with your technical problems.',
-    href: '/blog',
-    icon: HiOutlineSupport,
-  },
-  {
-    name: 'Guides',
+    name: 'Blog',
     description: 'See technology tips and tricks.',
     href: '/blog',
     icon: HiOutlineBookmarkAlt,
   },
+  // {
+  //   name: 'Help Center',
+  //   description: 'Get help with your technical problems.',
+  //   href: '/blog',
+  //   icon: HiOutlineSupport,
+  // },
+  // {
+  //   name: 'Guides',
+  //   description: 'See technology tips and tricks.',
+  //   href: '/blog',
+  //   icon: HiOutlineBookmarkAlt,
+  // },
 ];
 
 function classNames(...classes) {
@@ -347,7 +353,7 @@ function Navbar() {
             <Popover.Panel
               focus
               static
-              className="absolute top-0 inset-x-0 p-2 transition transform origin-top-right md:hidden"
+              className="absolute top-0 inset-x-0 p-2 transition transform origin-top-right md:hidden z-2"
             >
               <div className="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 bg-white divide-y-2 divide-gray-50">
                 <div className="pt-5 pb-6 px-5">
@@ -385,14 +391,14 @@ function Navbar() {
                 <div className="py-6 px-5 space-y-6">
                   <div className="grid grid-cols-2 gap-y-4 gap-x-8">
                     <Link
-                      to="#"
+                      to="/portfolio"
                       className="text-base font-medium text-gray-900 hover:text-gray-700"
                     >
                       Pricing
                     </Link>
 
                     <Link
-                      to="/contact  "
+                      to="/contact"
                       className="text-base font-medium text-gray-900 hover:text-gray-700"
                     >
                       Contact
@@ -407,7 +413,7 @@ function Navbar() {
                       </Link>
                     ))}
                   </div>
-                  <div>
+                  {/* <div>
                     <Link
                       to="#"
                       className="w-full flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-dodgerBlue-600 hover:bg-dodgerBlue-700"
@@ -423,7 +429,7 @@ function Navbar() {
                         Sign in
                       </Link>
                     </p>
-                  </div>
+                  </div> */}
                 </div>
               </div>
             </Popover.Panel>

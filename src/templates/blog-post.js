@@ -20,7 +20,7 @@ const BlogPostTemplate = ({
   return (
     <section className="py-12 relative">
       {helmet || ''}
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-6">
         <div className="flex flex-wrap -mx-4">
           <div className="mx-auto relative w-full md:w-8/12">
             <h3 className="text-3xl font-bold leading-normal mt-0 mb-2">

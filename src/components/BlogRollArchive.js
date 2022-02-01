@@ -7,7 +7,7 @@ const BlogRollArchive = ({ data }) => {
   const { edges: posts } = data.allMarkdownRemark;
 
   return (
-    <div className="mt-16 max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="mt-16 max-w-8xl mx-auto px-6 lg:px-8">
       <div className="items-center flex flex-wrap -mx-4">
         {posts &&
           posts.map(({ node: post }) => (
@@ -22,7 +22,7 @@ const BlogRollArchive = ({ data }) => {
                   {post.frontmatter.image && (
                     <GatsbyImage
                       layout="fixed"
-                      className="w-full rounded-lg rounded-r-none"
+                      className="w-full sm:rounded-lg rounded-r-none"
                       image={
                         post.frontmatter.image.childImageSharp.gatsbyImageData
                       }
