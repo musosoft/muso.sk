@@ -32,7 +32,7 @@ const BlogPostTemplate = ({
               content={content}
             />
             {tags && tags.length ? (
-              <div className="flex flex-wrap items-center mt-4 mt-0 mb-5 leading-relaxed text-gray-500">
+              <div className="flex flex-wrap items-center mt-0 mb-5 leading-relaxed text-gray-500">
                 <p className="text-lg mr-2 my-2">Tags: </p>
                 {tags.map((tag) => (
                   <span
@@ -60,7 +60,8 @@ BlogPostTemplate.propTypes = {
 };
 
 const BlogPost = ({ data }) => {
-  const { markdownRemark: post } = data;
+  const { post } = data.markdownRemark;
+
   return (
     <Layout>
       <BlogPostTemplate

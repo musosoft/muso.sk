@@ -9,6 +9,7 @@ module.exports = {
     twitterUsername: '@muso.sk',
   },
   plugins: [
+    'gatsby-plugin-react-helmet',
     {
       // keep as first gatsby-source-filesystem plugin for gatsby image support
       resolve: 'gatsby-source-filesystem',
@@ -24,7 +25,9 @@ module.exports = {
         name: 'pages',
       },
     },
-    `gatsby-transformer-sharp`,
+    `gatsby-plugin-image`,
+    'gatsby-plugin-sharp',
+    'gatsby-transformer-sharp',
     {
       resolve: 'gatsby-transformer-remark',
       options: {
@@ -53,15 +56,12 @@ module.exports = {
         ],
       },
     },
-    `gatsby-plugin-sharp`,
     {
       resolve: 'gatsby-plugin-netlify-cms',
       options: {
         modulePath: `${__dirname}/src/cms/cms.js`,
       },
     },
-    'gatsby-plugin-react-helmet',
-    `gatsby-plugin-image`,
     'gatsby-plugin-postcss',
     'gatsby-plugin-netlify', // make sure to keep it last in the array
   ],
