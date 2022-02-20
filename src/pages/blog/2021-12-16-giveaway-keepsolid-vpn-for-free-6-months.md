@@ -4,7 +4,7 @@ title: Giveaway KeepSolid VPN for free (6 months)
 date: 2021-12-16T04:34:08.443Z
 description: Free KeepSolid VPN for 6 Months
 featuredpost: false
-image: /img/free-keepsolid-vpn-for-6-months.png
+image: /img/keepsolid-vpn.png
 tags:
   - giveaway
 ---
