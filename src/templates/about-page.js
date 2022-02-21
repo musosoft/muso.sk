@@ -27,10 +27,6 @@ const AboutPageTemplate = ({
             image={image.childImageSharp.gatsbyImageData}
             className="w-full h-full absolute"
           />
-          <span
-            id="blackOverlay"
-            className="w-full h-full absolute opacity-50 bg-black"
-          ></span>
         </div>
         <div className="top-auto bottom-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden h-70-px">
           <svg
@@ -188,9 +184,9 @@ export const aboutPageQuery = graphql`
         image {
           childImageSharp {
             gatsbyImageData(
-              height: 630
-              width: 1200
-              quality: 100
+              width: 1519
+              height: 500
+              quality: 80
               layout: CONSTRAINED
             )
           }

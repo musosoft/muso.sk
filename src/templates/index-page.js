@@ -14,7 +14,7 @@ const IndexPageTemplate = ({ image, title, subheading, mainpitch, intro }) => (
         <GatsbyImage image={image.childImageSharp.gatsbyImageData} alt="" />
         <span
           id="blackOverlay"
-          className="w-full h-full absolute opacity-75 bg-black"
+          className="w-full h-full absolute opacity-25 bg-black"
         ></span>
       </div>
       <div className="container relative mx-auto">
@@ -165,7 +165,12 @@ export const pageQuery = graphql`
         title
         image {
           childImageSharp {
-            gatsbyImageData(quality: 70, layout: FULL_WIDTH)
+            gatsbyImageData(
+              height: 500
+              width: 1519
+              quality: 70
+              layout: CONSTRAINED
+            )
           }
         }
         heading
