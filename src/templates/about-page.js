@@ -163,6 +163,7 @@ const AboutPage = ({ data }) => {
         position={post.frontmatter.position}
         heading={post.frontmatter.heading}
         subheading={post.frontmatter.subheading}
+        image={post.frontmatter.image}
         content={post.html}
       />
     </Layout>
