@@ -1,7 +1,11 @@
 [build]
   publish = "public"
-  command = "npm run build"
+  command = "npm run buil
 [build.environment]
   NODE_VERSION = "17"
 [[plugins]]
   package = "@netlify/plugin-gatsby"
+[[redirects]]
+  from = "/cv"
+  to = "https://docs.google.com/document/d/1kDilmEm0R1ZrDPrbteFu4i2uX_PZJOQJcjh7l3RRw6o/export?format=pdf"
+  status = 302
