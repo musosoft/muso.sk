@@ -1,8 +1,8 @@
 ---
 templateKey: blog-post
-title: Giveaway KeepSolid VPN for free (6 months)
+title: Giveaway KeepSolid VPN for free (1 year)
 date: 2022-02-24T13:50:08.212Z
-description: Free KeepSolid VPN for 6 Months
+description: Free KeepSolid VPN for 1 year
 featuredpost: false
 image: /img/keepsolid-vpn.png
 tags:
@@ -10,12 +10,12 @@ tags:
 ---
 *Updated 24th. Feb. 2022*
 
-Trusted and secure VPN provider now offers 6 months of free VPN. Highly recommended for changing your IP address to another country. Or to watch Netflix titles avaiable only in America.
+Trusted and secure VPN provider now offers 1 year of free VPN. Highly recommended for changing your IP address to another country. Or to watch Netflix titles avaiable only in America.
 
 It's easy, just follow these steps:
 
 1. Register via https://id.keepsolid.com/signup
 2. Click "Redeem"
-3. Enter "VPNU6MONTH"
+3. Enter "StopRussianAggression" or "VPNU6MONTH"
 
 Enjoy :)
