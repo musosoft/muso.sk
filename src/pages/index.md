@@ -1,7 +1,8 @@
 ---
 templateKey: index-page
-title: Technology / Gaming ...making Websites
+title: Home
 image: /img/keyboard.jpg
+heading: Technology / Gaming ...making Websites
 subheading: From Gaming to Servers through Software and Hardware until Website and Graphics, here you get covered it all
 mainpitch:
   title: News, Tips & Tricks and more

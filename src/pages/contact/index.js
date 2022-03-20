@@ -1,6 +1,7 @@
 import React from 'react';
 import { navigate } from 'gatsby-link';
 import Layout from '../../components/Layout';
+import SEO from '../../components/SEO';
 
 function encode(data) {
   return Object.keys(data)
@@ -36,6 +37,8 @@ export default class Index extends React.Component {
   render() {
     return (
       <Layout>
+        {/* eslint-disable-next-line */}
+        <SEO title="Contact" />
         <section className="section">
           <div className="max-w-screen-xl my-24 px-8 grid gap-8 grid-cols-1 md:grid-cols-2 md:px-12 lg:px-16 xl:px-32 py-16 mx-auto text-gray-900">
             <div className="flex flex-col justify-between">

@@ -1,14 +1,23 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link, graphql } from 'gatsby';
+import SEO from '../components/SEO';
 import Layout from '../components/Layout';
 import Features from '../components/Features';
 import BlogRoll from '../components/BlogRoll';
-import { GatsbyImage } from 'gatsby-plugin-image';
+import { GatsbyImage, getSrc } from 'gatsby-plugin-image';
 import { FcIdea } from 'react-icons/fc';
 
-const IndexPageTemplate = ({ image, title, subheading, mainpitch, intro }) => (
+const IndexPageTemplate = ({
+  image,
+  heading,
+  subheading,
+  mainpitch,
+  intro,
+  helmet,
+}) => (
   <main>
+    {helmet || ''}
     <div className="relative pt-16 pb-32 flex content-center items-center justify-center min-h-screen-75">
       <div className="absolute top-0 w-full h-full grid">
         <GatsbyImage image={image.childImageSharp.gatsbyImageData} alt="" />
@@ -20,7 +29,7 @@ const IndexPageTemplate = ({ image, title, subheading, mainpitch, intro }) => (
       <div className="container relative mx-auto">
         <div className="items-center flex flex-wrap">
           <div className="w-full lg:w-6/12 px-4 ml-auto mr-auto text-center">
-            <h1 className="text-white font-semibold text-5xl">{title}</h1>
+            <h1 className="text-white font-semibold text-5xl">{heading}</h1>
             <p className="mt-4 text-lg text-gray-300">{subheading}</p>
           </div>
         </div>
@@ -143,6 +152,14 @@ const IndexPage = ({ data }) => {
         mainpitch={frontmatter.mainpitch}
         description={frontmatter.description}
         intro={frontmatter.intro}
+        helmet={
+          // eslint-disable-next-line
+          <SEO
+            title={frontmatter.title}
+            description={frontmatter.description}
+            image={getSrc(frontmatter.image)}
+          />
+        }
       />
     </Layout>
   );

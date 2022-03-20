@@ -1,8 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
-// import { GatsbyImage } from 'gatsby-plugin-image';
+import { getSrc } from 'gatsby-plugin-image';
 import Layout from '../components/Layout';
+import SEO from '../components/SEO';
 import Highlights from '../components/Highlights';
 import Testimonials from '../components/Testimonials';
 import Pricing from '../components/Pricing';
@@ -11,23 +12,25 @@ import { FcCommandLine } from 'react-icons/fc';
 
 const PortfolioPageTemplate = ({
   image,
-  title,
+  subheading,
   heading,
   description,
   websites,
   it,
   testimonials,
   pricing,
+  helmet,
 }) => (
   <>
     <section className="container mx-auto px-4 py-12">
+      {helmet || ''}
       <div className="flex flex-wrap -mx-4 justify-center">
         <div className="px-4 relative w-full text-center">
           <h2 className="text-4xl font-bold mt-3 mb-3 text-gray-700">
-            {title}
+            {heading}
           </h2>
           <p className="mt-2 mb-4 text-xl leading-relaxed text-slate-400">
-            {heading}
+            {subheading}
           </p>
         </div>
       </div>
@@ -223,6 +226,14 @@ const PortfolioPage = ({ data }) => {
         it={frontmatter.it}
         testimonials={frontmatter.testimonials}
         pricing={frontmatter.pricing}
+        helmet={
+          // eslint-disable-next-line
+          <SEO
+            title={frontmatter.title}
+            description={frontmatter.description}
+            image={getSrc(frontmatter.image)}
+          />
+        }
       />
     </Layout>
   );
