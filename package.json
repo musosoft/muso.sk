@@ -11,7 +11,7 @@
     "@tailwindcss/typography": "^0.5.2",
     "gatsby": "^4.11.2",
     "gatsby-plugin-image": "^2.11.1",
-    "gatsby-plugin-netlify-cms": "^6.11.0",
+    "gatsby-plugin-netlify-cms": "^6.13.0-next.0",
     "gatsby-plugin-purgecss": "^6.1.2",
     "gatsby-plugin-react-helmet": "^5.11.0",
     "gatsby-plugin-sharp": "^4.11.1",
@@ -46,7 +46,7 @@
   ],
   "license": "MIT",
   "scripts": {
-    "postinstall" : "gatsby telemetry --disable",
+    "postinstall": "gatsby telemetry --disable",
     "clean": "gatsby clean",
     "start": "npm run develop",
     "build": "npm run clean && gatsby build",
