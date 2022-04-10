@@ -5,9 +5,9 @@
   "author": "muso.sk",
   "repository": "https://github.com/musosoft/muso.sk",
   "dependencies": {
-    "@fontsource/poppins": "^4.5.5",
+    "@fontsource/poppins": "^4.5.2",
     "@headlessui/react": "^1.5.0",
-    "@tailwindcss/forms": "^0.5.0",
+    "@tailwindcss/forms": "^0.4.0",
     "@tailwindcss/typography": "^0.5.2",
     "gatsby": "^4.7.2",
     "gatsby-plugin-image": "^2.7.0",
@@ -32,12 +32,12 @@
   },
   "devDependencies": {
     "@netlify/plugin-gatsby": "^2.0.2",
-    "autoprefixer": "^10.4.4",
+    "autoprefixer": "^10.4.2",
     "gatsby-plugin-netlify": "^4.1.0",
     "gatsby-plugin-postcss": "^5.7.0",
     "npm-upgrade": "^3.1.0",
-    "postcss": "^8.4.12",
-    "prettier": "^2.6.2",
+    "postcss": "^8.4.6",
+    "prettier": "^2.5.1",
     "run-script-os": "^1.1.6",
     "tailwindcss": "^3.0.23"
   },
