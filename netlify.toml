@@ -4,6 +4,7 @@
 
 [build.environment]
   NODE_VERSION = "17"
+  CI = ""
 
 [[plugins]]
   package = "@netlify/plugin-gatsby"
