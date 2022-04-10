@@ -9,7 +9,7 @@
     "@headlessui/react": "^1.5.0",
     "@tailwindcss/forms": "^0.4.0",
     "@tailwindcss/typography": "^0.5.2",
-    "gatsby": "^4.7.2",
+    "gatsby": "4.7.0",
     "gatsby-plugin-image": "^2.7.0",
     "gatsby-plugin-netlify-cms": "^6.7.0",
     "gatsby-plugin-purgecss": "^6.1.0",
