@@ -50,10 +50,25 @@ module.exports = {
               destinationDir: 'static',
             },
           },
+          // {
+          //   resolve: 'gatsby-remark-external-links',
+          //   options: {
+          //     target: '_blank',
+          //     rel: 'nofollow noopener noreferrer',
+          //   },
+          // },
         ],
       },
     },
-    `gatsby-plugin-sharp`,
+    {
+      resolve: `gatsby-plugin-sharp`,
+      options: {
+        defaults: {
+          formats: [`webp`, `auto`],
+          quality: 90,
+        },
+      },
+    },
     {
       resolve: 'gatsby-plugin-netlify-cms',
       options: {

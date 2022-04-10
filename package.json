@@ -34,8 +34,10 @@
     "autoprefixer": "^10.4.2",
     "gatsby-plugin-netlify": "^4.1.0",
     "gatsby-plugin-postcss": "^5.7.0",
+    "npm-upgrade": "^3.1.0",
     "postcss": "^8.4.6",
     "prettier": "^2.5.1",
+    "run-script-os": "^1.1.6",
     "tailwindcss": "^3.0.23"
   },
   "keywords": [
@@ -43,17 +45,20 @@
   ],
   "license": "MIT",
   "scripts": {
+    "postinstall": "gatsby telemetry --disable",
     "clean": "gatsby clean",
     "start": "npm run develop",
     "build": "npm run clean && gatsby build",
     "develop": "gatsby develop",
     "format": "prettier --trailing-comma es5 --no-semi --single-quote --write \"{gatsby-*.js,src/**/*.js}\"",
-    "install:clean": "npm run clean && rm -rf node_modules/ && npm cache clean --force && rm -rf package-lock.json && npm install",
-    "install:clean-windows": "npm run clean && rd /s /q node_modules && npm cache clean --force && del package-lock.json && npm install",
+    "reinstall": "run-script-os",
+    "reinstall:nix": "npm run clean && rm -rf node_modules/ && npm cache clean --force && rm -rf package-lock.json && npm install",
+    "reinstall:windows": "npm run clean && rd /s /q node_modules && npm cache clean --force && del package-lock.json && npm install",
     "build:tailwind": "NODE_ENV=production postcss src/styles/global.css -o src/styles/tailwind.css",
     "watch:tailwind": "NODE_ENV=development postcss src/styles/global.css -o src/styles/tailwind.css -w",
-    "upgrade": "brew upgrade node && npm install -g npm@latest && npm-upgrade && npm update",
-    "upgrade-windows": "choco upgrade nodejs && npm install -g npm@latest && npm-upgrade && npm update"
+    "upgrade": "run-script-os",
+    "upgrade:macos": "brew upgrade node && npm install -g npm@latest && npm-upgrade && npm update",
+    "upgrade:windows": "powershell Start-Process powershell -Verb runAs -ArgumentList 'choco upgrade nodejs' && npm install -g npm@latest && npm-upgrade && npm update"
   },
   "browserslist": {
     "production": [

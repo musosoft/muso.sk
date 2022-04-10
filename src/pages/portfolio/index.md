@@ -1,9 +1,10 @@
 ---
 templateKey: 'portfolio-page'
 path: /portfolio
-title: Website Services
+title: Portfolio
 image: /img/orc_sk.png
-heading: Web development projects
+heading: Website Services
+subheading: Web development projects
 description: >-
   Website developement and professional IT services including WordPress, ReactJS, HTML, CSS, JS, Tailwind, Bootstrap, Servers, Graphics and other modern technologies
 websites:

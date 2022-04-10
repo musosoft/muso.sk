@@ -1,8 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
-import { GatsbyImage } from 'gatsby-plugin-image';
+import { GatsbyImage, getSrc } from 'gatsby-plugin-image';
 import Layout from '../components/Layout';
+import SEO from '../components/SEO';
 import Content, { HTMLContent } from '../components/Content';
 import muso from '../../static/img/muso.jpg';
 import { FaMapMarkerAlt, FaBriefcase } from 'react-icons/fa';
@@ -15,11 +16,13 @@ const AboutPageTemplate = ({
   content,
   image,
   contentComponent,
+  helmet,
 }) => {
   const PageContent = contentComponent || Content;
 
   return (
     <main className="profile-page">
+      {helmet || ''}
       <section className="relative block h-500-px">
         <div className="absolute top-0 w-full h-full">
           <GatsbyImage
@@ -161,6 +164,14 @@ const AboutPage = ({ data }) => {
         subheading={post.frontmatter.subheading}
         image={post.frontmatter.image}
         content={post.html}
+        helmet={
+          // eslint-disable-next-line
+          <SEO
+            title={post.frontmatter.title}
+            description={post.frontmatter.description}
+            image={getSrc(post.frontmatter.image)}
+          />
+        }
       />
     </Layout>
   );

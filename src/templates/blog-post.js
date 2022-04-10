@@ -18,15 +18,17 @@ const BlogPostTemplate = ({
   const PostContent = contentComponent || Content;
 
   return (
-    <section className="py-12 relative">
+    <section className="my-12 relative">
       {helmet || ''}
       <div className="container mx-auto px-6">
         <div className="flex flex-wrap -mx-4">
-          <div className="mx-auto relative w-full md:w-8/12">
-            <h3 className="text-3xl font-bold leading-normal mt-0 mb-2">
+          <div className="mx-auto relative w-full md:w-6/12">
+            <h3 className="text-4xl font-semibold leading-normal text-gray-800 mb-2 text-center">
               {title}
             </h3>
-            <h6 className="text-lg mt-2 mb-0 text-gray-400">{description}</h6>
+            <h6 className="text-lg mt-2 mb-0 text-gray-400 text-center">
+              {description}
+            </h6>
             <PostContent
               className="pt-12 prose text-gray-700 max-w-none"
               content={content}

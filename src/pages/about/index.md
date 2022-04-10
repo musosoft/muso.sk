@@ -1,6 +1,7 @@
 ---
 templateKey: about-page
 path: /about
+title: About
 heading: Roman 'muso.sk' Kováč
 image: /img/view.jpg
 location: Phuket, Thailand
