@@ -17,7 +17,7 @@ const Pricing = ({ data }) => (
                 </h6>
               </div>
               <div className=" text-gray-600 bg-gradient-to-b from-white to-gray-400 clip polygon b-3">
-                <ul class="py-8 px-2">
+                <ul className="py-8 px-2">
                   {price.items.map((item) => (
                     <li key={item} className="mt-4 flex items-start">
                       <div className="flex-shrink-0">

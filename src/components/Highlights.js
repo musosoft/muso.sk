@@ -7,7 +7,10 @@ const HighlightGrid = ({ gridItems }) => {
     <div className="items-center flex flex-wrap -mx-4">
       {gridItems.map((item) => {
         return (
-          <div className="ml-auto text-left mt-6 px-4 relative w-full lg:w-4/12">
+          <div
+            className="ml-auto text-left mt-6 px-4 relative w-full lg:w-4/12"
+            key={item.title}
+          >
             <div
               className="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg text-white"
               style={{ backgroundColor: '#' + item.color }}
@@ -52,7 +55,6 @@ const HighlightGrid = ({ gridItems }) => {
 HighlightGrid.propTypes = {
   gridItems: PropTypes.arrayOf(
     PropTypes.shape({
-      image: PropTypes.oneOfType([PropTypes.object, PropTypes.file]),
       text: PropTypes.string,
     })
   ),

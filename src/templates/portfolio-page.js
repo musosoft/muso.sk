@@ -137,9 +137,11 @@ const PortfolioPageTemplate = ({
                         size: '4em',
                         className: 'w-4/12',
                       })}
-                      <h3 class="w-8/12 ml-3 font-semibold">{icon.title}</h3>
+                      <h3 className="w-8/12 ml-3 font-semibold">
+                        {icon.title}
+                      </h3>
                     </div>
-                    <p class="mt-2 pb-4 text-sm px-4">{icon.description}</p>
+                    <p className="mt-2 pb-4 text-sm px-4">{icon.description}</p>
                   </div>
                 ))}
               </div>
@@ -202,7 +204,7 @@ PortfolioPageTemplate.propTypes = {
   it: PropTypes.shape({
     heading: PropTypes.string,
     description: PropTypes.string,
-    cards: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
+    cards: PropTypes.array,
   }),
   testimonials: PropTypes.array,
   pricing: PropTypes.shape({

@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import { Helmet } from 'react-helmet';
 import { useLocation } from '@reach/router';
 import { useStaticQuery, graphql } from 'gatsby';
-import { withPrefix } from 'gatsby';
 
 const SEO = ({ title, description, image, article }) => {
   const { pathname } = useLocation();
@@ -28,24 +27,6 @@ const SEO = ({ title, description, image, article }) => {
   return (
     <Helmet title={seo.title} titleTemplate={titleTemplate}>
       <html lang="en" />
-      <link
-        rel="apple-touch-icon"
-        sizes="180x180"
-        href={`${withPrefix('/')}img/apple-touch-icon.png`}
-      />
-      <link
-        rel="icon"
-        type="image/png"
-        href={`${withPrefix('/')}img/favicon-32x32.png`}
-        sizes="32x32"
-      />
-      <link
-        rel="icon"
-        type="image/png"
-        href={`${withPrefix('/')}img/favicon-16x16.png`}
-        sizes="16x16"
-      />
-      <meta name="theme-color" content="#1992ff" />
       <meta name="description" content={seo.description} />
       <meta name="image" content={seo.image} />
 

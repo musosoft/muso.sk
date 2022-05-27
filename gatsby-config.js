@@ -68,6 +68,18 @@ module.exports = {
         modulePath: `${__dirname}/src/cms/cms.js`,
       },
     },
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `muso.sk`,
+        short_name: `muso.sk`,
+        start_url: `/`,
+        background_color: `#ffffff`,
+        theme_color: `#1992ff`,
+        display: `standalone`,
+        icon: `${__dirname}/static/img/icon.svg`,
+      },
+    },
     'gatsby-plugin-react-helmet',
     `gatsby-plugin-image`,
     'gatsby-plugin-postcss',

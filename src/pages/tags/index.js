@@ -19,7 +19,7 @@ const TagsPage = ({
         <h1 className="text-3xl mb-2 font-semibold leading-normal">Tags</h1>
         {group.map((tag) => (
           <span
-            class="text-xs font-semibold inline-block p-2 rounded-full text-gray-600 bg-gray-50 uppercase last:mr-0 mr-2 mt-2"
+            className="text-xs font-semibold inline-block p-2 rounded-full text-gray-600 bg-gray-50 uppercase last:mr-0 mr-2 mt-2"
             key={tag.fieldValue}
           >
             <Link to={`/tags/${kebabCase(tag.fieldValue)}/`}>
