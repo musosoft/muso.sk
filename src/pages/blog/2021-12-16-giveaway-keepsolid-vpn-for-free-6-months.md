@@ -16,6 +16,6 @@ It's easy, just follow these steps:
 
 1. Register via https://id.keepsolid.com/signup
 2. Click "Redeem"
-3. Enter "StopRussianAggression" or "VPNU6MONTH"
+3. Enter "sharewareonsale"
 
 Enjoy :)
