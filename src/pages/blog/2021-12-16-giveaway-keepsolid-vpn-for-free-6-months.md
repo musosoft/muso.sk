@@ -1,8 +1,8 @@
 ---
 templateKey: blog-post
-title: Giveaway KeepSolid VPN for free (1 year)
-date: 2022-02-24T13:50:08.212Z
-description: Free KeepSolid VPN for 1 year
+title: Giveaway KeepSolid VPN for free (half year)
+date: 2022-08-22T15:07:57.994Z
+description: Free KeepSolid VPN for half year
 featuredpost: false
 image: /img/keepsolid-vpn.png
 tags:
