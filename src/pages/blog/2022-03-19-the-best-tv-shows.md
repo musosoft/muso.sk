@@ -4,7 +4,7 @@ title: The best TV shows
 date: 2022-03-19T13:23:16.146Z
 description: TV shows I recommend you watch.
 featuredpost: false
-image: /img/photo-1560169897-fc0cdbdfa4d5.jpg
+featuredImage: /img/photo-1560169897-fc0cdbdfa4d5.jpg
 tags:
   - tvshows
 ---

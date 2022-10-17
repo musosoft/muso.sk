@@ -5,7 +5,7 @@ date: 2022-02-27T07:50:07.721Z
 description: How to improve performance, remove bloatware from Windows 11
   installer and make your own setup iso.
 featuredpost: false
-image: /img/clint-patterson-ygpxcyps8h4-unsplash.jpg
+featuredImage: /img/clint-patterson-ygpxcyps8h4-unsplash.jpg
 tags:
   - windows
   - os

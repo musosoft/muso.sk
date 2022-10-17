@@ -25,16 +25,25 @@ module.exports = {
       },
     },
     `gatsby-transformer-sharp`,
+    // Including in your Gatsby plugins will transform any paths in your frontmatter
+    `gatsby-plugin-netlify-cms-paths`,
     {
       resolve: 'gatsby-transformer-remark',
       options: {
         plugins: [
           {
-            resolve: 'gatsby-remark-relative-images',
+            resolve: `gatsby-plugin-netlify-cms-paths`,
             options: {
-              name: 'uploads',
+              // Path to your Netlify CMS config file
+              cmsConfig: `/static/admin/config.yml`,
             },
           },
+          // {
+          //   resolve: 'gatsby-remark-relative-images',
+          //   options: {
+          //     name: 'uploads',
+          //   },
+          // },
           {
             resolve: 'gatsby-remark-images',
             options: {
@@ -63,12 +72,6 @@ module.exports = {
       },
     },
     {
-      resolve: 'gatsby-plugin-netlify-cms',
-      options: {
-        modulePath: `${__dirname}/src/cms/cms.js`,
-      },
-    },
-    {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `muso.sk`,
@@ -83,6 +86,12 @@ module.exports = {
     'gatsby-plugin-react-helmet',
     `gatsby-plugin-image`,
     'gatsby-plugin-postcss',
+    {
+      resolve: 'gatsby-plugin-netlify-cms',
+      options: {
+        modulePath: `${__dirname}/src/cms/cms.js`,
+      },
+    },
     'gatsby-plugin-netlify', // make sure to keep it last in the array
   ],
 };

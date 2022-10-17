@@ -4,7 +4,7 @@ title: Giveaway domain for free (1 year)
 date: 2021-12-01T02:01:24.851Z
 description: Porkbun free domain giveaway
 featuredpost: false
-image: /img/porkbun-free-domain-giveaway.jpg
+featuredImage: /img/porkbun-free-domain-giveaway.jpg
 tags:
   - giveaway
   - domain

@@ -16,12 +16,13 @@ const BlogRoll = ({ data }) => {
           posts.map(({ node: post }) => (
             <div className="px-4 relative w-full lg:w-3/12" key={post.id}>
               <div className="h-[180px] overflow-hidden relative flex flex-col min-w-0 break-words bg-white w-full shadow-lg transition-all duration-150 ease-in-out hover:z-10 hover:transform hover:scale-110 group rounded-lg mb-4">
-                {post.frontmatter.image && (
+                {post.frontmatter.featuredImage && (
                   <GatsbyImage
                     layout="fixed"
                     className="absolute w-full h-full bg-center bg-cover transition-all duration-1000 ease-in-out group-hover:transform group-hover:scale-110 rounded-lg"
                     image={
-                      post.frontmatter.image.childImageSharp.gatsbyImageData
+                      post.frontmatter.featuredImage.childImageSharp
+                        .gatsbyImageData
                     }
                     alt={`Featured image of ${post.frontmatter.title}`}
                   />
@@ -79,7 +80,7 @@ const BlogRollQuery = () => (
                 templateKey
                 date(formatString: "MMMM DD, YYYY")
                 featuredpost
-                image {
+                featuredImage {
                   childImageSharp {
                     gatsbyImageData(
                       height: 200

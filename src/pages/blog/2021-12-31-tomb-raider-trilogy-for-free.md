@@ -4,7 +4,7 @@ title: Tomb Raider trilogy for free
 date: 2021-12-31T01:53:18.132Z
 description: The last 24-hour giveaway of Epic Games ends with the Tomb Raider trilogy
 featuredpost: false
-image: /img/tomb-raider-trilogy-for-free.jpg
+featuredImage: /img/tomb-raider-trilogy-for-free.jpg
 tags:
   - giveaway
   - game

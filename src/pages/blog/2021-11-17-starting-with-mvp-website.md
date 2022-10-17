@@ -4,7 +4,7 @@ title: Starting with MVP website
 date: 2021-11-17T15:01:10.000Z
 description: muso.sk Blog opening for public after a long time.
 featuredpost: false
-image: /img/og-image.png
+featuredImage: /img/og-image.png
 tags:
   - coding
   - react
