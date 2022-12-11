@@ -19,3 +19,8 @@
   from = "/qr"
   to = "/"
   status = 302
+  
+[[redirects]]
+  from = "/qs"
+  to = "https://download.teamviewer.com/QS"
+  status = 302
