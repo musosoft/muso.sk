@@ -8,11 +8,10 @@ import Content, { HTMLContent } from '../components/Content';
 import muso from '../../static/img/muso.jpg';
 import { FaMapMarkerAlt, FaBriefcase } from 'react-icons/fa';
 
-const AboutPageTemplate = ({
+export const AboutPageTemplate = ({
   position,
   location,
   heading,
-  subheading,
   content,
   image,
   contentComponent,
@@ -151,6 +150,10 @@ AboutPageTemplate.propTypes = {
 };
 
 const AboutPage = ({ data }) => {
+  if (!data || !data.markdownRemark) {
+    return <div>Error: Post not found</div>;
+  }
+
   const { markdownRemark: post } = data;
 
   return (
@@ -161,7 +164,6 @@ const AboutPage = ({ data }) => {
         location={post.frontmatter.location}
         position={post.frontmatter.position}
         heading={post.frontmatter.heading}
-        subheading={post.frontmatter.subheading}
         image={post.frontmatter.image}
         content={post.html}
         helmet={
@@ -202,7 +204,6 @@ export const aboutPageQuery = graphql`
             )
           }
         }
-        subheading
       }
     }
   }

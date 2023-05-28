@@ -1,11 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link, graphql, StaticQuery } from 'gatsby';
-import { GatsbyImage } from 'gatsby-plugin-image';
+import { Link, graphql, useStaticQuery } from 'gatsby';
+import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 
 const BlogRoll = ({ data }) => {
   const { edges: posts } = data.allMarkdownRemark;
-
   return (
     <div className="mt-16 max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
       <h3 className="text-3xl mb-4 font-semibold leading-normal">
@@ -20,9 +19,7 @@ const BlogRoll = ({ data }) => {
                   <GatsbyImage
                     layout="fixed"
                     className="absolute w-full h-full bg-center bg-cover transition-all duration-1000 ease-in-out group-hover:transform group-hover:scale-110 rounded-lg"
-                    image={
-                      post.frontmatter.image.childImageSharp.gatsbyImageData
-                    }
+                    image={getImage(post.frontmatter.image)}
                     alt={`Featured image of ${post.frontmatter.title}`}
                   />
                 )}
@@ -59,44 +56,42 @@ BlogRoll.propTypes = {
   }),
 };
 
-const BlogRollQuery = () => (
-  <StaticQuery
-    query={graphql`
-      query BlogRollQuery {
-        allMarkdownRemark(
-          sort: { order: DESC, fields: [frontmatter___date] }
-          filter: { frontmatter: { templateKey: { eq: "blog-post" } } }
-        ) {
-          edges {
-            node {
-              excerpt(pruneLength: 200)
-              id
-              fields {
-                slug
-              }
-              frontmatter {
-                title
-                templateKey
-                date(formatString: "MMMM DD, YYYY")
-                featuredpost
-                image {
-                  childImageSharp {
-                    gatsbyImageData(
-                      height: 200
-                      width: 300
-                      quality: 100
-                      layout: CONSTRAINED
-                    )
-                  }
+const BlogRollQuery = () => {
+  const data = useStaticQuery(graphql`
+    query BlogRollQuery {
+      allMarkdownRemark(
+        sort: { frontmatter: { date: DESC } }
+        filter: { frontmatter: { templateKey: { eq: "blog-post" } } }
+      ) {
+        edges {
+          node {
+            excerpt(pruneLength: 200)
+            id
+            fields {
+              slug
+            }
+            frontmatter {
+              title
+              templateKey
+              date(formatString: "MMMM DD, YYYY")
+              featuredpost
+              image {
+                childImageSharp {
+                  gatsbyImageData(
+                    height: 200
+                    width: 300
+                    quality: 100
+                    layout: CONSTRAINED
+                  )
                 }
               }
             }
           }
         }
       }
-    `}
-    render={(data, count) => <BlogRoll data={data} count={count} />}
-  />
-);
+    }
+  `);
+  return <BlogRoll data={data} />;
+};
 
 export default BlogRollQuery;

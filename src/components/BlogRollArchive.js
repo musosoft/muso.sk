@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link, graphql, StaticQuery } from 'gatsby';
+import { Link, graphql, useStaticQuery } from 'gatsby';
 import { GatsbyImage } from 'gatsby-plugin-image';
 
 const BlogRollArchive = ({ data }) => {
@@ -61,44 +61,42 @@ BlogRollArchive.propTypes = {
   }),
 };
 
-const BlogRollArchiveQuery = () => (
-  <StaticQuery
-    query={graphql`
-      query BlogRollArchiveQuery {
-        allMarkdownRemark(
-          sort: { order: DESC, fields: [frontmatter___date] }
-          filter: { frontmatter: { templateKey: { eq: "blog-post" } } }
-        ) {
-          edges {
-            node {
-              excerpt(pruneLength: 200)
-              id
-              fields {
-                slug
-              }
-              frontmatter {
-                title
-                templateKey
-                date(formatString: "MMMM DD, YYYY")
-                featuredpost
-                image {
-                  childImageSharp {
-                    gatsbyImageData(
-                      height: 315
-                      width: 600
-                      quality: 100
-                      layout: CONSTRAINED
-                    )
-                  }
+const BlogRollArchiveQuery = () => {
+  const data = useStaticQuery(graphql`
+    query BlogRollArchiveQuery {
+      allMarkdownRemark(
+        sort: { frontmatter: { date: DESC } }
+        filter: { frontmatter: { templateKey: { eq: "blog-post" } } }
+      ) {
+        edges {
+          node {
+            excerpt(pruneLength: 200)
+            id
+            fields {
+              slug
+            }
+            frontmatter {
+              title
+              templateKey
+              date(formatString: "MMMM DD, YYYY")
+              featuredpost
+              image {
+                childImageSharp {
+                  gatsbyImageData(
+                    height: 315
+                    width: 600
+                    quality: 100
+                    layout: CONSTRAINED
+                  )
                 }
               }
             }
           }
         }
       }
-    `}
-    render={(data, count) => <BlogRollArchive data={data} count={count} />}
-  />
-);
+    }
+  `);
+  return <BlogRollArchive data={data} />;
+};
 
 export default BlogRollArchiveQuery;

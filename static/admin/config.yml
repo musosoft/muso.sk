@@ -96,6 +96,10 @@ collections:
               default: 'about-page',
             }
           - { label: 'Title', name: 'title', widget: 'string' }
+          - { label: 'heading', name: 'heading', widget: 'string' }
+          - { label: 'image', name: 'image', widget: 'string' }
+          - { label: 'location', name: 'location', widget: 'string' }
+          - { label: 'position', name: 'position', widget: 'string' }
           - { label: 'Body', name: 'body', widget: 'markdown' }
       - file: 'src/pages/portfolio/index.md'
         label: 'Portfolio Page'

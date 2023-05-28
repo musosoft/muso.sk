@@ -1,17 +1,28 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import BlogPostTemplate from '../../templates/blog-post';
+import { BlogPostTemplate } from '../../templates/blog-post';
 
 const BlogPostPreview = ({ entry, widgetFor }) => {
-  const tags = entry.getIn(['data', 'tags']);
-  return (
-    <BlogPostTemplate
+  const data = entry.getIn(['data']).toJS();
+
+  if (data) {
+    const {
+      description,
+      tags,
+      title,
+    } = data;
+
+    return (
+      <BlogPostTemplate
+      description={description}
+      tags={tags}
+      title={title}
       content={widgetFor('body')}
-      description={entry.getIn(['data', 'description'])}
-      tags={tags && tags.toJS()}
-      title={entry.getIn(['data', 'title'])}
-    />
-  );
+      />
+    );
+  } else {
+    return <div>Loading...</div>;
+  }
 };
 
 BlogPostPreview.propTypes = {
@@ -19,6 +30,6 @@ BlogPostPreview.propTypes = {
     getIn: PropTypes.func,
   }),
   widgetFor: PropTypes.func,
-};
+}
 
 export default BlogPostPreview;

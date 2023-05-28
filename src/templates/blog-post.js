@@ -7,7 +7,7 @@ import { graphql, Link } from 'gatsby';
 import Layout from '../components/Layout';
 import Content, { HTMLContent } from '../components/Content';
 
-const BlogPostTemplate = ({
+export const BlogPostTemplate = ({
   content,
   contentComponent,
   description,
@@ -62,6 +62,10 @@ BlogPostTemplate.propTypes = {
 };
 
 const BlogPost = ({ data }) => {
+  if (!data || !data.markdownRemark) {
+    return <div>Error: Post not found</div>;
+  }
+
   const { markdownRemark: post } = data;
   return (
     <Layout>

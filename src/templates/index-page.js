@@ -8,7 +8,7 @@ import BlogRoll from '../components/BlogRoll';
 import { GatsbyImage, getSrc } from 'gatsby-plugin-image';
 import { FcIdea } from 'react-icons/fc';
 
-const IndexPageTemplate = ({
+export const IndexPageTemplate = ({
   image,
   heading,
   subheading,
