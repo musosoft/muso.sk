@@ -10,7 +10,7 @@ import Pricing from '../components/Pricing';
 import * as FontAwesome from 'react-icons/fa';
 import { FcCommandLine } from 'react-icons/fc';
 
-const PortfolioPageTemplate = ({
+export const PortfolioPageTemplate = ({
   image,
   subheading,
   heading,
@@ -35,37 +35,6 @@ const PortfolioPageTemplate = ({
         </div>
       </div>
       <div className="items-center flex flex-wrap -mx-4">
-        {/*  <div className="ml-auto text-left mt-6 px-4 relative w-full lg:w-4/12">
-          <div className="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg text-white bg-[#c61d1d]">
-            <GatsbyImage
-              image={image.childImageSharp.gatsbyImageData}
-              alt=""
-              className="w-full flex-shrink-0 rounded-t-lg"
-            />
-            <blockquote className="p-6 relative mb-4">
-              <svg
-                preserveAspectRatio="none"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 583 95"
-                className="block w-full absolute text-slate-700 h-95-px -top-94-px left-0"
-              >
-                <polygon
-                  points="0,52 583,95 0,95"
-                  className="text-[#c61d1d] fill-current"
-                ></polygon>
-                <polygon
-                  points="0,42 583,95 683,0 0,95"
-                  opacity=".2"
-                  className="text-[#c61d1d] fill-current"
-                ></polygon>
-              </svg>
-              <h4 className="text-2xl font-semibold mt-0 text-white">
-                {websites.heading}
-              </h4>
-              <p className="text-white mt-2">{websites.description}</p>
-            </blockquote>
-          </div>
-        </div> */}
         <div className="mr-auto px-4 relative w-full">
           <Highlights gridItems={websites.cards} />
         </div>
@@ -75,7 +44,7 @@ const PortfolioPageTemplate = ({
       <div className="container mx-auto px-4">
         <div className="container mx-auto overflow-hidden pb-20">
           <div className="flex flex-wrap items-center">
-            <div className="w-full md:w-4/12 px-12 md:px-4 ml-auto mr-auto mt-48">
+            <div className="w-full md:w-4/12 px-12 md:px-4 ml-auto mr-auto mt-40">
               <div className="text-gray-600 p-3 text-center inline-flex items-center justify-center w-16 h-16 mb-6 shadow-lg rounded-full bg-white">
                 <FcCommandLine size="3em" />
               </div>
@@ -85,41 +54,6 @@ const PortfolioPageTemplate = ({
               <p className="text-lg font-light leading-relaxed mt-4 mb-4 text-gray-700">
                 {it.description}
               </p>
-              {/* <div className="block pb-6">
-                <span className="text-xs font-semibold inline-block py-1 px-2 rounded-full text-gray-600 bg-white uppercase last:mr-0 mr-2 mt-2">
-                  Buttons
-                </span>
-                <span className="text-xs font-semibold inline-block py-1 px-2 rounded-full text-gray-600 bg-white uppercase last:mr-0 mr-2 mt-2">
-                  Inputs
-                </span>
-                <span className="text-xs font-semibold inline-block py-1 px-2 rounded-full text-gray-600 bg-white uppercase last:mr-0 mr-2 mt-2">
-                  Labels
-                </span>
-                <span className="text-xs font-semibold inline-block py-1 px-2 rounded-full text-gray-600 bg-white uppercase last:mr-0 mr-2 mt-2">
-                  Menus
-                </span>
-                <span className="text-xs font-semibold inline-block py-1 px-2 rounded-full text-gray-600 bg-white uppercase last:mr-0 mr-2 mt-2">
-                  Navbars
-                </span>
-                <span className="text-xs font-semibold inline-block py-1 px-2 rounded-full text-gray-600 bg-white uppercase last:mr-0 mr-2 mt-2">
-                  Pagination
-                </span>
-                <span className="text-xs font-semibold inline-block py-1 px-2 rounded-full text-gray-600 bg-white uppercase last:mr-0 mr-2 mt-2">
-                  Progressbars
-                </span>
-                <span className="text-xs font-semibold inline-block py-1 px-2 rounded-full text-gray-600 bg-white uppercase last:mr-0 mr-2 mt-2">
-                  Typography
-                </span>
-              </div> */}
-              {/* <a
-                href="#"
-                target="_blank"
-                rel="noreferrer"
-                className="font-bold text-gray-800 hover:text-gray-600 ease-linear transition-all duration-150"
-              >
-                View All{' '}
-                <i className="fa fa-angle-double-right ml-1 leading-relaxed"></i>
-              </a> */}
             </div>
 
             <div className="w-full md:w-8/12 px-4 mt-32">
@@ -127,7 +61,7 @@ const PortfolioPageTemplate = ({
                 {it.cards.map((icon) => (
                   <div
                     key={icon.title}
-                    className="bg-white mb-4 w-full sm:w-52 rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition duration-300"
+                    className="bg-white mb-4 w-full sm:w-56 rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition duration-300"
                   >
                     <div
                       className="flex items-center py-2 px-4 bg-[color:var(--icon-color)] text-white"

@@ -1,6 +1,11 @@
-const colors = require('tailwindcss/colors');
+/** @type {import('tailwindcss').Config} */
+import colors from 'tailwindcss/colors';
+import plugin from 'tailwindcss/plugin';
+import forms from '@tailwindcss/forms';
+import typography from '@tailwindcss/typography';
+import nameClass from 'tailwindcss/lib/util/nameClass';
 
-module.exports = {
+export default {
   darkMode: 'class',
   content: [
     './src/**/**/*.js',
@@ -95,7 +100,53 @@ module.exports = {
       backgroundSize: {
         full: '100%',
       },
+      spacing: {
+        '1/10': '10%',
+        '1/9': '11.1111111%',
+        '1/8': '12.5%',
+        '1/7': '14.2857143%',
+        '1/6': '16.6666667%',
+        '1/5': '20%',
+        '1/4': '25%',
+        '1/3': '33.3333333%',
+        '2/5': '40%',
+        '1/2': '50%',
+        '3/5': '60%',
+        '2/3': '66.6666667%',
+        '3/4': '75%',
+        '4/5': '80%',
+        '5/6': '83.3333333%',
+        '6/7': '85.7142857%',
+        '7/8': '87.5%',
+        '8/9': '88.8888889%',
+        '9/10': '90%',
+        100: '100%',
+      },
     },
   },
-  plugins: [require('@tailwindcss/forms'), require('@tailwindcss/typography')],
+  plugins: [
+    forms,
+    typography,
+    plugin(function ({ addUtilities, theme }) {
+      const createClipPathUtility = (spacing) => {
+        let utilities = {};
+
+        Object.entries(theme('spacing')).forEach(([key, value]) => {
+          const classNameTop = nameClass('clip-slant-top', key);
+          const classNameBottom = nameClass('clip-slant-bottom', key);
+
+          utilities[classNameTop] = {
+            'clip-path': `polygon(0 0, 100% 0, 100% ${value})`,
+          };
+          utilities[classNameBottom] = {
+            'clip-path': `polygon(0 ${value}, 100% ${value}, 100% 100%, 0 100%)`,
+          };
+        });
+
+        return utilities;
+      };
+
+      addUtilities(createClipPathUtility(theme('spacing')));
+    }),
+  ],
 };

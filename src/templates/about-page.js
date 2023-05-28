@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { graphql } from 'gatsby';
+import { graphql, Link } from 'gatsby';
 import { GatsbyImage, getSrc } from 'gatsby-plugin-image';
 import Layout from '../components/Layout';
 import SEO from '../components/SEO';
@@ -125,13 +125,12 @@ export const AboutPageTemplate = ({
                       className="leading-relaxed text-gray-800 prose lg:prose-lg max-w-none"
                       content={content}
                     />
-                    <a
-                      href="/portfolio"
+                    <Link
+                      to="/portfolio"
                       className="font-normal text-blue-500"
-                      onClick={(e) => e.preventDefault()}
                     >
                       Check my services
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </div>

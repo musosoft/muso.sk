@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { v4 } from 'uuid';
 
 const Testimonials = ({ testimonials }) => (
-  <div className="flex justify-center w-full flex-wrap">
+  <div className="flex justify-center w-full flex-wrap gap-6">
     {testimonials.map((testimonial) => (
       <figure
         key={v4()}
@@ -20,11 +20,11 @@ const Testimonials = ({ testimonials }) => (
           </div>
         </div>
         <blockquote className="w-full mb-10">
-          <div className="text-3xl text-left leading-tight h-2">“</div>
+          <div className="text-3xl text-left leading-tight h-2 text-gray-500">“</div>
           <p className="text-sm text-gray-600 text-center px-5">
             {testimonial.quote}
           </p>
-          <div className="text-3xl text-right leading-tight h-3 -mt-3">”</div>
+          <div className="text-3xl text-right leading-tight h-3 -mt-3 text-gray-500">”</div>
         </blockquote>
         <figcaption className="w-full text-center">
           <p className="text-md font-bold text-center">{testimonial.author}</p>

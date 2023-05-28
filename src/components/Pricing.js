@@ -12,11 +12,11 @@ const Pricing = ({ data }) => (
           <div className="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg bg-blue-600 overflow-hidden">
             <div className="flex-auto">
               <div className="">
-                <h6 className="text-xl mt-5 mb-3 font-semibold text-white text-center">
+                <h6 className="text-2xl mt-5 mb-3 font-semibold text-white text-center">
                   {price.plan}
                 </h6>
               </div>
-              <div className=" text-gray-600 bg-gradient-to-b from-white to-gray-400 clip polygon b-3">
+              <div className="text-gray-600 bg-gradient-to-b from-white to-gray-400 clip polygon b-3 transform skew-y-[0.001deg]">
                 <ul className="py-8 px-2">
                   {price.items.map((item) => (
                     <li key={item} className="mt-4 flex items-start">
@@ -42,7 +42,7 @@ const Pricing = ({ data }) => (
                   ))}
                 </ul>
                 <div className="bg-blue-600 text-white clip polygon b-3">
-                  <div className="pt-12 pb-6 px-2">{price.description}</div>
+                  <div className="pt-12 pb-6 px-4">{price.description}</div>
                   <div className="text-center px-3 pb-6 text-3xl">
                     {price.price}
                   </div>

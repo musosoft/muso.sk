@@ -9,14 +9,16 @@ export default class BlogIndexPage extends React.Component {
       <Layout>
         {/* eslint-disable-next-line */}
         <SEO title="Blog" />
-        <div className="mt-12 text-center">
-          <h1 className="text-4xl font-semibold leading-normal text-gray-800 mb-2">
-            Latest Stories
-          </h1>
+        <div className="container mx-auto px-4">
+          <div className="mt-12 text-center">
+            <h1 className="text-4xl font-semibold leading-normal text-gray-800 mb-2">
+              Latest Stories
+            </h1>
+          </div>
+          <section className="mb-20">
+            <BlogRollArchive />
+          </section>
         </div>
-        <section className="mb-20">
-          <BlogRollArchive />
-        </section>
       </Layout>
     );
   }

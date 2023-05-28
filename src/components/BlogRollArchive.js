@@ -14,7 +14,7 @@ const BlogRollArchive = ({ data }) => {
             <div
               className={`mb-12 relative flex flex-col min-w-0 break-words ${
                 post.frontmatter.featuredpost ? 'bg-dodgerBlue-100' : 'bg-white'
-              } w-full mb-6 shadow-lg rounded-lg`}
+              } w-full mb-6 rounded-lg`}
               key={post.id}
             >
               <div className="items-center flex flex-wrap -mx-4">
@@ -22,7 +22,7 @@ const BlogRollArchive = ({ data }) => {
                   {post.frontmatter.image && (
                     <GatsbyImage
                       layout="fixed"
-                      className="w-full sm:rounded-lg rounded-r-none"
+                      className="w-full sm:rounded-lg rounded-r-none shadow-lg"
                       image={
                         post.frontmatter.image.childImageSharp.gatsbyImageData
                       }

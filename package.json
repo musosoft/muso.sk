@@ -27,7 +27,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-helmet": "^6.1.0",
-    "react-icons": "^4.8.0",
+    "react-icons": "^4.9.0",
     "uuid": "^9.0.0"
   },
   "devDependencies": {
@@ -37,7 +37,7 @@
     "gatsby-plugin-postcss": "^6.10.0",
     "lodash": "^4.17.21",
     "npm-upgrade": "^3.1.0",
-    "postcss": "^8.4.23",
+    "postcss": "^8.4.24",
     "postcss-cli": "^10.1.0",
     "prettier": "^2.8.8",
     "run-script-os": "^1.1.6",

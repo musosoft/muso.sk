@@ -10,21 +10,22 @@ const IndexPagePreview = ({ entry, getAsset }) => {
       image,
       title,
       heading,
+      subheading,
       description,
       intro,
       mainpitch,
     } = data;
 
-    const imageData = image ? { childImageSharp: { gatsbyImageData: image } } : null;
-
     return (
       <IndexPageTemplate
-        image={imageData}
+        image={getAsset(image)}
         title={title}
         heading={heading}
+        subheading={subheading}
         description={description}
-        intro={intro || { blurbs: [] }}
+        intro={intro ? { ...intro, image: getAsset(intro.image) } : { blurbs: [] }}
         mainpitch={mainpitch || {}}
+        inPreview={true}
       />
     );
   } else {
