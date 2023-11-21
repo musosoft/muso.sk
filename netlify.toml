@@ -12,7 +12,7 @@
 
 [[redirects]]
   from = "/cv"
-  to = "https://docs.google.com/document/d/1kDilmEm0R1ZrDPrbteFu4i2uX_PZJOQJcjh7l3RRw6o/export?format=pdf"
+  to = "https://docs.google.com/document/d/1kDilmEm0R1ZrDPrbteFu4i2uX_PZJOQJcjh7l3RRw6o/export?format=pdf/"
   status = 302
   
 [[redirects]]
@@ -22,10 +22,10 @@
   
 [[redirects]]
   from = "/qs"
-  to = "https://download.teamviewer.com/QS"
+  to = "https://download.teamviewer.com/QS/"
   status = 302
   
 [[redirects]]
   from = "/ip"
-  to = "https://musosoft.github.io/ip"
+  to = "https://musosoft.github.io/ip/"
   status = 302
