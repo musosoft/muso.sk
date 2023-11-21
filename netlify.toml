@@ -24,3 +24,8 @@
   from = "/qs"
   to = "https://download.teamviewer.com/QS"
   status = 302
+  
+[[redirects]]
+  from = "/ip"
+  to = "https://musosoft.github.io/ip"
+  status = 302
