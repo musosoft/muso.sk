@@ -1,8 +1,8 @@
-import pkg from 'lodash';
-const { get, uniq, kebabCase } = pkg;
 import { resolve } from 'path';
 import { createFilePath } from 'gatsby-source-filesystem';
-import { fmImagesToRelative } from 'gatsby-remark-relative-images';
+import { get } from './src/utils/get.mjs';
+import { uniq } from './src/utils/uniq.mjs';
+import { kebabCase } from './src/utils/kebabCase.mjs';
 
 export function createPages({ actions, graphql }) {
   const { createPage } = actions;
@@ -75,7 +75,6 @@ export function createPages({ actions, graphql }) {
 
 export function onCreateNode({ node, actions, getNode }) {
   const { createNodeField } = actions;
-  fmImagesToRelative(node);
 
   if (node.internal.type === `MarkdownRemark`) {
     const value = createFilePath({ node, getNode });

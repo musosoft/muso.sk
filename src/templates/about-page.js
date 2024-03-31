@@ -125,10 +125,7 @@ export const AboutPageTemplate = ({
                       className="leading-relaxed text-gray-800 prose lg:prose-lg max-w-none"
                       content={content}
                     />
-                    <Link
-                      to="/portfolio"
-                      className="font-normal text-blue-500"
-                    >
+                    <Link to="/portfolio" className="font-normal text-blue-500">
                       Check my services
                     </Link>
                   </div>

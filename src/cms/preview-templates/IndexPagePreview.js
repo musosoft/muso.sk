@@ -6,15 +6,8 @@ const IndexPagePreview = ({ entry, getAsset }) => {
   const data = entry.getIn(['data']).toJS();
 
   if (data) {
-    const {
-      image,
-      title,
-      heading,
-      subheading,
-      description,
-      intro,
-      mainpitch,
-    } = data;
+    const { image, title, heading, subheading, description, intro, mainpitch } =
+      data;
 
     return (
       <IndexPageTemplate
@@ -23,7 +16,9 @@ const IndexPagePreview = ({ entry, getAsset }) => {
         heading={heading}
         subheading={subheading}
         description={description}
-        intro={intro ? { ...intro, image: getAsset(intro.image) } : { blurbs: [] }}
+        intro={
+          intro ? { ...intro, image: getAsset(intro.image) } : { blurbs: [] }
+        }
         mainpitch={mainpitch || {}}
         inPreview={true}
       />

@@ -6,18 +6,14 @@ const BlogPostPreview = ({ entry, widgetFor }) => {
   const data = entry.getIn(['data']).toJS();
 
   if (data) {
-    const {
-      description,
-      tags,
-      title,
-    } = data;
+    const { description, tags, title } = data;
 
     return (
       <BlogPostTemplate
-      description={description}
-      tags={tags}
-      title={title}
-      content={widgetFor('body')}
+        description={description}
+        tags={tags}
+        title={title}
+        content={widgetFor('body')}
       />
     );
   } else {
@@ -30,6 +26,6 @@ BlogPostPreview.propTypes = {
     getIn: PropTypes.func,
   }),
   widgetFor: PropTypes.func,
-}
+};
 
 export default BlogPostPreview;

@@ -6,15 +6,11 @@ const AboutPagePreview = ({ entry, widgetFor }) => {
   const data = entry.getIn(['data']).toJS();
 
   if (data) {
-    const {
-      title,
-      location,
-      position,
-      heading,
-      image,
-    } = data;
+    const { title, location, position, heading, image } = data;
 
-    const imageData = image ? { childImageSharp: { gatsbyImageData: image } } : null;
+    const imageData = image
+      ? { childImageSharp: { gatsbyImageData: image } }
+      : null;
 
     return (
       <AboutPageTemplate

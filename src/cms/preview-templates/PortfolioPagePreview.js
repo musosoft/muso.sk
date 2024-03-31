@@ -28,7 +28,11 @@ const PortfolioPagePreview = ({ entry, getAsset }) => {
       description={entry.getIn(['data', 'description'])}
       intro={{ blurbs }}
       websites={{ cards: websitesCards }}
-      it={{ heading: entry.getIn(['data', 'it', 'heading']), description: entry.getIn(['data', 'it', 'description']), cards: itCards }}
+      it={{
+        heading: entry.getIn(['data', 'it', 'heading']),
+        description: entry.getIn(['data', 'it', 'description']),
+        cards: itCards,
+      }}
       testimonials={testimonials}
       pricing={{
         heading: entry.getIn(['data', 'pricing', 'heading']),

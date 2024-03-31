@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { kebabCase } from 'lodash';
 import SEO from '../components/SEO';
 import { getSrc } from 'gatsby-plugin-image';
 import { graphql, Link } from 'gatsby';
 import Layout from '../components/Layout';
 import Content, { HTMLContent } from '../components/Content';
+import { kebabCase } from '../../src/utils/kebabCase';
 
 export const BlogPostTemplate = ({
   content,

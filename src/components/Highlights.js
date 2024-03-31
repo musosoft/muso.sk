@@ -56,7 +56,7 @@ HighlightGrid.propTypes = {
   gridItems: PropTypes.arrayOf(
     PropTypes.shape({
       text: PropTypes.string,
-    })
+    }),
   ),
 };
 

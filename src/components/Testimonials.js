@@ -20,11 +20,15 @@ const Testimonials = ({ testimonials }) => (
           </div>
         </div>
         <blockquote className="w-full mb-10">
-          <div className="text-3xl text-left leading-tight h-2 text-gray-500">“</div>
+          <div className="text-3xl text-left leading-tight h-2 text-gray-500">
+            “
+          </div>
           <p className="text-sm text-gray-600 text-center px-5">
             {testimonial.quote}
           </p>
-          <div className="text-3xl text-right leading-tight h-3 -mt-3 text-gray-500">”</div>
+          <div className="text-3xl text-right leading-tight h-3 -mt-3 text-gray-500">
+            ”
+          </div>
         </blockquote>
         <figcaption className="w-full text-center">
           <p className="text-md font-bold text-center">{testimonial.author}</p>
@@ -42,7 +46,7 @@ Testimonials.propTypes = {
     PropTypes.shape({
       quote: PropTypes.string,
       author: PropTypes.string,
-    })
+    }),
   ),
 };
 

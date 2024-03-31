@@ -1,8 +1,0 @@
-{
-  "ignore": {
-    "gatsby-remark-relative-images": {
-      "versions": ">1",
-      "reason": "Not compatible with Windows and Netlify"
-    }
-  }
-}
