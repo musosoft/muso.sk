@@ -45,6 +45,7 @@
     "gatsby"
   ],
   "license": "MIT",
+  "packageManager": "yarn@4.1.1",
   "scripts": {
     "postinstall": "gatsby telemetry --disable",
     "clean": "gatsby clean",
