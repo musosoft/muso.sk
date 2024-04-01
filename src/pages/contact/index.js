@@ -1,5 +1,5 @@
 import React from 'react';
-import { navigate } from 'gatsby-link';
+import { navigate } from 'gatsby';
 import Layout from '../../components/Layout';
 import SEO from '../../components/SEO';
 import { Tab } from '@headlessui/react';

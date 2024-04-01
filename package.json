@@ -53,11 +53,11 @@
     "build": "yarn clean && gatsby build",
     "format": "prettier --write \"{gatsby-*.js,src/**/*.js}\"",
     "reinstall": "run-script-os",
-    "reinstall:nix": "yarn run clean && rm -rf node_modules/ && yarn cache clean && rm -rf yarn.lock && yarn install --force && yarn cache verify && yarn audit fix",
-    "reinstall:windows": "yarn run clean && rd /s /q node_modules && yarn cache clean && del yarn.lock && yarn install --force && yarn cache verify && yarn audit fix",
+    "reinstall:nix": "yarn run clean && rm -rf node_modules/ && yarn cache clean && rm -rf yarn.lock && yarn install",
+    "reinstall:windows": "yarn run clean && rmdir /s /q node_modules && yarn cache clean && del yarn.lock && yarn install",
     "upgrade": "run-script-os",
-    "upgrade:macos": "brew upgrade node && yarn global add yarn@latest && yarn upgrade-interactive && yarn upgrade",
-    "upgrade:windows": "powershell Start-Process powershell -Verb runAs -ArgumentList 'choco upgrade nodejs' && yarn global add yarn@latest && yarn upgrade-interactive && yarn upgrade"
+    "upgrade:macos": "brew upgrade node && yarn global add yarn@latest && yarn upgrade-interactive",
+    "upgrade:windows": "powershell Start-Process powershell -Verb runAs -ArgumentList 'choco upgrade nodejs' && yarn global add yarn@latest && yarn upgrade-interactive"
   },
   "prettier": {
     "singleQuote": true
