@@ -6,6 +6,7 @@
   NODE_VERSION = "21"
   CI = ""
   NODE_OPTIONS = "--max-old-space-size= 4096"
+  GATSBY_CONTINUE_BUILD_ON_MISSING_ADAPTER = "true"
 
 [[plugins]]
   package = "@netlify/plugin-gatsby"
