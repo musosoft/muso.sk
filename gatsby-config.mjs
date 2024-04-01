@@ -1,12 +1,10 @@
 import path from 'path';
 import { fileURLToPath } from 'url';
-import adapter from 'gatsby-adapter-netlify';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 export default {
-  adapter: adapter(),
   siteMetadata: {
     title: 'muso.sk',
     description:
