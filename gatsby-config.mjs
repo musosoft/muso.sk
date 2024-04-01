@@ -1,10 +1,12 @@
 import path from 'path';
 import { fileURLToPath } from 'url';
+import adapter from 'gatsby-adapter-netlify';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 export default {
+  adapter: adapter(),
   siteMetadata: {
     title: 'muso.sk',
     description:
@@ -89,7 +91,6 @@ export default {
     },
     'gatsby-plugin-react-helmet',
     `gatsby-plugin-image`,
-    'gatsby-plugin-postcss',
-    'gatsby-plugin-netlify', // make sure to keep it last in the array
+    'gatsby-plugin-postcss'
   ]
 };

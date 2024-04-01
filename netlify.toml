@@ -3,10 +3,11 @@
   command = "yarn build"
 
 [build.environment]
-  NODE_VERSION = "21"
+  AWS_LAMBDA_JS_RUNTIME = "nodejs21.x"
   CI = ""
+  NODE_VERSION = "21"
   NODE_OPTIONS = "--max-old-space-size= 4096"
-  GATSBY_CONTINUE_BUILD_ON_MISSING_ADAPTER = "true"
+  YARN_VERSION = "4.1.1"
 
 [[plugins]]
   package = "@netlify/plugin-gatsby"
