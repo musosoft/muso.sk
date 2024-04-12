@@ -5,6 +5,7 @@
   "author": "muso.sk",
   "repository": "https://github.com/musosoft/muso.sk",
   "dependencies": {
+  "webpack": "^5.0.0",
     "@fontsource/poppins": "^5.0.13",
     "@headlessui/react": "^1.7.18",
     "@tailwindcss/forms": "^0.5.7",
