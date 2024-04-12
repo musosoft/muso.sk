@@ -1,6 +1,17 @@
 import path from 'path';
 import { fileURLToPath } from 'url';
 
+import { fileURLToPath } from 'url';
+
+process.on('warning', (warning) => {
+  if (warning.name === 'DeprecationWarning' && warning.message.includes('punycode')) {
+    // Suppress the punycode deprecation warning
+  } else {
+    // Print all other warnings to the console
+    console.warn(warning.name, warning.message, warning.stack);
+  }
+});
+
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
