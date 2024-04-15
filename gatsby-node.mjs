@@ -4,10 +4,10 @@ import { get } from './src/utils/get.mjs';
 import { uniq } from './src/utils/uniq.mjs';
 import { kebabCase } from './src/utils/kebabCase.mjs';
 
-export function createPages({ actions, graphql }) {
+export async function createPages({ actions, graphql }) {
   const { createPage } = actions;
 
-  return graphql(`
+  const result = await graphql(`
     {
       allMarkdownRemark(limit: 1000) {
         edges {
@@ -24,51 +24,38 @@ export function createPages({ actions, graphql }) {
         }
       }
     }
-  `).then((result) => {
-    if (result.errors) {
-      result.errors.forEach((e) => console.error(e.toString()));
-      return Promise.reject(result.errors);
+  `);
+
+  if (result.errors) {
+    result.errors.forEach((e) => console.error(e.toString()));
+    throw result.errors;
+  }
+
+  const posts = result.data.allMarkdownRemark.edges;
+
+  posts.forEach(({ node }) => {
+    const { id, fields, frontmatter } = node;
+    createPage({
+      path: fields.slug,
+      tags: frontmatter.tags,
+      component: resolve(`src/templates/${String(frontmatter.templateKey)}.js`),
+      context: { id },
+    });
+  });
+
+  const tags = uniq(posts.reduce((acc, { node }) => {
+    if (get(node, 'frontmatter.tags')) {
+      acc.push(...node.frontmatter.tags);
     }
+    return acc;
+  }, []));
 
-    const posts = result.data.allMarkdownRemark.edges;
-
-    posts.forEach((edge) => {
-      const id = edge.node.id;
-      createPage({
-        path: edge.node.fields.slug,
-        tags: edge.node.frontmatter.tags,
-        component: resolve(
-          `src/templates/${String(edge.node.frontmatter.templateKey)}.js`
-        ),
-        // additional data can be passed via context
-        context: {
-          id,
-        },
-      });
-    });
-
-    // Tag pages:
-    let tags = [];
-    // Iterate through each post, putting all found tags into `tags`
-    posts.forEach((edge) => {
-      if (get(edge, `node.frontmatter.tags`)) {
-        tags = tags.concat(edge.node.frontmatter.tags);
-      }
-    });
-    // Eliminate duplicate tags
-    tags = uniq(tags);
-
-    // Make tag pages
-    tags.forEach((tag) => {
-      const tagPath = `/tags/${kebabCase(tag)}/`;
-
-      createPage({
-        path: tagPath,
-        component: resolve(`src/templates/tags.js`),
-        context: {
-          tag,
-        },
-      });
+  tags.forEach((tag) => {
+    const tagPath = `/tags/${kebabCase(tag)}/`;
+    createPage({
+      path: tagPath,
+      component: resolve('src/templates/tags.js'),
+      context: { tag },
     });
   });
 }

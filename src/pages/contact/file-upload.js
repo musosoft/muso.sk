@@ -72,6 +72,7 @@ export default class Contact extends React.Component {
                       className="input"
                       type={'text'}
                       name={'name'}
+                      id={'name'}
                       onChange={this.handleChange}
                       id={'name'}
                       required={true}
@@ -80,6 +81,7 @@ export default class Contact extends React.Component {
                 </div>
                 <div className="field">
                   <div className="file">
+                    <label htmlFor="attachment" className="label">Attachment</label>
                     <label className="file-label">
                       <input
                         className="file-input"
