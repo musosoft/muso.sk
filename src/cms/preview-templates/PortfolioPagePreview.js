@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { PortfolioPageTemplate } from '../../templates/portfolio-page';
+import PortfolioPageTemplate from '../../templates/PortfolioPageTemplate';
 
 // PortfolioPagePreview.js
 
