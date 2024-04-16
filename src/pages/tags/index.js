@@ -19,12 +19,12 @@ const TagsPage = ({
         <h1 className="text-3xl mb-2 font-semibold leading-normal">Tags</h1>
         {group.map((tag) => (
           <span
-            className="text-xs font-semibold inline-block p-2 rounded-full text-gray-600 bg-gray-50 uppercase last:mr-0 mr-2 mt-2"
+            className="text-xs font-semibold inline-block p-2 rounded-full text-gray-600 dark:text-gray-400 bg-gray-50 uppercase last:mr-0 mr-2 mt-2"
             key={tag.fieldValue}
           >
             <Link to={`/tags/${kebabCase(tag.fieldValue)}/`}>
               {tag.fieldValue}
-              <span className="inline-flex items-center justify-center px-2 py-1 text-tiny font-bold leading-none text-gray-600 bg-white rounded-full ml-2">
+              <span className="inline-flex items-center justify-center px-2 py-1 text-tiny font-bold leading-none text-gray-600 dark:text-gray-400 bg-white dark:bg-gray-800 rounded-full ml-2">
                 {tag.totalCount}
               </span>
             </Link>

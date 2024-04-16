@@ -7,7 +7,7 @@ const Testimonials = ({ testimonials }) => (
     {testimonials.map((testimonial) => (
       <figure
         key={v4()}
-        className="max-w-md py-4 px-8 bg-white shadow-lg rounded-lg my-20 border border-gray-50"
+        className="max-w-md py-4 px-8 bg-white dark:bg-gray-800 shadow-lg rounded-lg my-20 border border-gray-50 dark:border-gray-700"
       >
         <div className="w-full pt-1 pb-5">
           <div
@@ -20,19 +20,19 @@ const Testimonials = ({ testimonials }) => (
           </div>
         </div>
         <blockquote className="w-full mb-10">
-          <div className="text-3xl text-left leading-tight h-2 text-gray-500">
+          <div className="text-3xl text-left leading-tight h-2 text-gray-500 dark:text-gray-300">
             “
           </div>
-          <p className="text-sm text-gray-600 text-center px-5">
+          <p className="text-sm text-gray-600 dark:text-gray-400 text-center px-5">
             {testimonial.quote}
           </p>
-          <div className="text-3xl text-right leading-tight h-3 -mt-3 text-gray-500">
+          <div className="text-3xl text-right leading-tight h-3 -mt-3 text-gray-500 dark:text-gray-300">
             ”
           </div>
         </blockquote>
         <figcaption className="w-full text-center">
           <p className="text-md font-bold text-center">{testimonial.author}</p>
-          <cite className="text-xs text-gray-500 text-center">
+          <cite className="text-xs text-gray-500 dark:text-gray-300 text-center">
             {testimonial.company}
           </cite>
         </figcaption>

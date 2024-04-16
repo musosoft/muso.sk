@@ -28,10 +28,10 @@ class TagRoute extends React.Component {
             <h3 className="text-3xl mb-2 font-semibold leading-normal">
               {tagHeader}
             </h3>
-            <ul className="text-lg font-light leading-relaxed mt-4 mb-4 text-gray-700">
+            <ul className="text-lg font-light leading-relaxed mt-4 mb-4 text-gray-700 dark:text-gray-300">
               {postLinks}
             </ul>
-            <p className="font-bold text-gray-800 hover:text-gray-600 ease-linear transition-all duration-150">
+            <p className="font-bold text-gray-800 dark:text-gray-200 hover:text-gray-600 dark:text-gray-400 ease-linear transition-all duration-150">
               <Link to="/tags/">Browse all tags</Link>
             </p>
           </div>

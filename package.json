@@ -49,6 +49,7 @@
     "postinstall": "gatsby telemetry --disable",
     "clean": "gatsby clean",
     "start": "gatsby develop",
+    "debug": "gatsby develop --verbose",
     "build": "npm run clean && gatsby build",
     "format": "prettier --write \"{gatsby-*.js,src/**/*.js}\"",
     "reinstall": "run-script-os",

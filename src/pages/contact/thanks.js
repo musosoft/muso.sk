@@ -5,7 +5,7 @@ const Thanks = () => (
   <Layout>
     <section className="section">
       <div className="container mx-auto">
-        <div className="flex flex-wrap justify-center bg-white shadow-xl rounded-lg mt-12 py-16 px-12 relative z-10">
+        <div className="flex flex-wrap justify-center bg-white dark:bg-gray-800 shadow-xl rounded-lg mt-12 py-16 px-12 relative z-10">
           <div className="w-full text-center lg:w-8/12">
             <p className="text-4xl text-center">
               <span role="img" aria-label="love">
@@ -13,7 +13,7 @@ const Thanks = () => (
               </span>
             </p>
             <h3 className="font-semibold text-3xl">Thank you</h3>
-            <p className="text-gray-600 text-lg leading-relaxed mt-4 mb-4">
+            <p className="text-gray-600 dark:text-gray-400 text-lg leading-relaxed mt-4 mb-4">
               Will get back to you ASAP!
             </p>
             <div className="sm:block flex flex-col mt-10">

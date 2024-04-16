@@ -6,7 +6,7 @@ import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 const BlogRoll = ({ data }) => {
   const { edges: posts } = data.allMarkdownRemark;
   return (
-    <div className="mt-16 max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="mt-10 max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
       <h3 className="text-3xl mb-4 font-semibold leading-normal">
         Latest news
       </h3>
@@ -14,7 +14,7 @@ const BlogRoll = ({ data }) => {
         {posts &&
           posts.map(({ node: post }) => (
             <div className="px-4 relative w-full lg:w-3/12" key={post.id}>
-              <div className="h-[180px] overflow-hidden relative flex flex-col min-w-0 break-words bg-white w-full shadow-lg transition-all duration-150 ease-in-out hover:z-10 hover:transform hover:scale-110 group rounded-lg mb-4">
+              <div className="h-[180px] overflow-hidden relative flex flex-col min-w-0 break-words bg-white dark:bg-gray-800 w-full shadow-lg transition-all duration-150 ease-in-out hover:z-10 hover:transform hover:scale-110 group rounded-lg mb-4">
                 {post.frontmatter.image && (
                   <GatsbyImage
                     layout="fixed"
@@ -32,10 +32,10 @@ const BlogRoll = ({ data }) => {
                 ></div>
                 <Link to={post.fields.slug}>
                   <div className="absolute text-left p-6 bottom-0">
-                    <h6 className="text-xl leading-normal mb-0 text-white opacity-75">
+                    <h6 className="text-xl md:text-lg leading-normal mb-0 text-white opacity-75">
                       {post.frontmatter.date}
                     </h6>
-                    <h5 className="text-2xl font-bold leading-tight mt-0 mb-2 text-white">
+                    <h5 className="text-2xl md:text-xl font-bold leading-tight mt-0 mb-2 text-white">
                       {post.frontmatter.title}
                     </h5>
                   </div>

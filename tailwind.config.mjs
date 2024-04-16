@@ -128,18 +128,30 @@ export default {
     forms,
     typography,
     plugin(function ({ addUtilities, theme }) {
-      const createClipPathUtility = (spacing) => {
+      const createClipPathUtility = () => {
         let utilities = {};
 
         Object.entries(theme('spacing')).forEach(([key, value]) => {
-          const classNameTop = nameClass('clip-slant-top', key);
-          const classNameBottom = nameClass('clip-slant-bottom', key);
+          const classNameTopLeft = nameClass('slant-tl', key);
+          const classNameTopRight = nameClass('slant-tr', key);
+          const classNameBottomRight = nameClass('slant-br', key);
+          const classNameBottomLeft = nameClass('slant-bl', key);
 
-          utilities[classNameTop] = {
-            'clip-path': `polygon(0 0, 100% 0, 100% ${value})`,
+          utilities[classNameTopLeft] = {
+            '--tw-clip-polygon-a': `0 ${value}`,
+            'clip-path': `polygon(var(--tw-clip-polygon))`,
           };
-          utilities[classNameBottom] = {
-            'clip-path': `polygon(0 ${value}, 100% ${value}, 100% 100%, 0 100%)`,
+          utilities[classNameTopRight] = {
+            '--tw-clip-polygon-b': `100% ${value}`,
+            'clip-path': `polygon(var(--tw-clip-polygon))`,
+          };
+          utilities[classNameBottomRight] = {
+            '--tw-clip-polygon-c': `100% calc(100% - ${value})`,
+            'clip-path': `polygon(var(--tw-clip-polygon))`,
+          };
+          utilities[classNameBottomLeft] = {
+            '--tw-clip-polygon-d': `0 calc(100% - ${value})`,
+            'clip-path': `polygon(var(--tw-clip-polygon))`,
           };
         });
 
@@ -147,6 +159,16 @@ export default {
       };
 
       addUtilities(createClipPathUtility(theme('spacing')));
+
+      addUtilities({
+        '*': {
+          '--tw-clip-polygon': `var(--tw-clip-polygon-a), var(--tw-clip-polygon-b), var(--tw-clip-polygon-c), var(--tw-clip-polygon-d)`,
+          '--tw-clip-polygon-a': `0 0`,
+          '--tw-clip-polygon-b': `100% 0`,
+          '--tw-clip-polygon-c': `100% 100%`,
+          '--tw-clip-polygon-d': `0 100%`,
+        },
+      });
     }),
   ],
 };

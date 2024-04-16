@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { HiCheckCircle } from "react-icons/hi";
 
 const Pricing = ({ data }) => (
   <div className="w-full px-4">
@@ -10,40 +11,26 @@ const Pricing = ({ data }) => (
           className="md:w-6/12 lg:w-3/12 px-4 sm:px-12 md:px-4 mx-auto"
         >
           <div className="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg bg-blue-600 overflow-hidden">
-            <div className="flex-auto">
+            <div className="flex-auto max-w-80 mx-auto">
               <div className="">
                 <h6 className="text-2xl mt-5 mb-3 font-semibold text-white text-center">
                   {price.plan}
                 </h6>
               </div>
-              <div className="text-gray-600 bg-gradient-to-b from-white to-gray-400 clip polygon b-3 transform skew-y-[0.001deg]">
-                <ul className="py-8 px-2">
+              <div className="text-gray-600 dark:text-gray-400 bg-blue-600">
+                <ul className="px-4">
                   {price.items.map((item) => (
-                    <li key={item} className="mt-4 flex items-start">
-                      <div className="flex-shrink-0">
-                        <svg
-                          className="h-6 w-6 text-teal-500"
-                          stroke="currentColor"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth="2"
-                            d="M5 13l4 4L19 7"
-                          ></path>
-                        </svg>
-                      </div>
-                      <p className="ml-3 text-base font-medium text-gray-500">
+                    <li key={item} className="mt-4 flex place-items-center text-gray-100">
+                      <HiCheckCircle />
+                      <p className="ml-3 text-base font-medium">
                         {item}
                       </p>
                     </li>
                   ))}
                 </ul>
-                <div className="bg-blue-600 text-white clip polygon b-3">
-                  <div className="pt-12 pb-6 px-4">{price.description}</div>
-                  <div className="text-center px-3 pb-6 text-3xl">
+                <div className="bg-blue-600  text-white ">
+                  <div className="pt-6 pb-6 px-4">{price.description}</div>
+                  <div className="text-center pt-6 px-3 pb-6 text-3xl">
                     {price.price}
                   </div>
                 </div>

@@ -11,7 +11,7 @@ export default class BlogIndexPage extends React.Component {
         <SEO title="Blog" />
         <div className="container mx-auto px-4">
           <div className="mt-12 text-center">
-            <h1 className="text-4xl font-semibold leading-normal text-gray-800 mb-2">
+            <h1 className="text-4xl font-semibold leading-normal text-gray-800 dark:text-gray-200 mb-2">
               Latest Stories
             </h1>
           </div>

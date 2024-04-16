@@ -13,7 +13,7 @@ const BlogRollArchive = ({ data }) => {
           posts.map(({ node: post }) => (
             <div
               className={`mb-12 relative flex flex-col min-w-0 break-words ${
-                post.frontmatter.featuredpost ? 'bg-dodgerBlue-100' : 'bg-white'
+                post.frontmatter.featuredpost ? 'bg-dodgerBlue-100' : 'bg-white dark:bg-gray-800'
               } w-full mb-6 rounded-lg`}
               key={post.id}
             >

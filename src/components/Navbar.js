@@ -3,7 +3,7 @@ import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { Link, graphql, StaticQuery } from 'gatsby';
 import { Popover, Transition } from '@headlessui/react';
-// import { ThemeToggle } from './ThemeToggle.js';
+import { ThemeToggle } from './ThemeToggle.js';
 import logo from '../../static/img/logo.svg';
 import {
   HiOutlineMenu,
@@ -87,7 +87,7 @@ function Navbar() {
       {({ open }) => (
         <>
           <div className="max-w-7xl mx-auto px-4 sm:px-6">
-            <div className="flex justify-between items-center border-b-2 border-gray-100 py-6 md:justify-start md:space-x-10">
+            <div className="flex justify-between items-center border-b-2 border-gray-100 dark:border-gray-700 py-6 md:justify-start md:space-x-10">
               <div className="flex justify-start lg:w-0 lg:flex-1">
                 <Link to="/">
                   <span className="sr-only">muso.sk</span>
@@ -95,7 +95,7 @@ function Navbar() {
                 </Link>
               </div>
               <div className="-mr-2 -my-2 md:hidden">
-                <Popover.Button className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-dodgerBlue-500">
+                <Popover.Button className="bg-white dark:bg-gray-800 rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 dark:text-gray-300 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-dodgerBlue-500">
                   <span className="sr-only">Open menu</span>
                   <HiOutlineMenu className="h-6 w-6" aria-hidden="true" />
                 </Popover.Button>
@@ -106,15 +106,15 @@ function Navbar() {
                     <>
                       <Popover.Button
                         className={classNames(
-                          open ? 'text-gray-900' : 'text-gray-500',
-                          'group bg-white rounded-md inline-flex items-center text-base font-medium hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-dodgerBlue-500'
+                          open ? 'text-gray-900' : 'text-gray-500 dark:text-gray-300',
+                          'group bg-white dark:bg-gray-800 rounded-md inline-flex items-center text-base font-medium hover:text-gray-900 dark:hover:text-gray-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-dodgerBlue-500'
                         )}
                       >
                         <span>Services</span>
                         <HiChevronDown
                           className={classNames(
-                            open ? 'text-gray-600' : 'text-gray-400',
-                            'ml-2 h-5 w-5 group-hover:text-gray-500'
+                            open ? 'text-gray-600 dark:text-gray-400' : 'text-gray-400',
+                            'ml-2 h-5 w-5 group-hover:text-gray-500 dark:text-gray-300'
                           )}
                           aria-hidden="true"
                         />
@@ -135,7 +135,7 @@ function Navbar() {
                           className="absolute z-10 -ml-4 mt-3 transform px-2 w-screen max-w-md sm:px-0 lg:ml-0 lg:left-1/2 lg:-translate-x-1/2"
                         >
                           <div className="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 overflow-hidden">
-                            <div className="relative grid gap-6 bg-white px-5 py-6 sm:gap-8 sm:p-8">
+                            <div className="relative grid gap-6 bg-white dark:bg-gray-800 px-5 py-6 sm:gap-8 sm:p-8">
                               {services.map((item) => (
                                 <Link
                                   key={item.name}
@@ -150,7 +150,7 @@ function Navbar() {
                                     <p className="text-base font-medium text-gray-900">
                                       {item.name}
                                     </p>
-                                    <p className="mt-1 text-sm text-gray-500">
+                                    <p className="mt-1 text-sm text-gray-500 dark:text-gray-300">
                                       {item.description}
                                     </p>
                                   </div>
@@ -182,25 +182,25 @@ function Navbar() {
 
                 <Link
                   to="/portfolio"
-                  className="text-base font-medium text-gray-500 hover:text-gray-900"
+                  className="text-base font-medium text-gray-500 dark:text-gray-300 hover:text-gray-900 dark:hover:text-gray-100"
                 >
                   Portfolio
                 </Link>
                 <Link
                   to="/blog"
-                  className="text-base font-medium text-gray-500 hover:text-gray-900"
+                  className="text-base font-medium text-gray-500 dark:text-gray-300 hover:text-gray-900 dark:hover:text-gray-100"
                 >
                   Blog
                 </Link>
                 <Link
                   to="/about"
-                  className="text-base font-medium text-gray-500 hover:text-gray-900"
+                  className="text-base font-medium text-gray-500 dark:text-gray-300 hover:text-gray-900 dark:hover:text-gray-100"
                 >
                   About
                 </Link>
                 <Link
                   to="/contact"
-                  className="text-base font-medium text-gray-500 hover:text-gray-900"
+                  className="text-base font-medium text-gray-500 dark:text-gray-300 hover:text-gray-900 dark:hover:text-gray-100"
                 >
                   Contact
                 </Link>
@@ -210,15 +210,15 @@ function Navbar() {
                     <>
                       <Popover.Button
                         className={classNames(
-                          open ? 'text-gray-900' : 'text-gray-500',
-                          'group bg-white rounded-md inline-flex items-center text-base font-medium hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-dodgerBlue-500'
+                          open ? 'text-gray-900' : 'text-gray-500 dark:text-gray-300',
+                          'group bg-white dark:bg-gray-800 rounded-md inline-flex items-center text-base font-medium hover:text-gray-900 dark:hover:text-gray-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-dodgerBlue-500'
                         )}
                       >
                         <span>Blog</span>
                         <HiChevronDown
                           className={classNames(
-                            open ? 'text-gray-600' : 'text-gray-400',
-                            'ml-2 h-5 w-5 group-hover:text-gray-500'
+                            open ? 'text-gray-600 dark:text-gray-400' : 'text-gray-400',
+                            'ml-2 h-5 w-5 group-hover:text-gray-500 dark:text-gray-300'
                           )}
                           aria-hidden="true"
                         />
@@ -239,7 +239,7 @@ function Navbar() {
                           className="absolute z-10 left-1/2 transform -translate-x-1/2 mt-3 px-2 w-screen max-w-md sm:px-0"
                         >
                           <div className="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 overflow-hidden">
-                            <div className="relative grid gap-6 bg-white px-5 py-6 sm:gap-8 sm:p-8">
+                            <div className="relative grid gap-6 bg-white dark:bg-gray-800 px-5 py-6 sm:gap-8 sm:p-8">
                               {blog.map((item) => (
                                 <Link
                                   key={item.name}
@@ -254,7 +254,7 @@ function Navbar() {
                                     <p className="text-base font-medium text-gray-900">
                                       {item.name}
                                     </p>
-                                    <p className="mt-1 text-sm text-gray-500">
+                                    <p className="mt-1 text-sm text-gray-500 dark:text-gray-300">
                                       {item.description}
                                     </p>
                                   </div>
@@ -263,7 +263,7 @@ function Navbar() {
                             </div>
                             <div className="px-5 py-5 bg-gray-50 sm:px-8 sm:py-8">
                               <div>
-                                <h3 className="text-sm tracking-wide font-medium text-gray-500 uppercase">
+                                <h3 className="text-sm tracking-wide font-medium text-gray-500 dark:text-gray-300 uppercase">
                                   Recent Posts
                                 </h3>
                                 <StaticQuery
@@ -306,7 +306,7 @@ function Navbar() {
                                           >
                                             <Link
                                               to={post.fields.slug}
-                                              className="font-medium text-gray-900 hover:text-gray-700"
+                                              className="font-medium text-gray-900 hover:text-gray-700 dark:text-gray-300"
                                             >
                                               {post.frontmatter.title}
                                             </Link>
@@ -335,7 +335,7 @@ function Navbar() {
                 </Popover> */}
               </Popover.Group>
               <div className="hidden md:flex items-center justify-end md:flex-1 lg:w-0">
-                {/* <ThemeToggle /> */}
+                <ThemeToggle />
               </div>
             </div>
           </div>
@@ -355,14 +355,14 @@ function Navbar() {
               static
               className="absolute top-0 inset-x-0 p-2 transition transform origin-top-right md:hidden z-2"
             >
-              <div className="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 bg-white divide-y-2 divide-gray-50">
+              <div className="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 bg-white dark:bg-gray-800 divide-y-2 divide-gray-50">
                 <div className="pt-5 pb-6 px-5">
                   <div className="flex items-center justify-between">
                     <div>
                       <img className="h-8 w-auto" src={logo} alt="Workflow" />
                     </div>
                     <div className="-mr-2">
-                      <Popover.Button className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-dodgerBlue-500">
+                      <Popover.Button className="bg-white dark:bg-gray-800 rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 dark:text-gray-300 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-dodgerBlue-500">
                         <span className="sr-only">Close menu</span>
                         <HiOutlineX className="h-6 w-6" aria-hidden="true" />
                       </Popover.Button>
@@ -392,14 +392,14 @@ function Navbar() {
                   <div className="grid grid-cols-2 gap-y-4 gap-x-8">
                     <Link
                       to="/portfolio"
-                      className="text-base font-medium text-gray-900 hover:text-gray-700"
+                      className="text-base font-medium text-gray-900 hover:text-gray-700 dark:text-gray-300"
                     >
                       Pricing
                     </Link>
 
                     <Link
                       to="/contact"
-                      className="text-base font-medium text-gray-900 hover:text-gray-700"
+                      className="text-base font-medium text-gray-900 hover:text-gray-700 dark:text-gray-300"
                     >
                       Contact
                     </Link>
@@ -407,7 +407,7 @@ function Navbar() {
                       <Link
                         key={item.name}
                         to={item.href}
-                        className="text-base font-medium text-gray-900 hover:text-gray-700"
+                        className="text-base font-medium text-gray-900 hover:text-gray-700 dark:text-gray-300"
                       >
                         {item.name}
                       </Link>
@@ -420,7 +420,7 @@ function Navbar() {
                     >
                       Sign up
                     </Link>
-                    <p className="mt-6 text-center text-base font-medium text-gray-500">
+                    <p className="mt-6 text-center text-base font-medium text-gray-500 dark:text-gray-300">
                       Existing customer?{' '}
                       <Link
                         to="#"

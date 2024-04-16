@@ -53,28 +53,28 @@ const IndexPageTemplate = ({
             y="0"
           >
             <polygon
-              className="text-gray-300 fill-current"
+              className="fill-gray-300 dark:fill-gray-900"
               points="2560 0 2560 100 0 100"
             ></polygon>
           </svg>
         </div>
       </div>
 
-      <section className="pb-20 bg-gray-300 -mt-24">
+      <section className="pb-20 bg-gray-300 dark:bg-gray-900 -mt-24">
         <div className="container mx-auto px-4">
           <Features gridItems={intro.blurbs} />
           <div className="flex flex-wrap items-center mt-32 mb-8">
             <div className="w-full md:w-5/12 px-4 mr-auto ml-auto mb-4">
-              <div className="text-gray-600 p-1 text-center inline-flex items-center justify-center w-16 h-16 mb-6 shadow-lg rounded-full bg-gray-100">
+              <div className="text-gray-600 dark:text-gray-400 p-1 text-center inline-flex items-center justify-center w-16 h-16 mb-6 shadow-lg rounded-full bg-gray-100">
                 <FcIdea size="2em" />
               </div>
               <h3 className="text-3xl mb-2 font-semibold leading-normal">
                 {mainpitch.title}
               </h3>
-              <p className="text-lg font-light leading-relaxed mt-4 mb-4 text-gray-700">
+              <p className="text-lg font-light leading-relaxed mt-4 mb-4 text-gray-700 dark:text-gray-300">
                 {mainpitch.description}
               </p>
-              <Link to="/blog/" className="font-bold text-gray-800 mt-8">
+              <Link to="/blog/" className="font-bold text-gray-800 dark:text-gray-200 mt-8">
                 Check Blog
               </Link>
             </div>
@@ -95,7 +95,7 @@ const IndexPageTemplate = ({
                     className="w-full align-middle rounded-t-lg"
                   />
                 )}
-                <div className="h-4 clip-slant-top-3/4 bg-white"></div>
+                <div className="h-4 slant-tl-4 -mt-4 bg-dodgerBlue-500 dark:bg-gray-800"></div>
                 <blockquote className="relative p-8 mb-4">
                   {/* <svg
                     preserveAspectRatio="none"
@@ -123,7 +123,7 @@ const IndexPageTemplate = ({
           </div>
         </div>
       </section>
-      <section className="relative py-20 bg-white">
+      <section className="relative py-20 bg-white dark:bg-gray-800">
         <div className="container mx-auto px-4">
           <div className="bottom-auto top-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden -mt-20 h-20">
             <svg
@@ -136,7 +136,7 @@ const IndexPageTemplate = ({
               y="0"
             >
               <polygon
-                className="text-white fill-current"
+                className="fill-white dark:fill-gray-800"
                 points="2560 0 2560 100 0 100"
               ></polygon>
             </svg>

@@ -22,33 +22,17 @@ const AboutPageTemplate = ({
     <main className="profile-page">
       {helmet || ''}
       <section className="relative block h-500-px">
-        <div className="absolute top-0 w-full h-full">
+        <div className="absolute top-0 w-full h-full bg-gray-300 dark:bg-gray-900">
           <GatsbyImage
             alt=""
             image={image.childImageSharp.gatsbyImageData}
-            className="w-full h-full absolute"
+            className="w-full h-full absolute slant-br-9"
           />
         </div>
-        <div className="top-auto bottom-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden h-70-px">
-          <svg
-            className="absolute bottom-0 overflow-hidden"
-            xmlns="http://www.w3.org/2000/svg"
-            preserveAspectRatio="none"
-            version="1.1"
-            viewBox="0 0 2560 100"
-            x="0"
-            y="0"
-          >
-            <polygon
-              className="text-gray-300 fill-current"
-              points="2560 0 2560 100 0 100"
-            ></polygon>
-          </svg>
-        </div>
       </section>
-      <section className="relative py-16 bg-gray-300">
+      <section className="relative py-16 bg-gray-300 dark:bg-gray-900">
         <div className="container mx-auto px-4">
-          <div className="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-xl rounded-lg -mt-64">
+          <div className="relative flex flex-col min-w-0 break-words bg-white dark:bg-gray-800 w-full mb-6 shadow-xl rounded-lg -mt-64">
             <div className="px-6">
               <div className="flex flex-wrap justify-center">
                 <div className="w-full lg:w-3/12 px-4 lg:order-2 flex justify-center">
@@ -74,24 +58,24 @@ const AboutPageTemplate = ({
                 <div className="w-full lg:w-4/12 px-2 lg:order-1">
                   <div className="flex justify-center py-4 lg:pt-4 pt-8">
                     <div className="mr-3 py-3 text-center">
-                      <span className="text-xl font-bold block uppercase tracking-wide text-gray-700">
+                      <span className="text-xl font-bold block uppercase tracking-wide text-gray-700 dark:text-gray-300">
                         7 years
                       </span>
-                      <span className="text-sm text-gray-500">
+                      <span className="text-sm text-gray-500 dark:text-gray-300">
                         Web development
                       </span>
                     </div>
                     <div className="mr-3 py-3 text-center">
-                      <span className="text-xl font-bold block uppercase tracking-wide text-gray-700">
+                      <span className="text-xl font-bold block uppercase tracking-wide text-gray-700 dark:text-gray-300">
                         13 years
                       </span>
-                      <span className="text-sm text-gray-500">IT services</span>
+                      <span className="text-sm text-gray-500 dark:text-gray-300">IT services</span>
                     </div>
                     <div className="py-3 text-center">
-                      <span className="text-xl font-bold block uppercase tracking-wide text-gray-700">
+                      <span className="text-xl font-bold block uppercase tracking-wide text-gray-700 dark:text-gray-300">
                         4 years
                       </span>
-                      <span className="text-sm text-gray-500">
+                      <span className="text-sm text-gray-500 dark:text-gray-300">
                         Remote consulting
                       </span>
                     </div>
@@ -99,20 +83,20 @@ const AboutPageTemplate = ({
                 </div>
               </div>
               <div className="mt-12 text-center">
-                <h3 className="text-4xl font-semibold leading-normal text-gray-800 mb-2">
+                <h3 className="text-4xl font-semibold leading-normal text-gray-800 dark:text-gray-200 mb-2">
                   {heading}
                 </h3>
-                <div className="text-sm leading-normal mt-0 mb-2 text-gray-500 font-bold uppercase">
+                <div className="text-sm leading-normal mt-0 mb-2 text-gray-500 dark:text-gray-300 font-bold uppercase">
                   <FaMapMarkerAlt
                     size=""
-                    className="inline-block mr-2 text-lg text-gray-500"
+                    className="inline-block mr-2 text-lg text-gray-500 dark:text-gray-300"
                   />
                   {location}
                 </div>
-                <div className="mb-2 text-gray-700 mt-10">
+                <div className="mb-2 text-gray-700 dark:text-gray-300 mt-10">
                   <FaBriefcase
                     size=""
-                    className="inline-block mr-2 text-lg text-gray-500"
+                    className="inline-block mr-2 text-lg text-gray-500 dark:text-gray-300"
                   />
                   {position}
                 </div>
@@ -121,7 +105,7 @@ const AboutPageTemplate = ({
                 <div className="flex flex-wrap justify-center">
                   <div className="w-full lg:w-9/12 px-4">
                     <PageContent
-                      className="leading-relaxed text-gray-800 prose lg:prose-lg max-w-none"
+                      className="leading-relaxed text-gray-800 dark:text-gray-200 prose lg:prose-lg max-w-none"
                       content={content}
                     />
                     <Link to="/portfolio" className="font-normal text-blue-500">

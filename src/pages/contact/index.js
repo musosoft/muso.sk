@@ -45,10 +45,10 @@ export default class Index extends React.Component {
           <div className="max-w-screen-xl my-24 px-8 grid gap-8 grid-cols-1 md:grid-cols-2 md:px-12 lg:px-16 xl:px-32 py-16 mx-auto text-gray-900">
             <div className="flex flex-col justify-between">
               <div>
-                <h2 className="text-4xl lg:text-5xl font-bold leading-tight">
+                <h2 className="text-4xl lg:text-5xl font-bold leading-tight dark:text-white">
                   Lets talk about everything!
                 </h2>
-                <div className="text-gray-700 mt-8">Don't be shy.</div>
+                <div className="text-gray-700 dark:text-gray-300 mt-8">Don't be shy.</div>
               </div>
               <div className="mt-8 text-center">
                 <img
@@ -61,13 +61,13 @@ export default class Index extends React.Component {
             <div>
               <Tab.Group>
                 <Tab.List className="-mb-px flex space-x-8">
-                  <Tab className="group inline-flex items-center py-4 px-1 border-b-2 font-medium text-sm border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300">
+                  <Tab className="group inline-flex items-center py-4 px-1 border-b-2 font-medium text-sm border-transparent text-gray-500 dark:text-gray-300 hover:text-gray-700 dark:text-gray-300 hover:border-gray-300">
                     Email
                   </Tab>
-                  {/* <Tab className="group inline-flex items-center py-4 px-1 border-b-2 font-medium text-sm border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300">
+                  {/* <Tab className="group inline-flex items-center py-4 px-1 border-b-2 font-medium text-sm border-transparent text-gray-500 dark:text-gray-300 hover:text-gray-700 dark:text-gray-300 hover:border-gray-300">
                     Facebook
                   </Tab>
-                  <Tab className="group inline-flex items-center py-4 px-1 border-b-2 font-medium text-sm border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300">
+                  <Tab className="group inline-flex items-center py-4 px-1 border-b-2 font-medium text-sm border-transparent text-gray-500 dark:text-gray-300 hover:text-gray-700 dark:text-gray-300 hover:border-gray-300">
                     Messenger
                   </Tab> */}
                 </Tab.List>
@@ -94,13 +94,13 @@ export default class Index extends React.Component {
                       </div>
                       <div>
                         <label
-                          className="uppercase text-sm text-gray-600 font-bold"
+                          className="uppercase text-sm text-gray-600 dark:text-gray-400 font-bold"
                           htmlFor="name"
                         >
                           Your name
                         </label>
                         <input
-                          className="w-full text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
+                          className="w-full dark:bg-gray-600 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
                           type="text"
                           name="name"
                           onChange={this.handleChange}
@@ -110,13 +110,13 @@ export default class Index extends React.Component {
                       </div>
                       <div className="mt-8">
                         <label
-                          className="uppercase text-sm text-gray-600 font-bold"
+                          className="uppercase text-sm text-gray-600 dark:text-gray-400 font-bold"
                           htmlFor="email"
                         >
                           Email
                         </label>
                         <input
-                          className="w-full text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
+                          className="w-full dark:bg-gray-600 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
                           type="email"
                           name="email"
                           onChange={this.handleChange}
@@ -126,13 +126,13 @@ export default class Index extends React.Component {
                       </div>
                       <div className="mt-8">
                         <label
-                          className="uppercase text-sm text-gray-600 font-bold"
+                          className="uppercase text-sm text-gray-600 dark:text-gray-400 font-bold"
                           htmlFor="message"
                         >
                           Message
                         </label>
                         <textarea
-                          className="w-full h-32 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
+                          className="w-full h-32 dark:bg-gray-600 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
                           name="message"
                           onChange={this.handleChange}
                           id="message"
