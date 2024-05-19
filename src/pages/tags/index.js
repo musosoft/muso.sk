@@ -52,7 +52,7 @@ export const tagPageQuery = graphql`
   }
 `;
 
-export const Head = ({ title }) => (
+export const Head = () => (
   /* eslint-disable-next-line */
-  <SEO title={`Tags | ${title}`} />
+  <SEO title='Tags' />
 );
