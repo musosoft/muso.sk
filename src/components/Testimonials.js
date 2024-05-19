@@ -1,12 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { v4 } from 'uuid';
+import { generateKey } from '../utils/generateKey';
 
 const Testimonials = ({ testimonials }) => (
   <div className="flex justify-center w-full flex-wrap gap-6">
     {testimonials.map((testimonial) => (
       <figure
-        key={v4()}
+        key={generateKey()}
         className="max-w-md py-4 px-8 bg-white dark:bg-gray-800 shadow-lg rounded-lg my-20 border border-gray-50 dark:border-gray-700"
       >
         <div className="w-full pt-1 pb-5">

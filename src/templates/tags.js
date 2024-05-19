@@ -1,7 +1,7 @@
 import React from 'react';
-import { Helmet } from 'react-helmet';
 import { Link, graphql } from 'gatsby';
 import Layout from '../components/Layout';
+import SEO from '../components/SEO';
 
 class TagRoute extends React.Component {
   render() {
@@ -9,12 +9,12 @@ class TagRoute extends React.Component {
     const postLinks = posts.map((post) => (
       <li key={post.node.fields.slug}>
         <Link to={post.node.fields.slug}>
-          <h2 className="is-size-2">{post.node.frontmatter.title}</h2>
+          <h2 className="text-xl">{post.node.frontmatter.title}</h2>
         </Link>
       </li>
     ));
     const tag = this.props.pageContext.tag;
-    const title = this.props.data.site.siteMetadata.title;
+    // const title = this.props.data.site.siteMetadata.title;
     const totalCount = this.props.data.allMarkdownRemark.totalCount;
     const tagHeader = `${totalCount} post${
       totalCount === 1 ? '' : 's'
@@ -23,7 +23,6 @@ class TagRoute extends React.Component {
     return (
       <Layout>
         <section className="section">
-          <Helmet title={`${tag} | ${title}`} />
           <div className="mt-8 mb-20 text-center">
             <h3 className="text-3xl mb-2 font-semibold leading-normal">
               {tagHeader}
@@ -69,3 +68,8 @@ export const tagPageQuery = graphql`
     }
   }
 `;
+
+export const Head = ({ tag, title }) => (
+  /* eslint-disable-next-line */
+  <SEO title={`${tag} | ${title}`} />
+);

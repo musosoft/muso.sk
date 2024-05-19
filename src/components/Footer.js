@@ -107,7 +107,7 @@ const Footer = class extends React.Component {
               </div>
             </div>
           </div>
-          <hr className="my-6 border-gray-400" />
+          <hr className="my-6 border-gray-400 dark:border-gray-800" />
           <div className="flex flex-wrap items-center md:justify-between justify-center">
             <div className="w-full md:w-4/12 px-4 mx-auto text-center">
               <div className="text-sm text-gray-600 dark:text-gray-400 font-normal py-1">

@@ -1,8 +1,8 @@
 import React from 'react';
-import { Helmet } from 'react-helmet';
 import { Link, graphql } from 'gatsby';
 import Layout from '../../components/Layout';
 import { kebabCase } from '../../utils/kebabCase';
+import SEO from '../../components/SEO';
 
 const TagsPage = ({
   data: {
@@ -14,7 +14,6 @@ const TagsPage = ({
 }) => (
   <Layout>
     <section className="section">
-      <Helmet title={`Tags | ${title}`} />
       <div className="mt-8 mb-20 text-center">
         <h1 className="text-3xl mb-2 font-semibold leading-normal">Tags</h1>
         {group.map((tag) => (
@@ -52,3 +51,8 @@ export const tagPageQuery = graphql`
     }
   }
 `;
+
+export const Head = ({ title }) => (
+  /* eslint-disable-next-line */
+  <SEO title={`Tags | ${title}`} />
+);

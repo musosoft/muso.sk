@@ -19,14 +19,6 @@ const IndexPage = ({ data }) => {
         mainpitch={frontmatter.mainpitch}
         description={frontmatter.description}
         intro={frontmatter.intro}
-        helmet={
-          // eslint-disable-next-line
-          <SEO
-            title={frontmatter.title}
-            description={frontmatter.description}
-            image={getSrc(frontmatter.image)}
-          />
-        }
       />
     </Layout>
   );
@@ -90,3 +82,16 @@ export const pageQuery = graphql`
     }
   }
 `;
+
+export const Head = ({ data }) => {
+  const { frontmatter } = data.markdownRemark;
+
+  return (
+    /* eslint-disable-next-line */
+    <SEO
+      title={frontmatter.title}
+      description={frontmatter.description}
+      image={getSrc(frontmatter.image)}
+    />
+  );
+};

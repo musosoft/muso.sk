@@ -2,14 +2,14 @@
 templateKey: index-page
 title: Home
 image: /img/keyboard.jpg
-heading: Technology / Gaming ...making Websites
-subheading: From Gaming to Servers through Software and Hardware until Website and Graphics, here you get covered it all
+heading: AI-Driven Websites and Apps ...future is here
+subheading: Explore the Latest in Technology and Gaming - Your Ultimate Guide to Servers, Software, Hardware, and AI. Stay Ahead with Cutting-Edge Insights and Tutorials!
 mainpitch:
   title: News, Tips & Tricks and more
   description: >
     muso.sk is here to share knowledge to everyone who is passionate about Technology, Website Development, Graphic design, Scripting, Software, Operating systems, Smartphones, Games, eSport and Servers
 description: >-
-  ...
+  muso.sk is here to share knowledge to everyone who is passionate about Technology, Website Development, Graphic design, Scripting, Software, Operating systems, Smartphones, Games, eSport and Servers
 intro:
   blurbs:
     - icon: FaReact

@@ -9,7 +9,7 @@ export default {
     title: 'muso.sk',
     description:
       'muso.sk Technology, Gaming, Website... news and services. Servers, Software, Hardware... here you get covered it all.',
-    titleTemplate: '%s · muso.sk',
+    titleTemplate: ' · muso.sk',
     url: 'https://muso.sk',
     image: '/img/og-image.png',
     twitterUsername: '@muso.sk',
@@ -64,7 +64,7 @@ export default {
       options: {
         defaults: {
           formats: [`webp`, `auto`],
-          quality: 90,
+          quality: 80,
         },
       },
     },
@@ -87,7 +87,6 @@ export default {
         icon: `${__dirname}/static/img/icon.svg`,
       },
     },
-    'gatsby-plugin-react-helmet',
     `gatsby-plugin-image`,
     'gatsby-plugin-postcss'
   ]

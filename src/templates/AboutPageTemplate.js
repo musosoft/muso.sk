@@ -14,13 +14,11 @@ const AboutPageTemplate = ({
   content,
   image,
   contentComponent,
-  helmet,
 }) => {
   const PageContent = contentComponent || Content;
 
   return (
     <main className="profile-page">
-      {helmet || ''}
       <section className="relative block h-500-px">
         <div className="absolute top-0 w-full h-full bg-gray-300 dark:bg-gray-900">
           <GatsbyImage

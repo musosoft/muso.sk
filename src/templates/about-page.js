@@ -24,14 +24,6 @@ const AboutPage = ({ data }) => {
         heading={post.frontmatter.heading}
         image={post.frontmatter.image}
         content={post.html}
-        helmet={
-          // eslint-disable-next-line
-          <SEO
-            title={post.frontmatter.title}
-            description={post.frontmatter.description}
-            image={getSrc(post.frontmatter.image)}
-          />
-        }
       />
     </Layout>
   );
@@ -66,3 +58,15 @@ export const aboutPageQuery = graphql`
     }
   }
 `;
+export const Head = ({ data }) => {
+  const { frontmatter } = data.markdownRemark;
+
+  return (
+    /* eslint-disable-next-line */
+    <SEO
+      title={frontmatter.title}
+      description={frontmatter.description}
+      image={getSrc(frontmatter.image)}
+    />
+  );
+};

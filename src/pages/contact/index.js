@@ -39,8 +39,6 @@ export default class Index extends React.Component {
   render() {
     return (
       <Layout>
-        {/* eslint-disable-next-line */}
-        <SEO title="Contact" />
         <section className="section">
           <div className="max-w-screen-xl my-24 px-8 grid gap-8 grid-cols-1 md:grid-cols-2 md:px-12 lg:px-16 xl:px-32 py-16 mx-auto text-gray-900">
             <div className="flex flex-col justify-between">
@@ -48,7 +46,9 @@ export default class Index extends React.Component {
                 <h2 className="text-4xl lg:text-5xl font-bold leading-tight dark:text-white">
                   Lets talk about everything!
                 </h2>
-                <div className="text-gray-700 dark:text-gray-300 mt-8">Don't be shy.</div>
+                <div className="text-gray-700 dark:text-gray-300 mt-8">
+                  Don't be shy.
+                </div>
               </div>
               <div className="mt-8 text-center">
                 <img
@@ -160,3 +160,5 @@ export default class Index extends React.Component {
     );
   }
 }
+/* eslint-disable-next-line */
+export const Head = () => <SEO title="Contact" />;

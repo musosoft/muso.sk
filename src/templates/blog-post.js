@@ -5,7 +5,7 @@ import { getSrc } from 'gatsby-plugin-image';
 import { graphql } from 'gatsby';
 import Layout from '../components/Layout';
 import { HTMLContent } from '../components/Content';
-import BlogPostTemplate from "./BlogPostTemplate";
+import BlogPostTemplate from './BlogPostTemplate';
 
 const BlogPost = ({ data }) => {
   if (!data || !data.markdownRemark) {
@@ -19,14 +19,6 @@ const BlogPost = ({ data }) => {
         content={post.html}
         contentComponent={HTMLContent}
         description={post.frontmatter.description}
-        helmet={
-          // eslint-disable-next-line
-          <SEO
-            title={post.frontmatter.title}
-            description={post.frontmatter.description}
-            image={getSrc(post.frontmatter.image)}
-          />
-        }
         tags={post.frontmatter.tags}
         title={post.frontmatter.title}
       />
@@ -66,3 +58,16 @@ export const pageQuery = graphql`
     }
   }
 `;
+
+export const Head = ({ data }) => {
+  const { frontmatter } = data.markdownRemark;
+
+  return (
+    /* eslint-disable-next-line */
+    <SEO
+      title={frontmatter.title}
+      description={frontmatter.description}
+      image={getSrc(frontmatter.image)}
+    />
+  );
+};

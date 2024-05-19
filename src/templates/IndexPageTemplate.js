@@ -14,7 +14,6 @@ const IndexPageTemplate = ({
   mainpitch,
   description,
   intro,
-  helmet,
   inPreview = false,
 }) => {
   const mainImageData = !inPreview ? getImage(image) : image;
@@ -22,7 +21,6 @@ const IndexPageTemplate = ({
 
   return (
     <main>
-      {helmet || ''}
       <div className="relative pt-16 pb-32 flex content-center items-center justify-center min-h-screen-75">
         <div className="absolute top-0 w-full h-full grid">
           {!inPreview && mainImageData && (
@@ -36,27 +34,13 @@ const IndexPageTemplate = ({
         </div>
         <div className="container relative mx-auto">
           <div className="items-center flex flex-wrap">
-            <div className="w-full lg:w-6/12 px-4 ml-auto mr-auto text-center">
-              <h1 className="text-white font-semibold text-5xl">{heading}</h1>
-              <p className="mt-4 text-lg text-gray-300">{subheading}</p>
+            <div className="w-full lg:w-6/12 px-4 ml-auto mr-auto text-center bg-gradient-to-r from-gray-100 to-dodgerBlue-200 bg-clip-text text-transparent">
+              <h1 className="font-semibold text-6xl">{heading}</h1>
+              <p className="mt-4 text-2xl">{subheading}</p>
             </div>
           </div>
         </div>
-        <div className="top-auto bottom-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden h-70-px">
-          <svg
-            className="absolute bottom-0 overflow-hidden"
-            xmlns="http://www.w3.org/2000/svg"
-            preserveAspectRatio="none"
-            version="1.1"
-            viewBox="0 0 2560 100"
-            x="0"
-            y="0"
-          >
-            <polygon
-              className="fill-gray-300 dark:fill-gray-900"
-              points="2560 0 2560 100 0 100"
-            ></polygon>
-          </svg>
+        <div className="top-auto bottom-0 left-0 right-0 w-full absolute pointer-events-none h-16 slant-tl-16 bg-gray-300 dark:bg-gray-900 -mb-px">
         </div>
       </div>
 
@@ -125,21 +109,7 @@ const IndexPageTemplate = ({
       </section>
       <section className="relative py-20 bg-white dark:bg-gray-800">
         <div className="container mx-auto px-4">
-          <div className="bottom-auto top-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden -mt-20 h-20">
-            <svg
-              className="absolute bottom-0 overflow-hidden"
-              xmlns="http://www.w3.org/2000/svg"
-              preserveAspectRatio="none"
-              version="1.1"
-              viewBox="0 0 2560 100"
-              x="0"
-              y="0"
-            >
-              <polygon
-                className="fill-white dark:fill-gray-800"
-                points="2560 0 2560 100 0 100"
-              ></polygon>
-            </svg>
+          <div className="bottom-auto -top-20 left-0 right-0 w-full absolute pointer-events-none slant-tl-20 h-20 bg-white dark:bg-gray-800 mt-px">           
           </div>
           {!inPreview && <BlogRoll />}
         </div>

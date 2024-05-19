@@ -10,13 +10,11 @@ const BlogPostTemplate = ({
   description,
   tags,
   title,
-  helmet,
 }) => {
   const PostContent = contentComponent || Content;
 
   return (
     <section className="my-12 relative">
-      {helmet || ''}
       <div className="container mx-auto px-6">
         <div className="flex flex-wrap -mx-4">
           <div className="mx-auto relative w-full md:w-6/12">
@@ -35,7 +33,7 @@ const BlogPostTemplate = ({
                 <p className="text-lg mr-2 my-2">Tags: </p>
                 {tags.map((tag) => (
                   <span
-                    className="text-gray-500 dark:text-gray-300 bg-gray-200 text-xs font-bold inline-block py-1 uppercase last:mr-0 mr-1 leading-tight rounded-full px-3"
+                    className="text-gray-500 dark:text-gray-300 bg-gray-200 dark bg-gray-500 text-xs font-bold inline-block py-1 uppercase last:mr-0 mr-1 leading-tight rounded-full px-3"
                     key={tag + `tag`}
                   >
                     <Link to={`/tags/${kebabCase(tag)}/`}>{tag}</Link>
@@ -55,7 +53,6 @@ BlogPostTemplate.propTypes = {
   contentComponent: PropTypes.func,
   description: PropTypes.string,
   title: PropTypes.string,
-  helmet: PropTypes.object,
 };
 
 export default BlogPostTemplate;

@@ -20,14 +20,6 @@ const PortfolioPage = ({ data }) => {
         it={frontmatter.it}
         testimonials={frontmatter.testimonials}
         pricing={frontmatter.pricing}
-        helmet={
-          // eslint-disable-next-line
-          <SEO
-            title={frontmatter.title}
-            description={frontmatter.description}
-            image={getSrc(frontmatter.image)}
-          />
-        }
       />
     </Layout>
   );
@@ -97,3 +89,16 @@ export const PortfolioPageQuery = graphql`
     }
   }
 `;
+
+export const Head = ({ data }) => {
+  const { frontmatter } = data.markdownRemark;
+
+  return (
+    /* eslint-disable-next-line */
+    <SEO
+      title={frontmatter.title}
+      description={frontmatter.description}
+      image={getSrc(frontmatter.image)}
+    />
+  );
+};

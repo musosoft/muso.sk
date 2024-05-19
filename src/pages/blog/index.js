@@ -7,8 +7,6 @@ export default class BlogIndexPage extends React.Component {
   render() {
     return (
       <Layout>
-        {/* eslint-disable-next-line */}
-        <SEO title="Blog" />
         <div className="container mx-auto px-4">
           <div className="mt-12 text-center">
             <h1 className="text-4xl font-semibold leading-normal text-gray-800 dark:text-gray-200 mb-2">
@@ -23,3 +21,5 @@ export default class BlogIndexPage extends React.Component {
     );
   }
 }
+/* eslint-disable-next-line */
+export const Head = () => <SEO title="Blog" />;
