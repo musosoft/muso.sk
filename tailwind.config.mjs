@@ -8,10 +8,10 @@ import nameClass from 'tailwindcss/lib/util/nameClass';
 export default {
   darkMode: 'class',
   content: [
-    './src/**/**/*.js',
-    './src/**/*.js',
-    './src/pages/**/*.md',
-    './src/pages/*.md',
+    './src/**/**/*.jsx',
+    './src/**/*.jsx',
+    './src/pages/**/*.mdx',
+    './src/pages/*.mdx',
   ],
   theme: {
     extend: {

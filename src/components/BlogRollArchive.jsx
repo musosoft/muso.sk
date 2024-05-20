@@ -4,7 +4,7 @@ import { Link, graphql, useStaticQuery } from 'gatsby';
 import { GatsbyImage } from 'gatsby-plugin-image';
 
 const BlogRollArchive = ({ data }) => {
-  const { edges: posts } = data.allMarkdownRemark;
+  const { edges: posts } = data.allMdx;
 
   return (
     <div className="mt-16 max-w-8xl mx-auto px-6 lg:px-8">
@@ -55,7 +55,7 @@ const BlogRollArchive = ({ data }) => {
 
 BlogRollArchive.propTypes = {
   data: PropTypes.shape({
-    allMarkdownRemark: PropTypes.shape({
+    allMdx: PropTypes.shape({
       edges: PropTypes.array,
     }),
   }),
@@ -64,7 +64,7 @@ BlogRollArchive.propTypes = {
 const BlogRollArchiveQuery = () => {
   const data = useStaticQuery(graphql`
     query BlogRollArchiveQuery {
-      allMarkdownRemark(
+      allMdx(
         sort: { frontmatter: { date: DESC } }
         filter: { frontmatter: { templateKey: { eq: "blog-post" } } }
       ) {

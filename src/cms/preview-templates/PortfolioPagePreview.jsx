@@ -2,8 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import PortfolioPageTemplate from '../../templates/PortfolioPageTemplate';
 
-// PortfolioPagePreview.js
-
 const PortfolioPagePreview = ({ entry, getAsset }) => {
   const entryBlurbs = entry.getIn(['data', 'intro', 'blurbs']);
   const blurbs = entryBlurbs ? entryBlurbs.toJS() : [];

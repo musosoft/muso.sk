@@ -12,6 +12,7 @@
 *.rtf  diff=astextplain
 *.RTF  diff=astextplain
 *.md   text
+*.mdx  text
 
 # Graphics
 *.png  binary

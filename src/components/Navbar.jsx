@@ -3,7 +3,7 @@ import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { Link, graphql, StaticQuery } from 'gatsby';
 import { Popover, Transition } from '@headlessui/react';
-import { ThemeToggle } from './ThemeToggle.js';
+import { ThemeToggle } from './ThemeToggle';
 import logo from '../../static/img/logo.svg';
 import {
   HiOutlineMenu,
@@ -269,7 +269,7 @@ function Navbar() {
                                 <StaticQuery
                                   query={graphql`
                                     query NavbarQuery {
-                                      allMarkdownRemark(
+                                      allMdx(
                                         sort: {
                                           order: DESC
                                           fields: [frontmatter___date]
@@ -296,7 +296,7 @@ function Navbar() {
                                   `}
                                   render={(data) => {
                                     const { edges: posts } =
-                                      data.allMarkdownRemark;
+                                      data.allMdx;
                                     return (
                                       <ul className="mt-4 space-y-4">
                                         {posts.map(({ node: post }) => (
@@ -442,7 +442,7 @@ function Navbar() {
 
 Navbar.propTypes = {
   data: PropTypes.shape({
-    allMarkdownRemark: PropTypes.shape({
+    allMdx: PropTypes.shape({
       edges: PropTypes.array,
     }),
   }),
