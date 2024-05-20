@@ -1,14 +1,12 @@
-import path from 'path';
-import { fileURLToPath } from 'url';
+import { dirname } from "path";
+import { fileURLToPath } from "url";
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+const __dirname = dirname(fileURLToPath(import.meta.url));
 
 export default {
   siteMetadata: {
     title: 'muso.sk',
-    description:
-      'muso.sk Technology, Gaming, Website... news and services. Servers, Software, Hardware... here you get covered it all.',
+    description: 'muso.sk Technology, Gaming, Website... news and services. Servers, Software, Hardware... here you get covered it all.',
     titleTemplate: ' · muso.sk',
     url: 'https://muso.sk',
     image: '/img/og-image.png',
@@ -16,7 +14,6 @@ export default {
   },
   plugins: [
     {
-      // keep as first gatsby-source-filesystem plugin for gatsby image support
       resolve: 'gatsby-source-filesystem',
       options: {
         path: `${__dirname}/static/img`,
@@ -32,47 +29,12 @@ export default {
     },
     `gatsby-transformer-sharp`,
     {
-      resolve: 'gatsby-transformer-remark',
-      options: {
-        plugins: [
-          {
-            resolve: 'gatsby-remark-relative-images',
-            options: {
-              name: 'uploads',
-            },
-          },
-          {
-            resolve: 'gatsby-remark-images',
-            options: {
-              // It's important to specify the maxWidth (in pixels) of
-              // the content container as this plugin uses this as the
-              // base for generating different widths of each image.
-              maxWidth: 1024,
-            },
-          },
-          {
-            resolve: 'gatsby-remark-copy-linked-files',
-            options: {
-              destinationDir: 'static',
-            },
-          },
-        ],
-      },
-    },
-    {
       resolve: `gatsby-plugin-sharp`,
       options: {
         defaults: {
           formats: [`webp`, `auto`],
           quality: 80,
         },
-      },
-    },
-    {
-      resolve: 'gatsby-plugin-decap-cms',
-      options: {
-        modulePath: `${__dirname}/src/cms/cms.js`,
-        enableIdentityWidget: false,
       },
     },
     {
@@ -88,6 +50,39 @@ export default {
       },
     },
     `gatsby-plugin-image`,
-    'gatsby-plugin-postcss'
-  ]
+    'gatsby-plugin-postcss',
+    {
+      resolve: 'gatsby-plugin-mdx',
+      options: {
+        extensions: ['.mdx', '.md'],
+        gatsbyRemarkPlugins: [
+          {
+            resolve: 'gatsby-remark-mdx-relative-images',
+            options: {
+              name: 'uploads',
+            },
+          },
+          {
+            resolve: 'gatsby-remark-images',
+            options: {
+              maxWidth: 1024,
+            },
+          },
+          {
+            resolve: 'gatsby-remark-copy-linked-files',
+            options: {
+              destinationDir: 'static',
+            },
+          },
+        ],
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-decap-cms',
+      options: {
+        modulePath: `${__dirname}/src/cms/cms.js`,
+        enableIdentityWidget: false,
+      },
+    },
+  ],
 };

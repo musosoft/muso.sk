@@ -7,19 +7,15 @@ import * as FontAwesome from 'react-icons/fa';
 import { FcCommandLine } from 'react-icons/fc';
 
 const PortfolioPageTemplate = ({
-  image,
   subheading,
   heading,
-  description,
   websites,
   it,
   testimonials,
   pricing,
-  helmet,
 }) => (
   <>
     <section className="container mx-auto px-4 py-12">
-      {helmet || ''}
       <div className="flex flex-wrap -mx-4 justify-center">
         <div className="px-4 relative w-full text-center">
           <h2 className="text-4xl font-bold mt-3 mb-3 text-gray-700 dark:text-gray-300">

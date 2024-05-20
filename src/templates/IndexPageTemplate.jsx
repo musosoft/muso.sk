@@ -8,11 +8,9 @@ import { FcIdea } from 'react-icons/fc';
 
 const IndexPageTemplate = ({
   image,
-  title,
   heading,
   subheading,
   mainpitch,
-  description,
   intro,
   inPreview = false,
 }) => {

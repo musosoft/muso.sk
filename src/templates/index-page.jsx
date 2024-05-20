@@ -1,24 +1,79 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { graphql } from 'gatsby';
-import SEO from '../components/SEO';
-import Layout from '../components/Layout';
+import { graphql, useStaticQuery } from 'gatsby';
 import { getSrc } from 'gatsby-plugin-image';
+import Layout from '../components/Layout';
+import SEO from '../components/SEO';
 import IndexPageTemplate from './IndexPageTemplate';
 
-const IndexPage = ({ data }) => {
-  const { frontmatter } = data.markdownRemark;
+const useIndexPageData = () => {
+  const data = useStaticQuery(graphql`
+    query IndexPage {
+      mdx(frontmatter: { templateKey: { eq: "index-page" } }) {
+        frontmatter {
+          title
+          image {
+            childImageSharp {
+              gatsbyImageData(
+                height: 500
+                width: 1519
+                quality: 70
+                layout: CONSTRAINED
+              )
+            }
+          }
+          heading
+          subheading
+          mainpitch {
+            title
+            description
+          }
+          description
+          intro {
+            blurbs {
+              icon
+              color
+              title
+              text
+              button
+              link
+            }
+            heading
+            image {
+              childImageSharp {
+                gatsbyImageData(
+                  height: 300
+                  width: 384
+                  quality: 100
+                  layout: CONSTRAINED
+                )
+              }
+            }
+            description
+          }
+        }
+      }
+    }
+  `);
+
+  return data.mdx;
+};
+
+const IndexPage = () => {
+  const post = useIndexPageData();
+
+  if (!post) {
+    return <div>Error: Post not found</div>;
+  }
 
   return (
     <Layout>
       <IndexPageTemplate
-        image={frontmatter.image}
-        title={frontmatter.title}
-        heading={frontmatter.heading}
-        subheading={frontmatter.subheading}
-        mainpitch={frontmatter.mainpitch}
-        description={frontmatter.description}
-        intro={frontmatter.intro}
+        image={post.frontmatter.image}
+        heading={post.frontmatter.heading}
+        subheading={post.frontmatter.subheading}
+        mainpitch={post.frontmatter.mainpitch}
+        intro={post.frontmatter.intro}
       />
     </Layout>
   );
@@ -26,7 +81,7 @@ const IndexPage = ({ data }) => {
 
 IndexPage.propTypes = {
   data: PropTypes.shape({
-    markdownRemark: PropTypes.shape({
+    mdx: PropTypes.shape({
       frontmatter: PropTypes.object,
     }),
   }),
@@ -34,64 +89,14 @@ IndexPage.propTypes = {
 
 export default IndexPage;
 
-export const pageQuery = graphql`
-  query IndexPageTemplate {
-    markdownRemark(frontmatter: { templateKey: { eq: "index-page" } }) {
-      frontmatter {
-        title
-        image {
-          childImageSharp {
-            gatsbyImageData(
-              height: 500
-              width: 1519
-              quality: 70
-              layout: CONSTRAINED
-            )
-          }
-        }
-        heading
-        subheading
-        mainpitch {
-          title
-          description
-        }
-        description
-        intro {
-          blurbs {
-            icon
-            color
-            title
-            text
-            button
-            link
-          }
-          heading
-          image {
-            childImageSharp {
-              gatsbyImageData(
-                height: 300
-                width: 384
-                quality: 100
-                layout: CONSTRAINED
-              )
-            }
-          }
-          description
-        }
-      }
-    }
-  }
-`;
-
-export const Head = ({ data }) => {
-  const { frontmatter } = data.markdownRemark;
+export const Head = () => {
+  const post = useIndexPageData();
 
   return (
-    /* eslint-disable-next-line */
     <SEO
-      title={frontmatter.title}
-      description={frontmatter.description}
-      image={getSrc(frontmatter.image)}
+      title={post.frontmatter.title}
+      description={post.frontmatter.description}
+      image={getSrc(post.frontmatter.image)}
     />
   );
 };

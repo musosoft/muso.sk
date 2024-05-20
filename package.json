@@ -12,6 +12,7 @@
   "devDependencies": {
     "@fontsource/poppins": "^5.0.14",
     "@headlessui/react": "^2.0.3",
+    "@mdx-js/react": "^3.0.1",
     "@netlify/plugin-gatsby": "^3.8.1",
     "@tailwindcss/forms": "^0.5.7",
     "@tailwindcss/typography": "^0.5.13",
@@ -21,6 +22,7 @@
     "gatsby-plugin-decap-cms": "^4.0.4",
     "gatsby-plugin-image": "^3.13.1",
     "gatsby-plugin-manifest": "^5.13.1",
+    "gatsby-plugin-mdx": "^5.13.1",
     "gatsby-plugin-pnpm-gatsby-5": "^1.2.11",
     "gatsby-plugin-postcss": "^6.13.1",
     "gatsby-plugin-purgecss": "^6.2.1",
@@ -28,9 +30,8 @@
     "gatsby-plugin-sharp": "^5.13.1",
     "gatsby-remark-copy-linked-files": "^6.13.1",
     "gatsby-remark-images": "^7.13.1",
-    "gatsby-remark-relative-images": "^2.0.5",
+    "gatsby-remark-mdx-relative-images": "^1.1.1",
     "gatsby-source-filesystem": "^5.13.1",
-    "gatsby-transformer-remark": "^6.13.1",
     "gatsby-transformer-sharp": "^5.13.1",
     "postcss": "^8.4.38",
     "postcss-cli": "^11.0.0",
@@ -58,7 +59,7 @@
     "upgrade": "run-script-os",
     "upgrade:macos": "brew upgrade node && pnpm install -g pnpm@latest && pnpm update --interactive --latest && pnpm upgrade",
     "upgrade:windows": "powershell Start-Process powershell -Verb runAs -ArgumentList 'choco upgrade nodejs' && winget update --id pnpm.pnpm && pnpm update --interactive --latest && pnpm upgrade"
-  },  
+  },
   "prettier": {
     "singleQuote": true
   },

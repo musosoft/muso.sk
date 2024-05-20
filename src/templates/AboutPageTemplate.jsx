@@ -1,4 +1,3 @@
-// AboutPageTemplate.js
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
@@ -57,7 +56,7 @@ const AboutPageTemplate = ({
                   <div className="flex justify-center py-4 lg:pt-4 pt-8">
                     <div className="mr-3 py-3 text-center">
                       <span className="text-xl font-bold block uppercase tracking-wide text-gray-700 dark:text-gray-300">
-                        7 years
+                        {new Date().getFullYear() - 2014} years
                       </span>
                       <span className="text-sm text-gray-500 dark:text-gray-300">
                         Web development
@@ -65,13 +64,13 @@ const AboutPageTemplate = ({
                     </div>
                     <div className="mr-3 py-3 text-center">
                       <span className="text-xl font-bold block uppercase tracking-wide text-gray-700 dark:text-gray-300">
-                        13 years
+                      {new Date().getFullYear() - 2008} years
                       </span>
                       <span className="text-sm text-gray-500 dark:text-gray-300">IT services</span>
                     </div>
                     <div className="py-3 text-center">
                       <span className="text-xl font-bold block uppercase tracking-wide text-gray-700 dark:text-gray-300">
-                        4 years
+                      {new Date().getFullYear() - 2016} years
                       </span>
                       <span className="text-sm text-gray-500 dark:text-gray-300">
                         Remote consulting

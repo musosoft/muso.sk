@@ -1,18 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { MDXProvider } from "@mdx-js/react"
 import { Link } from 'gatsby';
-import Content from '../components/Content';
 import { kebabCase } from '../../src/utils/kebabCase';
 
-const BlogPostTemplate = ({
-  content,
-  contentComponent,
-  description,
-  tags,
-  title,
-}) => {
-  const PostContent = contentComponent || Content;
+const shortcodes = { Link };
 
+const BlogPostTemplate = ({ title, description, tags, children }) => {
   return (
     <section className="my-12 relative">
       <div className="container mx-auto px-6">
@@ -24,16 +18,15 @@ const BlogPostTemplate = ({
             <h6 className="text-lg mt-2 mb-0 text-gray-400 text-center">
               {description}
             </h6>
-            <PostContent
-              className="pt-12 prose dark:prose-invert text-gray-700 dark:text-gray-300 max-w-none"
-              content={content}
-            />
+            <MDXProvider components={shortcodes} className="pt-12 prose dark:prose-invert text-gray-700 dark:text-gray-300 max-w-none">
+              {children}
+            </MDXProvider>
             {tags && tags.length ? (
               <div className="flex flex-wrap items-center mt-0 mb-5 leading-relaxed text-gray-500 dark:text-gray-300">
                 <p className="text-lg mr-2 my-2">Tags: </p>
                 {tags.map((tag) => (
                   <span
-                    className="text-gray-500 dark:text-gray-300 bg-gray-200 dark bg-gray-500 text-xs font-bold inline-block py-1 uppercase last:mr-0 mr-1 leading-tight rounded-full px-3"
+                    className="text-gray-500 dark:text-gray-300 dark bg-gray-500 text-xs font-bold inline-block py-1 uppercase last:mr-0 mr-1 leading-tight rounded-full px-3"
                     key={tag + `tag`}
                   >
                     <Link to={`/tags/${kebabCase(tag)}/`}>{tag}</Link>

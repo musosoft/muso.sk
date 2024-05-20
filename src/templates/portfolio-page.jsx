@@ -1,25 +1,86 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { graphql } from 'gatsby';
+import { graphql, useStaticQuery } from 'gatsby';
 import { getSrc } from 'gatsby-plugin-image';
 import Layout from '../components/Layout';
 import SEO from '../components/SEO';
 import PortfolioPageTemplate from './PortfolioPageTemplate';
 
-const PortfolioPage = ({ data }) => {
-  const { frontmatter } = data.markdownRemark;
+const usePortfolioPageData = () => {
+  const data = useStaticQuery(graphql`
+    query PortfolioPage {
+      mdx(frontmatter: { templateKey: { eq: "portfolio-page" } }) {
+        frontmatter {
+          title
+          image {
+            childImageSharp {
+              gatsbyImageData(quality: 100, layout: FULL_WIDTH)
+            }
+          }
+          heading
+          description
+          websites {
+            cards {
+              image {
+                childImageSharp {
+                  gatsbyImageData(quality: 100, layout: FULL_WIDTH)
+                }
+              }
+              title
+              color
+              text
+            }
+          }
+          it {
+            heading
+            description
+            cards {
+              title
+              icon
+              color
+              description
+            }
+          }
+          testimonials {
+            author
+            company
+            background
+            quote
+          }
+          pricing {
+            heading
+            description
+            plans {
+              description
+              items
+              plan
+              price
+            }
+          }
+        }
+      }
+    }
+  `);
+
+  return data.mdx;
+};
+
+const PortfolioPage = () => {
+  const post = usePortfolioPageData();
+
+  if (!post) {
+    return <div>Error: Post not found</div>;
+  }
 
   return (
     <Layout>
       <PortfolioPageTemplate
-        image={frontmatter.image}
-        title={frontmatter.title}
-        heading={frontmatter.heading}
-        description={frontmatter.description}
-        websites={frontmatter.websites}
-        it={frontmatter.it}
-        testimonials={frontmatter.testimonials}
-        pricing={frontmatter.pricing}
+        title={post.frontmatter.title}
+        heading={post.frontmatter.heading}
+        websites={post.frontmatter.websites}
+        it={post.frontmatter.it}
+        testimonials={post.frontmatter.testimonials}
+        pricing={post.frontmatter.pricing}
       />
     </Layout>
   );
@@ -27,7 +88,7 @@ const PortfolioPage = ({ data }) => {
 
 PortfolioPage.propTypes = {
   data: PropTypes.shape({
-    markdownRemark: PropTypes.shape({
+    mdx: PropTypes.shape({
       frontmatter: PropTypes.object,
     }),
   }),
@@ -35,70 +96,14 @@ PortfolioPage.propTypes = {
 
 export default PortfolioPage;
 
-export const PortfolioPageQuery = graphql`
-  query PortfolioPage($id: String) {
-    markdownRemark(id: { eq: $id }) {
-      frontmatter {
-        title
-        image {
-          childImageSharp {
-            gatsbyImageData(quality: 100, layout: FULL_WIDTH)
-          }
-        }
-        heading
-        description
-        websites {
-          cards {
-            image {
-              childImageSharp {
-                gatsbyImageData(quality: 100, layout: FULL_WIDTH)
-              }
-            }
-            title
-            color
-            text
-          }
-        }
-        it {
-          heading
-          description
-          cards {
-            title
-            icon
-            color
-            description
-          }
-        }
-        testimonials {
-          author
-          company
-          background
-          quote
-        }
-        pricing {
-          heading
-          description
-          plans {
-            description
-            items
-            plan
-            price
-          }
-        }
-      }
-    }
-  }
-`;
-
-export const Head = ({ data }) => {
-  const { frontmatter } = data.markdownRemark;
+export const Head = () => {
+  const post = usePortfolioPageData();
 
   return (
-    /* eslint-disable-next-line */
     <SEO
-      title={frontmatter.title}
-      description={frontmatter.description}
-      image={getSrc(frontmatter.image)}
+      title={post.frontmatter.title}
+      description={post.frontmatter.description}
+      image={getSrc(post.frontmatter.image)}
     />
   );
 };
