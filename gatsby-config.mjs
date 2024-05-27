@@ -13,44 +13,9 @@ export default {
     twitterUsername: '@muso.sk',
   },
   plugins: [
-    {
-      resolve: 'gatsby-source-filesystem',
-      options: {
-        path: `${__dirname}/static/img`,
-        name: 'uploads',
-      },
-    },
-    {
-      resolve: 'gatsby-source-filesystem',
-      options: {
-        path: `${__dirname}/src/pages`,
-        name: 'pages',
-      },
-    },
-    `gatsby-transformer-sharp`,
-    {
-      resolve: `gatsby-plugin-sharp`,
-      options: {
-        defaults: {
-          formats: [`webp`, `auto`],
-          quality: 80,
-        },
-      },
-    },
-    {
-      resolve: `gatsby-plugin-manifest`,
-      options: {
-        name: `muso.sk`,
-        short_name: `muso.sk`,
-        start_url: `/`,
-        background_color: `#ffffff`,
-        theme_color: `#1992ff`,
-        display: `standalone`,
-        icon: `${__dirname}/static/img/icon.svg`,
-      },
-    },
     `gatsby-plugin-image`,
-    'gatsby-plugin-postcss',
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
     {
       resolve: 'gatsby-plugin-mdx',
       options: {
@@ -77,6 +42,33 @@ export default {
         ],
       },
     },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        path: `${__dirname}/static/img`,
+        name: 'uploads',
+      },
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        path: `${__dirname}/src/pages`,
+        name: 'pages',
+      },
+    },
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `muso.sk`,
+        short_name: `muso.sk`,
+        start_url: `/`,
+        background_color: `#ffffff`,
+        theme_color: `#1992ff`,
+        display: `standalone`,
+        icon: `${__dirname}/static/img/icon.svg`,
+      },
+    },
+    'gatsby-plugin-postcss',
     {
       resolve: 'gatsby-plugin-decap-cms',
       options: {

@@ -11,7 +11,7 @@
   },
   "devDependencies": {
     "@fontsource/poppins": "^5.0.14",
-    "@headlessui/react": "^2.0.3",
+    "@headlessui/react": "^2.0.4",
     "@mdx-js/react": "^3.0.1",
     "@netlify/plugin-gatsby": "^3.8.1",
     "@tailwindcss/forms": "^0.5.7",
@@ -26,7 +26,6 @@
     "gatsby-plugin-pnpm-gatsby-5": "^1.2.11",
     "gatsby-plugin-postcss": "^6.13.1",
     "gatsby-plugin-purgecss": "^6.2.1",
-    "gatsby-plugin-react-helmet": "^6.13.1",
     "gatsby-plugin-sharp": "^5.13.1",
     "gatsby-remark-copy-linked-files": "^6.13.1",
     "gatsby-remark-images": "^7.13.1",

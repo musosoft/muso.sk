@@ -1,7 +1,5 @@
 import { resolve } from 'path';
 import { createFilePath } from 'gatsby-source-filesystem';
-import { get } from './src/utils/get.mjs';
-import { uniq } from './src/utils/uniq.mjs';
 import { kebabCase } from './src/utils/kebabCase.mjs';
 
 export async function createPages({ graphql, actions, reporter }) {
@@ -34,29 +32,19 @@ export async function createPages({ graphql, actions, reporter }) {
 
   const posts = result.data.allMdx.nodes;
 
-  posts.forEach((node) => {
-    const { id, fields, frontmatter, internal } = node;
-    const postTemplate = resolve(`src/templates/${String(frontmatter.templateKey)}.jsx`);
-    
+  posts.forEach(({ id, fields, frontmatter, internal }) => {
     createPage({
       path: fields.slug,
-      tags: frontmatter.tags,
-      component: `${postTemplate}?__contentFilePath=${internal.contentFilePath}`,
+      component: `${resolve(`src/templates/${String(frontmatter.templateKey)}.jsx`)}?__contentFilePath=${internal.contentFilePath}`,
       context: { id },
     });
   });
 
-  const tags = uniq(posts.reduce((acc, node) => {
-    if (get(node, 'frontmatter.tags')) {
-      acc.push(...node.frontmatter.tags);
-    }
-    return acc;
-  }, []));
+  const tags = [...new Set(posts.flatMap(post => post.frontmatter.tags || []))];
 
-  tags.forEach((tag) => {
-    const tagPath = `/tags/${kebabCase(tag)}/`;
+  tags.forEach(tag => {
     createPage({
-      path: tagPath,
+      path: `/tags/${kebabCase(tag)}/`,
       component: resolve('src/templates/tags.jsx'),
       context: { tag },
     });
