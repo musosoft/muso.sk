@@ -53,7 +53,7 @@ const AboutPageTemplate = ({
                   <div className="flex justify-center py-4 lg:pt-4 pt-8">
                     <div className="mr-3 py-3 text-center">
                       <span className="text-xl font-bold block uppercase tracking-wide text-gray-700 dark:text-gray-300">
-                        7 years
+                        10 years
                       </span>
                       <span className="text-sm text-gray-500 dark:text-gray-300">
                         Web development
@@ -61,7 +61,7 @@ const AboutPageTemplate = ({
                     </div>
                     <div className="mr-3 py-3 text-center">
                       <span className="text-xl font-bold block uppercase tracking-wide text-gray-700 dark:text-gray-300">
-                        13 years
+                        16 years
                       </span>
                       <span className="text-sm text-gray-500 dark:text-gray-300">
                         IT services
@@ -69,7 +69,7 @@ const AboutPageTemplate = ({
                     </div>
                     <div className="py-3 text-center">
                       <span className="text-xl font-bold block uppercase tracking-wide text-gray-700 dark:text-gray-300">
-                        4 years
+                        7 years
                       </span>
                       <span className="text-sm text-gray-500 dark:text-gray-300">
                         Remote consulting
