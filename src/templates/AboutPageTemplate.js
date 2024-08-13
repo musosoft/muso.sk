@@ -3,7 +3,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
 import { GatsbyImage } from 'gatsby-plugin-image';
-import Content from '../components/Content';
 import muso from '../../static/img/muso.jpg';
 import { FaMapMarkerAlt, FaBriefcase } from 'react-icons/fa';
 
@@ -14,10 +13,7 @@ const AboutPageTemplate = ({
   content,
   image,
   contentComponent,
-}) => {
-  const PageContent = contentComponent || Content;
-
-  return (
+}) => (
     <main className="profile-page">
       <section className="relative block h-500-px">
         <div className="absolute top-0 w-full h-full bg-gray-300 dark:bg-gray-900">
@@ -67,7 +63,9 @@ const AboutPageTemplate = ({
                       <span className="text-xl font-bold block uppercase tracking-wide text-gray-700 dark:text-gray-300">
                         13 years
                       </span>
-                      <span className="text-sm text-gray-500 dark:text-gray-300">IT services</span>
+                      <span className="text-sm text-gray-500 dark:text-gray-300">
+                        IT services
+                      </span>
                     </div>
                     <div className="py-3 text-center">
                       <span className="text-xl font-bold block uppercase tracking-wide text-gray-700 dark:text-gray-300">
@@ -102,10 +100,56 @@ const AboutPageTemplate = ({
               <div className="mt-10 py-10 border-t border-gray-300 text-center">
                 <div className="flex flex-wrap justify-center">
                   <div className="w-full lg:w-9/12 px-4">
-                    <PageContent
-                      className="leading-relaxed text-gray-800 dark:text-gray-200 prose lg:prose-lg max-w-none"
-                      content={content}
-                    />
+                    <h3>Hi I'm muso.sk, nice to meet you!</h3>
+                    <blockquote>
+                      
+                      <p>
+                        Since beginning my journey as a Freelance years ago,
+                        I've done remote work for agencies, consulted for
+                        startups, and collaborated with both business and
+                        consumer use.
+                      </p>
+                    </blockquote>
+                    <p>
+                      I'm 29, a developer, IT guy and traveller. I'm originally
+                      from Slovakia. I moved to Thailand, to live in a jungle in
+                      a paradise island to deliver a code full of sunshine
+                      vibes. ✈️⁣⁣⁣ ⁣⁣ I'm always looking for new digital
+                      opportunities. I am happy to contribute to a project that
+                      you need help with in. In addition to development I can
+                      also assist with IT related technology.
+                    </p>
+                    <p>
+                      My main goal is to connect with new people, exchange my
+                      skills to help them with everything I can. I'm used to
+                      work remotely, value having decent ethics, and an open
+                      mind. Different perspectives are important to me. ⁣⁣ I am
+                      a Front-end website developer with a bit of backend
+                      experience. My skills include HTML, CSS, SCSS, WordPress,
+                      Cross Browser Compatibility, Responsive Design, Git,
+                      ReactJS, Adobe Photoshop, Tailwind, Bootstrap, Bash and
+                      more... As Consultant I depend on community, service
+                      support and stackowerflow, trying to minimize workload,
+                      overpricing and stress.
+                    </p>
+                    <p>
+                      Other than that I'm an open-minded IT guy passionate about
+                      Software/Hardware, Android smartphones, eSport servers,
+                      Linux servers, Crypto... I would continue but I hate to
+                      tinkle
+                    </p>
+                    <p>
+                      Those above are also my hobbies since I was young, my
+                      other activities include: Hiking, Traveling, Nightclubs,
+                      Baseball, Learning Thai, Coding, Swimming, Building
+                      Computers, Cycling, Memes, Watching Series, Video Games,
+                      Listening electronic music...⁣⁣⁣⁣
+                    </p>
+                    <p>
+                      <strong>
+                        Do you currently need any help with a project?
+                      </strong>
+                    </p>
                     <Link to="/portfolio" className="font-normal text-blue-500">
                       Check my services
                     </Link>
@@ -118,7 +162,6 @@ const AboutPageTemplate = ({
       </section>
     </main>
   );
-};
 
 AboutPageTemplate.propTypes = {
   title: PropTypes.string.isRequired,
