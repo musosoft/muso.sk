@@ -15,6 +15,11 @@
   from = "/qs"
   to = "https://download.teamviewer.com/QS/"
   status = 302
+
+[[redirects]]
+  from = "/rd"
+  to = "https://github.com/rustdesk/rustdesk/releases/download/1.2.7/rustdesk-1.2.7-x86_64.exe"
+  status = 302
   
 [[redirects]]
   from = "/ip"
