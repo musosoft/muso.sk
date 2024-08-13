@@ -88,7 +88,7 @@ testimonials:
     quote: >-
       I'm happy that the site looks nice and approach to work was great. I can recommend.
 pricing:
-  heading: 20,- € Hourly rate
+  heading: 30,- € Hourly rate
   description: >-
     To make it easy and to receive great service each task costs you the same. Contact me about more details and payment info.
   plans:
@@ -98,14 +98,14 @@ pricing:
         - Easy Drag'N'Drop customisation
         - Mobile version
       plan: Simple website
-      price: '300,- €'
+      price: '400-700,- €'
     - description: Top website that your customers will fall in love with! An unrivaled website exactly according to your design ideas. Suitable for small e-shops and companies of national size.
       items:
         - SEO
         - Custom web administration
         - Payment gateways
       plan: Advanced Website
-      price: '400-1500,- €'
+      price: '800-1500,- €'
     - description: An e-shop with hundreds of products, a rework of your existing site... Get professional service, help with the texts and graphics, latest technologies thanks to which you will be ahead of the competition.
       items:
         - Whatever you need
@@ -119,5 +119,5 @@ pricing:
         - Time tracking reports
         - Screen sharing calls
       plan: Everything else
-      price: '20,- € hourly'
+      price: '30,- € hourly'
 ---
